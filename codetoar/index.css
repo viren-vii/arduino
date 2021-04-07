@@ -1,0 +1,230 @@
+html, body{
+  min-height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #000;
+  background-repeat:no-repeat;
+  background: -webkit-linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+  background: -moz-linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+  background: -ms-linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+  background: -o-linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+  background: linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+
+  margin: 0;
+  padding: 0;
+}
+/* .bg{
+  height: 100%;
+  background-attachment: fixed;
+  background: linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+.codeScreen{
+  display: table;
+  width: 100%;
+}
+.codeHere{
+  margin: 0% 5% 5% 5%;
+  padding: 2%;
+  border-radius: 100px;
+  background-color: #F0F0F0;
+  box-shadow: 10px black;
+}
+.leftPart{
+  display: table-cell;
+  width: 50%;
+  text-align: left;
+  /* border: 5px solid rgb(255, 186, 186); */
+  padding: 5em;
+}
+.rightPart{
+  display: table-cell;
+  width: 50%;
+  text-align: left;
+  border: 1px solid green;
+  /* line-height: 1.58em; */
+  font-size: x-large;
+  padding: .5em;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a,select {
+    background-color: aliceblue;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: black;
+    color: white;
+  }
+  pre{
+    font-size: x-large;
+  }
+ .SS {
+   width: 50px;
+ }
+
+ #cover {display:block; position: fixed; height: 100%; width: 100%; top:0; left: 0; background: rgba(0,0,0,0.5); z-index:9999;}
+
+ .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #753A88; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display: block;
+  position: absolute; /*Can also be `fixed`*/
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+button{
+  transition: 0.1s ease-out;
+  background-color: #CB2B5E;
+  border-radius: 10px;
+  padding:10px;
+  text-decoration: none;
+  outline: none;
+  border: 2px #753A88;
+  color: white;
+  margin: auto;
+  margin-bottom: 2%;
+
+}
+button:hover{
+  transition: 0.1s ease-in;
+  background-color: #753A88;
+  color: rgb(255, 255, 255);
+}
+header,footer{
+  background: linear-gradient( 135deg, rgba(117, 58, 136, 1) 0%, rgba(203, 43, 94, 1) 0%, rgba(117, 58, 136, 1) 100% );
+  color: white;
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 10%;
+  height: auto;
+}
+.floatBtn {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 25%; /* Position the navbar at the top of the page */
+  right: 10%;
+  box-shadow: 0 0 10px #CB2B5E; 
+}
+.floatbt{
+  /* border:1px solid #CB2B5E; */
+  box-shadow: 0 0 20px #ff0051; 
+}
+::selection{
+  background-color: #ffbadd;
+}
+
+/*----------------------------------------*/
+
+input{
+  line-height: 25px;
+  border-radius: 10px;
+  /* border-color: rgb(216, 216, 216); */
+  border: 1px solid;
+  border-color: #ff8cb0;
+  padding: 5px;
+}
+input:focus {
+  outline: none !important;
+  outline-offset: 0;
+  border:1px solid #CB2B5E;
+  border-radius: 10px;
+  padding: 4px;
+  line-height: 25px;
+  box-shadow: 0 0 10px #ff76a1; 
+}
+
+/*------------------------------*/
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  background-color: #ffd0df;
+  color: #ff3877;
+  border-radius: 50%;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s;
+  width: fit-content;
+  background-color: #CB2B5E;
+  color: #fff;
+  text-align: center;
+  padding: 5px 5px;
+  border-radius: 6px;
+ 
+  position: absolute;
+  z-index: 1;
+}
+.tooltip .tooltiptext {
+  top: -5px;
+  left: 105%;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*------------------------------*/
+
+select{
+  display: inline;
+  border-radius: 10px;
+  line-height: 25px;
+  border: 1px solid;
+  border-color: #ff8cb0;
+  padding: 5px;
+  background-color: white;
+  appearance: none;
+}
+select:focus {
+  outline: none !important;
+  outline-offset: 0;
+  border:1px solid #CB2B5E;
+  border-radius: 10px;
+  padding: 4px;
+  line-height: 25px;
+  box-shadow: 0 0 10px #ff76a1;    
+}

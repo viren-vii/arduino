@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <title>HTML generator</title>
+    <meta name="description" content="HTML generator">
+    <meta name="author" content="Viren-vii">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./robomonkee.png">
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+    <script>hljs.highlightAll();</script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
+</head>
+<body class="bg">
+    <div id="loader" class="loader"></div> 
+    <div id="cover"></div>
+    <img src="./robomonkee.png">
+    <!-- <div class="nav">
+        <ul>
+            <li><a href="default.asp">Home</a></li>
+            <li><a href="news.asp">News</a></li>
+            <li><a href="contact.asp">Contact</a></li>
+            <li style="float:right"><a href="about.asp">About</a></li>
+        </ul>
+    </div> -->
+
+
+<div class="codeScreen">
+<div class="codeHere">
+<pre><code class="lang-cpp"> <form>
+<div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="handleOnChange(); document.getElementById('modalId').style.display='block'">GET CODE</button></div>
+<!-- #define TRIGGER_PIN 9
+#define ECHO_PIN 10 
+
+#define IR1 A1
+#define IR2 A2
+#define IR3 A3
+#define IR4 A4
+#define IR5 A5
+
+#define EN2 3
+#define RM1 4
+#define RM2 5
+#define EN1 6
+#define LM1 7
+#define LM2 8 -->
+
+    float SP_EN1 = <input type="number" min="0" max="255" placeholder="SPEED 1" id="SP_EN1" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Left Motor Speed</span></div>
+    float SP_EN2 = <input type="number" min="0" max="255" placeholder="SPEED 2" id="SP_EN2" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Right Motor Speed</span></div>
+<datalist id = "HL">
+    <option value="HIGH"></option>
+    <option value="LOW"></option>
+</datalist>
+<!-- void forward(){
+    Serial.print("Forwards Triggered");
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,HIGH);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,SP_EN1);   
+}
+
+void right(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,0);
+    digitalWrite(LM1,HIGH);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,SP_EN1);
+}
+
+void left(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,0);
+}
+
+void deg360(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,HIGH);
+    analogWrite(EN1,SP_EN1);
+}
+
+void reverse(){
+    Serial.print("Reverse Triggered");
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM2,HIGH);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,HIGH);
+    analogWrite(EN1,SP_EN1);   
+}
+
+void stop(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM2,LOW);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,0);
+    analogWrite(EN2,0);
+}
+
+
+void setup(){
+    Serial.begin(9600);
+    // MOTOR AND ENABLES
+    pinMode (RM1, OUTPUT);
+    pinMode (RM2, OUTPUT);
+    pinMode (LM1, OUTPUT);
+    pinMode (LM2, OUTPUT);
+    pinMode (ENA, OUTPUT);
+    pinMode (ENB, OUTPUT);
+    // IR ARRAY
+    pinMode (IR1, INPUT);
+    pinMode (IR2, INPUT);
+    pinMode (IR3, INPUT);
+    pinMode (IR4, INPUT);
+    pinMode (IR5, INPUT);
+    // ULTRASONIC SENSOR
+    pinMode(ECHO_PIN,INPUT);
+    pinMode(TRIGGER_PIN,OUTPUT);
+}
+
+int dist(){
+    digitalWrite(TRIGGER_PIN,LOW);
+    delayMicroseconds(2);
+    digitalWrite(TRIGGER_PIN,HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TRIGGER_PIN,LOW);
+    int dur=pulseIn(ECHO_PIN, HIGH);
+    c=dur*0.0294/2;
+    return c;
+}
+
+void loop(){
+    int S1 = digitalRead(IR1);
+    int S2 = digitalRead(IR2);
+    int S3 = digitalRead(IR3);
+    int S4 = digitalRead(IR4);
+    int S5 = digitalRead(IR5); -->
+
+    <button type="button" onclick="toggleUS();">Toggle Ultrasonic</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Include/Exclude Ultrasonic from Program</span></div>
+    <div id="ultrasonicBlock" style="display: none;">
+    if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
+        <select name="functions" id="FnUS" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+          </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
+        delay(10);
+    }
+    </div>
+    <div id="ifBlocks">
+    if(S1 == <input class="SS" id="S1if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Value read by IR sensor (0/1)</span></div> && S2 == <input class="SS" id="S2if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S3 == <input class="SS" id="S3if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S4 == <input class="SS" id="S4if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S5 == <input class="SS" id="S5if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/>){
+        <select name="functions" id="Fnif0" oninput="handleOnChange();">
+            <option value="forward" selected>forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+        </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
+    }
+    </div>
+    <button type="button" onclick="addIfBlock();">+</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Add another if block similar to above one</span></div>
+
+<!-- } -->
+</form> </code></pre>
+        </div>
+
+    <div id="modalId" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+        <header class="w3-container"> 
+            <h2 style="text-align: center;">Click on the button to copy code!</h2>
+            <div style="text-align: center;  margin-bottom: 10px;"><button type="button" onclick="copyToCB('arduinoCodeDiv')">Copy Code</button></div>
+            <span onclick="document.getElementById('modalId').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+            </header>
+          <div class="w3-container">
+            <pre class="arduinoCode">
+                <div id = "arduinoCodeDiv">
+                </div>
+            </pre>
+          </div>
+          <footer class="w3-container">
+            <p>   </p>
+          </footer>
+        </div>
+      </div>
+
+
+    </div>
+    </body>
+</html> 

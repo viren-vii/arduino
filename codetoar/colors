@@ -1,0 +1,25 @@
+outer-purple : #74025B
+rgb(116, 2, 91)
+
+inner-purple : #400046
+rgb(64, 0, 70)
+
+gray: #CDCDCD
+
+
+
+
+
+
+    rgba(64, 0, 70, 1) 0%,
+    rgb(116, 2, 91, 1) 0%,
+    rgba(64, 0, 70, 1) 100%
+
+
+
+
+dark #753A88
+rgba(117, 58, 136, 1)
+
+light #CB2B5E
+rgba(203, 43, 94, 1)

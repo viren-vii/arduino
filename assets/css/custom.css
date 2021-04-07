@@ -1,0 +1,90 @@
+html {
+    scroll-behavior: smooth;
+  }
+.bd-example{
+    margin: 50px 0 50px 0;
+}
+.carousel-inner img {
+    margin: auto;
+}
+.carousel-indicators{
+    top: 5%;
+    margin-bottom: 500px;
+}
+.carousel-indicators li {
+    background-color: #f55858;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    text-indent: 0;
+    position: relative;
+    width: 20vw;
+    height: 10vh;
+    line-height: 10vh;
+}
+.carousel-indicators li:last-child {
+    border-top-right-radius: 500px;
+    border-bottom-right-radius: 500px;
+}
+.carousel-indicators li:first-child {
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+}
+.carousel-item{
+    text-align: center;
+}
+.carousel-btn{
+    position: relative;
+    margin: 10px 0 100px 0;
+    border-radius: 50px;
+    font-size: 1em;
+    width: 30%;
+    font-weight: bolder;
+    padding:1%;
+    background-color: white;
+    border: 2px solid #f55858;
+    color: #f55858;
+    letter-spacing: 0.25px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+.carousel-btn:hover{
+    cursor: pointer;
+    background-color: #f55858;
+    color: white;
+    /* box-shadow: 5px 5px 5px 5px #ffe992; */
+}
+.carousel-image{
+    border: 10px solid #f55858;
+    border-radius: 50px;
+}
+#courses{
+    margin: 0;
+    position: relative;
+    top: 50%;
+}
+
+.card{
+    margin: auto;
+    margin-top: 10%;
+}
+
+@media screen and (max-width: 600px) {
+    .carousel-indicators{
+        top: 0%;
+    }
+    .carousel-indicators li {
+        width: 20vw;
+        height: 5vh;
+        line-height: 5vh;
+    }
+    .carousel-btn{
+        width: 50%;
+    }
+    .carousel-image{
+        border: 5px solid #f55858;
+        border-radius: 20px;
+    }
+  }
