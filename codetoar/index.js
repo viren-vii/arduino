@@ -171,6 +171,7 @@ function changeArduino(){
 
 float SP_EN1 = `+vSP_EN1+`;
 float SP_EN2 = `+vSP_EN2+`;
+float c = 0;
 
 
 void forward(){
