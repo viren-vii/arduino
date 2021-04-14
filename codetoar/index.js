@@ -349,6 +349,8 @@ function choiceCheck(){
         visibleUS = false;
     }
     if(bluetoothCheck.checked){
+        ultrasoniceCheck.checked = false;
+        lineFollowerCheck.checked = false;
         visibleUS = false;
         visibleIR = false;
         handleBtChanges();
