@@ -20,18 +20,17 @@
 <body class="bg">
     <div id="loader" class="loader"></div> 
     <div id="cover"></div>
-    <img src="./robomonkee.png">
-    <!-- <div class="nav">
+    <img src="../assets/images/robomonkee.png">
+    <div class="nav">
         <ul>
-            <li><a href="default.asp">Home</a></li>
-            <li><a href="news.asp">News</a></li>
-            <li><a href="contact.asp">Contact</a></li>
-            <li style="float:right"><a href="about.asp">About</a></li>
+            <li><a href="#line-follower">Line Follower</a></li>
+            <li><a href="#ultrasonic">Ultrasonic</a></li>
+            <li><a href="#bluetooth">Bluetooth</a></li>
         </ul>
-    </div> -->
+    </div>
 
 
-<div class="codeScreen">
+<div class="codeScreen" id="line-follower">
 <div class="codeHere">
 <pre><code class="lang-cpp"> <form>
 <div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="handleOnChange(); document.getElementById('modalId').style.display='block'">GET CODE</button></div>
@@ -156,21 +155,10 @@ void loop(){
     int S4 = digitalRead(IR4);
     int S5 = digitalRead(IR5); -->
 
-    <button type="button" onclick="toggleUS();">Toggle Ultrasonic</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Include/Exclude Ultrasonic from Program</span></div>
-    <div id="ultrasonicBlock" style="display: none;">
-    if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
-        <select name="functions" id="FnUS" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-          </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
-        delay(10);
-    }
-    </div>
+    <!-- <button type="button" onclick="toggleUS();">Toggle Ultrasonic</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Include/Exclude Ultrasonic from Program</span></div> -->
+
     <div id="ifBlocks">
-    if(S1 == <input class="SS" id="S1if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Value read by IR sensor (0/1)</span></div> && S2 == <input class="SS" id="S2if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S3 == <input class="SS" id="S3if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S4 == <input class="SS" id="S4if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S5 == <input class="SS" id="S5if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/>){
+    if(S1 == <input class="SS" value="0" id="S1if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Value read by IR sensor (0/1)</span></div> && S2 == <input class="SS" id="S2if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S3 == <input class="SS" id="S3if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S4 == <input class="SS" id="S4if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S5 == <input class="SS" value="0" id="S5if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/>){
         <select name="functions" id="Fnif0" oninput="handleOnChange();">
             <option value="forward" selected>forward</option>
             <option value="reverse">reverse</option>
@@ -185,11 +173,105 @@ void loop(){
 <!-- } -->
 </form> </code></pre>
         </div>
+    </div>
+    <div id="ultrasonic" class="codeHere">
+        <pre><code class="lang-cpp">
+        <div id="ultrasonicBlock" style="display: block;">
+            if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
+                <select name="functions" id="FnUS" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                  </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
+                delay(10);
+            }
+            </div>
+            </code></pre>
+    </div>
+
+    <div id="bluetooth" class="codeHere">
+        <pre><code class="lang-cpp">
+        <img src="../assets/images/bt/up-arrow.png"/><select name="functions" id="btControlsU" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        <img src="../assets/images/bt/down-arrow.png"/><select name="functions" id="btControlsD" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        <img src="../assets/images/bt/left-arrow.png"/><select name="functions" id="btControlsL" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        <img src="../assets/images/bt/right-arrow.png"/><select name="functions" id="btControlsR" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        <img src="../assets/images/bt/stop.png"/><select name="functions" id="btControlsS" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        <img src="../assets/images/bt/spin-left.png"/><select name="functions" id="btControlsSL" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        <img src="../assets/images/bt/spin-right.png"/><select name="functions" id="btControlsSR" oninput="handleOnChange();">
+            <option value="forward">forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+            <option value="stop">spin right</option>
+            <option value="stop">spin left</option>
+        </select>
+        </code></pre>
+    </div>
 
     <div id="modalId" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom">
         <header class="w3-container"> 
             <h2 style="text-align: center;">Click on the button to copy code!</h2>
+            <div id="choices">
+                <input type="checkbox" autocomplete="off" oninput = "choiceCheck();" class="check" id="line-follower-check" name="line-follower-check" value="line-follower-check">
+                <label for="line-follower-check">Line Follower</label>
+                <input type="checkbox" autocomplete="off" oninput = "choiceCheck();" class="check" id="ultrasonic-check" name="ultrasonic-check" value="ultrasonic-check">
+                <label for="ultrasonic-check">Ultrasonice</label><br>
+                <input type="checkbox" autocomplete="off" oninput = "choiceCheck();" class="check" id="bluetooth-check" name="bluetooth-check" value="bluetooth-check">
+                <label for="bluetooth-check">bluetooth</label><br>
+                
+            </div>
             <div style="text-align: center;  margin-bottom: 10px;"><button type="button" onclick="copyToCB('arduinoCodeDiv')">Copy Code</button></div>
             <span onclick="document.getElementById('modalId').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
@@ -206,7 +288,7 @@ void loop(){
         </div>
       </div>
 
+      <button onclick="topFunction()" class="bounce" id="myBtn" title="Go to top">Top</button> 
 
-    </div>
     </body>
 </html> 
