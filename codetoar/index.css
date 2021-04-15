@@ -99,13 +99,15 @@ body {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  transition: all 0.3s ease 0s;
 }
-/* Change the link color to #111 (black) on hover */
+
 .nav .active,
 .nav a:hover {
   background-color: #ff3877;
   font-weight: bold;
   color: white;
+  transition: all 0.3s ease 0s;
 }
 
 pre {
