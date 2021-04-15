@@ -79,11 +79,7 @@ body {
 }
 .nav {
   text-align: center;
-}
-ul {
-  text-align: center;
   transform-origin: left;
-  margin: auto;
   position: fixed;
   left: 30px;
   width: 100vh;
@@ -91,28 +87,22 @@ ul {
   transform: rotate(-90deg);
 }
 
-li {
-  display: inline-block;
-  margin: auto;
-  text-align: center;
-}
-
-li a {
+.nav a {
   background-color: transparent;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   margin: 5px 10px 0 10px;
   font-weight: lighter;
   border-radius: 20px;
-  width: 220px;
-  display: block;
+  width: 25%;
+  display: inline-block;
   color: black;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 /* Change the link color to #111 (black) on hover */
-li .active,
-a:hover {
+.nav .active,
+.nav a:hover {
   background-color: #ff3877;
   font-weight: bold;
   color: white;
@@ -317,33 +307,6 @@ select:focus {
 }
 #bluetooth select {
   display: inline-block;
-}
-
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: white; /* Set a background color */
-  font-weight: lighter;
-  color: black; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 50%;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease 0s;
-  width: auto;
-  height: auto;
-}
-#myBtn:hover {
-  box-shadow: 0px 15px 20px rgba(203, 43, 94, 0.5);
-  color: #fff;
-  transition: all 0.3s ease 0s;
-  transform: translateY(-7px);
-  background-color: #000;
 }
 
 #homeBtn {

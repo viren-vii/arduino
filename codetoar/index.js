@@ -319,6 +319,7 @@ void loop(){
 }
 
 
+  // ----------------------------------------- copy function start
 
 function copyToCB(containerid) {
     if (document.selection) {
@@ -335,6 +336,28 @@ function copyToCB(containerid) {
     }
 }
 
+
+function copyToClipboard(element){
+    var textarea = document.createElement('textarea');
+    textarea.textContent = document.getElementById(element).innerText;
+    document.body.appendChild(textarea);
+  
+    var selection = document.getSelection();
+    var range = document.createRange();
+    
+    range.selectNode(textarea);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  
+    alert('copy success', document.execCommand('copy'));
+    selection.removeAllRanges();
+  
+    document.body.removeChild(textarea);
+    
+  }
+
+
+  // ----------------------------------------- copy function end
 function choiceCheck(st) {
     if(st=='bt' && bluetoothCheck.checked){
         lineFollowerCheck.checked = false;
@@ -476,30 +499,6 @@ function btCodeHandler() {
     document.getElementById("arduinoCodeDiv").innerText = code;
 }
 
-
-// go to top button -----------------------------------------------------------
-
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () { scrollFunction() };
-
-function scrollFunction() {
-    if (mybutton !== undefined) {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-    }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-// go to top button end -----------------------------------------------------------
 
 //---------------------------------------------actiive class
 
