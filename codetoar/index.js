@@ -6,6 +6,7 @@ window.onload = function () {
     document.getElementById("cover").style.display = "none";
     document.getElementById("loader").style.display = "none";
 
+    addActiveClass();
 
     mybutton = document.getElementById("myBtn");
     //Get the button:
@@ -505,6 +506,7 @@ function topFunction() {
 function addActiveClass() {
     // Get all buttons with class="btn" inside the container
     var btns = document.getElementsByClassName("nav-buttons");
+    console.log(btns);
     // Loop through the buttons and add the active class to the current/clicked button
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function () {
@@ -515,4 +517,7 @@ function addActiveClass() {
     }
 }
 
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
 //---------------------------------------------actiive class end

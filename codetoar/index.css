@@ -324,7 +324,7 @@ select:focus {
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
   border-radius: 50%;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
   width: auto;
   height: auto;
@@ -360,6 +360,7 @@ select:focus {
 #line-follower-check:checked + label {
   color: white;
   background-color: #ff3877;
+  /* border: 3px solid rgba(255, 225, 225, 0.3); */
 }
 #ultrasonic-check:checked + label {
   color: white;
