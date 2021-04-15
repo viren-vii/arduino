@@ -81,7 +81,9 @@ body {
   text-align: center;
 }
 ul {
+  text-align: center;
   transform-origin: left;
+  margin: auto;
   position: fixed;
   left: 30px;
   width: 100vh;
@@ -95,9 +97,12 @@ li {
   text-align: center;
 }
 
-li a,
-select {
-  background-color: aliceblue;
+li a {
+  background-color: transparent;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  margin: 5px 10px 0 10px;
+  font-weight: lighter;
+  border-radius: 20px;
   width: 220px;
   display: block;
   color: black;
@@ -108,9 +113,11 @@ select {
 /* Change the link color to #111 (black) on hover */
 li .active,
 a:hover {
-  background-color: black;
+  background-color: #ff3877;
+  font-weight: bold;
   color: white;
 }
+
 pre {
   font-size: x-large;
 }
@@ -200,13 +207,15 @@ img {
   padding: 20px;
   font-weight: 900;
   font-size: larger;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease 0s;
 }
 .floatbt:hover {
   box-shadow: 0px 15px 20px rgba(203, 43, 94, 0.5);
   color: #fff;
   transform: translateY(-7px);
+  transform: scale(1.1);
+  cursor: pointer;
 }
 ::selection {
   background-color: #ffbadd;
@@ -337,6 +346,38 @@ select:focus {
   background-color: #000;
 }
 
+#homeBtn {
+  display: block; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  left: 10px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: white; /* Set a background color */
+  font-weight: lighter;
+  color: black; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 50%;
+  box-shadow: 5px 10px 150px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease 0s;
+  width: 50px;
+  height: auto;
+}
+#homeBtn:hover {
+  box-shadow: 0px 15px 20px rgba(203, 43, 94, 0.5);
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  transform: translateY(-7px);
+  background-color: #000;
+}
+#homeBtn:hover img {
+  filter: invert(100%);
+}
+#homeBtn img {
+  min-width: 100%;
+}
 #choices {
   text-align: center;
 }
