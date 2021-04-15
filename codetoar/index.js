@@ -321,23 +321,23 @@ void loop(){
 
   // ----------------------------------------- copy function start
 
-function copyToCB(containerid) {
-    if (document.selection) {
-        var range = document.body.createTextRange();
-        range.moveToElementText(document.getElementById(containerid));
-        range.select().createTextRange();
-        document.execCommand("copy");
-    } else if (window.getSelection) {
-        var range = document.createRange();
-        range.selectNode(document.getElementById(containerid));
-        window.getSelection().addRange(range);
-        document.execCommand("copy");
-        alert("Text has been copied, now paste in the text-area")
-    }
-}
+// function copyToCB(containerid) {
+//     if (document.selection) {
+//         var range = document.body.createTextRange();
+//         range.moveToElementText(document.getElementById(containerid));
+//         range.select().createTextRange();
+//         document.execCommand("copy");
+//     } else if (window.getSelection) {
+//         var range = document.createRange();
+//         range.selectNode(document.getElementById(containerid));
+//         window.getSelection().addRange(range);
+//         document.execCommand("copy");
+//         alert("Text has been copied, now paste in the text-area")
+//     }
+// }
 
 
-function copyToClipboard(element){
+function copyToClipboard(element,st){
     var textarea = document.createElement('textarea');
     textarea.textContent = document.getElementById(element).innerText;
     document.body.appendChild(textarea);
@@ -349,7 +349,7 @@ function copyToClipboard(element){
     selection.removeAllRanges();
     selection.addRange(range);
   
-    alert('copy success', document.execCommand('copy'));
+    alert(st=='upload'?'Copy success! Paste the code in editor.':'Copy success!', document.execCommand('copy'));
     selection.removeAllRanges();
   
     document.body.removeChild(textarea);
@@ -357,7 +357,29 @@ function copyToClipboard(element){
   }
 
 
-  // ----------------------------------------- copy function end
+// ----------------------------------------- copy function end
+// ----------------------------------------- save code start
+
+function download(filename, text) {
+    var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    pom.setAttribute('download', filename);
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
+}
+function saveCode(element){
+    text = document.getElementById(element).innerText;
+    download('code.ino',text);
+}
+// ----------------------------------------- save code end
+
 function choiceCheck(st) {
     if(st=='bt' && bluetoothCheck.checked){
         lineFollowerCheck.checked = false;

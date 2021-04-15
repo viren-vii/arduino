@@ -307,7 +307,12 @@ void loop(){
                     <label class="check-label" for="bluetooth-check">Bluetooth</label><br>
             </div>
             <br>
-            <div style="text-align: center;  margin-bottom: 10px;"><button type="button" onclick="copyToClipboard('arduinoCodeDiv')">Copy Code</button></div>
+            <div class = "modal-button-div">
+                <div class="modal-buttons" ><button type="button" onclick="copyToClipboard('arduinoCodeDiv')">Copy Code</button></div>
+                <div class="modal-buttons" ><button type="button" onclick="saveCode('arduinoCodeDiv')">Save Code</button></div>
+                <div class="modal-buttons" ><a href="https://create.arduino.cc/editor" target="blank"><button type="button" onclick="copyToClipboard('arduinoCodeDiv','upload')">Upload Code</button></a></div>
+            </div>
+
             <span onclick="document.getElementById('modalId').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
             </header>

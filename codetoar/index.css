@@ -374,3 +374,12 @@ select:focus {
   color: white;
   background-color: #ff3877;
 }
+
+.modal-button-div {
+  text-align: center;
+}
+.modal-buttons {
+  display: inline-block;
+  margin: auto;
+  margin-bottom: 10px;
+}
