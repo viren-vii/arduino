@@ -81,10 +81,12 @@ body {
   text-align: center;
 }
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  transform-origin: left;
+  position: fixed;
+  left: 30px;
+  width: 100vh;
+  bottom: 0;
+  transform: rotate(-90deg);
 }
 
 li {
@@ -96,6 +98,7 @@ li {
 li a,
 select {
   background-color: aliceblue;
+  width: 220px;
   display: block;
   color: black;
   text-align: center;
@@ -103,7 +106,8 @@ select {
   text-decoration: none;
 }
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+li .active,
+a:hover {
   background-color: black;
   color: white;
 }
@@ -187,17 +191,22 @@ img {
   max-width: 10%;
   height: auto;
 }
-.floatBtn {
+.floatbt {
   overflow: hidden;
   position: fixed;
   right: 10%;
   top: 50%;
-  width: auto;
-  box-shadow: 0 0 10px #cb2b5e;
+  width: 200px;
+  padding: 20px;
+  font-weight: 900;
+  font-size: larger;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
 }
-.floatbt {
-  /* border:1px solid #CB2B5E; */
-  box-shadow: 0 0 20px #ff0051;
+.floatbt:hover {
+  box-shadow: 0px 15px 20px rgba(203, 43, 94, 0.5);
+  color: #fff;
+  transform: translateY(-7px);
 }
 ::selection {
   background-color: #ffbadd;
@@ -232,13 +241,16 @@ input:focus {
   color: #ff3877;
   border-radius: 50%;
 }
-
+.tooltiptext img {
+  filter: invert(100%);
+  max-width: 20%;
+}
 /* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
   opacity: 0;
   transition: opacity 1s;
-  width: fit-content;
+  width: inherit;
   background-color: #cb2b5e;
   color: #fff;
   text-align: center;
@@ -257,6 +269,10 @@ input:focus {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+#bluetooth .tooltiptext {
+  width: 100px;
 }
 
 /*------------------------------*/
@@ -284,15 +300,11 @@ select:focus {
   box-shadow: 0 0 10px #ff76a1;
 }
 
-#bluetooth {
+/* #bluetooth {
   text-align: center;
-}
+} */
 #bluetooth img {
-  padding: 1%;
   display: inline-block;
-  margin: 5px 0 5px 0;
-  width: 5%;
-  height: auto;
 }
 #bluetooth select {
   display: inline-block;
@@ -307,18 +319,22 @@ select:focus {
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: white; /* Set a background color */
-  font-weight: bolder;
+  font-weight: lighter;
   color: black; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
-  border-radius: 100%;
-  box-shadow: 0 0 10px #ff76a1;
+  border-radius: 50%;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
   width: auto;
   height: auto;
 }
 #myBtn:hover {
-  background-color: black;
-  color: white;
+  box-shadow: 0px 15px 20px rgba(203, 43, 94, 0.5);
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  transform: translateY(-7px);
+  background-color: #000;
 }
 
 #choices {
@@ -326,5 +342,30 @@ select:focus {
 }
 .check {
   text-align: center;
-  display: inline-block;
+  display: none;
+  margin-top: 20px;
+}
+
+.check-label {
+  color: black;
+  background-color: rgb(255, 225, 225);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px 0 5px 0;
+}
+.check-label:hover {
+  cursor: pointer;
+}
+
+#line-follower-check:checked + label {
+  color: white;
+  background-color: #ff3877;
+}
+#ultrasonic-check:checked + label {
+  color: white;
+  background-color: #ff3877;
+}
+#bluetooth-check:checked + label {
+  color: white;
+  background-color: #ff3877;
 }

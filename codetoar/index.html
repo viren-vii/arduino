@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/styles/default.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/highlight.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
     <script>hljs.highlightAll();</script>
 
     <!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
@@ -23,9 +24,9 @@
     <img src="../assets/images/robomonkee.png">
     <div class="nav">
         <ul>
-            <li><a href="#line-follower">Line Follower</a></li>
-            <li><a href="#ultrasonic">Ultrasonic</a></li>
-            <li><a href="#bluetooth">Bluetooth</a></li>
+            <li><a onclick="addActiveClass();" class="nav-buttons" href="#bluetooth">Bluetooth</a></li>
+            <li><a onclick="addActiveClass();" class="nav-buttons" href="#ultrasonic">Ultrasonic</a></li>
+            <li><a onclick="addActiveClass();" class="nav-buttons active" href="#line-follower">Line Follower</a></li>
         </ul>
     </div>
 
@@ -193,85 +194,121 @@ void loop(){
 
     <div id="bluetooth" class="codeHere">
         <pre><code class="lang-cpp">
-        <img src="../assets/images/bt/up-arrow.png"/><select name="functions" id="btControlsU" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        <img src="../assets/images/bt/down-arrow.png"/><select name="functions" id="btControlsD" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        <img src="../assets/images/bt/left-arrow.png"/><select name="functions" id="btControlsL" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        <img src="../assets/images/bt/right-arrow.png"/><select name="functions" id="btControlsR" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        <img src="../assets/images/bt/stop.png"/><select name="functions" id="btControlsS" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        <img src="../assets/images/bt/spin-left.png"/><select name="functions" id="btControlsSL" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        <img src="../assets/images/bt/spin-right.png"/><select name="functions" id="btControlsSR" oninput="handleOnChange();">
-            <option value="forward">forward</option>
-            <option value="reverse">reverse</option>
-            <option value="left">left</option>
-            <option value="right">right</option>
-            <option value="stop">stop</option>
-            <option value="stop">spin right</option>
-            <option value="stop">spin left</option>
-        </select>
-        </code></pre>
-    </div>
+            // recieved is a variable in which serial data obtained from bluetooth controller is stored
+
+
+            if(recieved == 'u'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/up-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsU" oninput="handleOnChange();"> 
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'd'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/down-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsD" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'r'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/left-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsL" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'l'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/right-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsR" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 's'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/stop.png"/></span></div>){
+                <select name="functions" id="btControlsS" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'sl'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-left.png"/></span></div>){
+                <select name="functions" id="btControlsSL" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'sr'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-right.png"/></span></div>){
+                <select name="functions" id="btControlsSR" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'horn'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-right.png"/></span></div>){
+                <select name="functions" id="btControlsSR" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            </code></pre>
+        </div>
 
     <div id="modalId" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom">
         <header class="w3-container"> 
             <h2 style="text-align: center;">Click on the button to copy code!</h2>
             <div id="choices">
-                <input type="checkbox" autocomplete="off" oninput = "choiceCheck();" class="check" id="line-follower-check" name="line-follower-check" value="line-follower-check">
-                <label for="line-follower-check">Line Follower</label>
-                <input type="checkbox" autocomplete="off" oninput = "choiceCheck();" class="check" id="ultrasonic-check" name="ultrasonic-check" value="ultrasonic-check">
-                <label for="ultrasonic-check">Ultrasonice</label><br>
-                <input type="checkbox" autocomplete="off" oninput = "choiceCheck();" class="check" id="bluetooth-check" name="bluetooth-check" value="bluetooth-check">
-                <label for="bluetooth-check">bluetooth</label><br>
-                
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck();" class="check" id="line-follower-check" name="line-follower-check" value="line-follower-check">
+                    <label class="check-label" for="line-follower-check">Line Follower</label>
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck();" class="check" id="ultrasonic-check" name="ultrasonic-check" value="ultrasonic-check">
+                    <label class="check-label" for="ultrasonic-check">Ultrasonic</label>
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck('bt');" class="check" id="bluetooth-check" name="bluetooth-check" value="bluetooth-check">
+                    <label class="check-label" for="bluetooth-check">Bluetooth</label><br>
             </div>
+            <br>
             <div style="text-align: center;  margin-bottom: 10px;"><button type="button" onclick="copyToCB('arduinoCodeDiv')">Copy Code</button></div>
             <span onclick="document.getElementById('modalId').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
@@ -289,6 +326,8 @@ void loop(){
       </div>
 
       <button onclick="topFunction()" class="bounce" id="myBtn" title="Go to top">Top</button> 
+
+
 
     </body>
 </html> 
