@@ -32,7 +32,7 @@
 <div class="codeScreen" id="line-follower">
 <div class="codeHere">
 <pre><code class="lang-cpp"> <form>
-<div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="handleOnChange(); document.getElementById('modalId').style.display='block'">GET CODE</button></div>
+<div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="  document.getElementById('modalId').style.display='block';  handleOnChange(); return false;">GET CODE</button></div>
 <!-- #define TRIGGER_PIN 9
 #define ECHO_PIN 10 
 
@@ -49,8 +49,8 @@
 #define LM1 7
 #define LM2 8 -->
 
-    float SP_EN1 = <input type="number" min="0" max="255" placeholder="SPEED 1" id="SP_EN1" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Left Motor Speed</span></div>
-    float SP_EN2 = <input type="number" min="0" max="255" placeholder="SPEED 2" id="SP_EN2" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Right Motor Speed</span></div>
+    float SP_EN1 = <input type="number" min="0" max="255" value="0" placeholder="SPEED 1" id="SP_EN1" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Left Motor Speed</span></div>
+    float SP_EN2 = <input type="number" min="0" max="255" value="0" placeholder="SPEED 2" id="SP_EN2" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Right Motor Speed</span></div>
 <datalist id = "HL">
     <option value="HIGH"></option>
     <option value="LOW"></option>
@@ -176,7 +176,7 @@ void loop(){
     <div id="ultrasonic" class="codeHere">
         <pre><code class="lang-cpp">
         <div id="ultrasonicBlock" style="display: block;">
-            if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
+            if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" value="0" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
                 <select name="functions" id="FnUS" oninput="handleOnChange();">
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
@@ -309,7 +309,7 @@ void loop(){
             <br>
             <div class = "modal-button-div">
                 <div class="modal-buttons" ><button type="button" onclick="copyToClipboard('arduinoCodeDiv')">Copy Code</button></div>
-                <div class="modal-buttons" ><button type="button" onclick="saveCode('arduinoCodeDiv')">Save Code</button></div>
+                <div class="modal-buttons" ><button type="button" onclick="saveCode('arduinoCodeDiv')">Download Code</button></div>
                 <div class="modal-buttons" ><a href="https://create.arduino.cc/editor" target="blank"><button type="button" onclick="copyToClipboard('arduinoCodeDiv','upload')">Upload Code</button></a></div>
             </div>
 
