@@ -6,11 +6,12 @@ window.onload = function () {
     document.getElementById("cover").style.display = "none";
     document.getElementById("loader").style.display = "none";
 
-    addActiveClass();
-
     mybutton = document.getElementById("myBtn");
     //Get the button:
 
+    linefolloweCodeBlock = document.getElementById('line-follower');
+    ultrasonicCodeBlock = document.getElementById('ultrasonic');
+    bluetoothCodeBlock = document.getElementById('bluetooth');
 
 
     lineFollowerCheck = document.getElementById('line-follower-check');
@@ -152,7 +153,8 @@ var irPins = `#define IR1 A1
 #define IR2 A2
 #define IR3 A3
 #define IR4 A4
-#define IR5 A5`;
+#define IR5 A5
+int S1=0, S2=0, S3=0, S4=0, S5=0;`;
 
 var motorPins = `#define EN2 3
 #define RM1 4
@@ -252,6 +254,8 @@ function handleOnChange() {
     usBlock = `if(dist()<` + vDist + `){
             `+ vFnUS + `();
             delay(10);
+        }else{
+            forward();
         }`;
     changeArduino();
 }
@@ -302,11 +306,11 @@ void loop(){
 
     `+ (visibleUS ? usBlock : "") + `
     `+ (visibleIR ? `
-    int S1 = digitalRead(IR1);
-	int S2 = digitalRead(IR2);
-	int S3 = digitalRead(IR3);
-	int S4 = digitalRead(IR4);
-    int S5 = digitalRead(IR5);
+    `+ (comment ? "//" : "") + `S1 = digitalRead(IR1);
+	S2 = digitalRead(IR2);
+	S3 = digitalRead(IR3);
+	S4 = digitalRead(IR4);
+    `+ (comment ? "//" : "") + `S5 = digitalRead(IR5);
 
 	if(S1 == `+ vS1if0 + ` and S2 == ` + vS2if0 + ` and S3 == ` + vS3if0 + ` and S4 == ` + vS4if0 + ` and S5 == ` + vS5if0 + `){
             `+ vFnif0 + `();
@@ -395,7 +399,11 @@ function choiceCheck(st) {
     
     handleOnChange();
 }
-
+var comment = false;
+function radioCheck(num){
+    comment = num == 3? true : false;
+    handleOnChange();
+}
 var uVal, dVal, rVal, lVal, sVal, srVal, slVal;
 
 function handleBtChanges() {
@@ -524,18 +532,26 @@ function btCodeHandler() {
 
 //---------------------------------------------actiive class
 
-function addActiveClass() {
+function addActiveClass(elt) {
+
+    var btn = document.getElementsByClassName("active");
+    // console.log(btn);
+    
+    // console.log(btn[0].id);
+    let hide = btn[0].id;
+    hide = hide.replace('NavBtn','');
+    // Loop through the buttons and add the active class to the current/clicked button;
+    btn[0].className = " ";
+    document.getElementById(hide).className = "hide";
+
+    document.getElementById(elt+"NavBtn").classList.add('active');
+    // document.getElementById(elt).classList.remove('hide');
+    document.getElementById(elt).className = "show";
     // Get all buttons with class="btn" inside the container
-    var btns = document.getElementsByClassName("nav-buttons");
-    console.log(btns);
-    // Loop through the buttons and add the active class to the current/clicked button
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-        });
-    }
+
+
+
+
 }
 
 window.onbeforeunload = function () {

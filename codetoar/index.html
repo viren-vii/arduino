@@ -21,18 +21,23 @@
 <body class="bg">
     <div id="loader" class="loader"></div> 
     <div id="cover"></div>
-    <img src="../assets/images/robomonkee.png">
+    <img class="headerImage" src="../assets/images/robomonkee.png">
     <div class="nav">
-            <a onclick="addActiveClass();" class="nav-buttons" href="#bluetooth">Bluetooth</a>
-            <a onclick="addActiveClass();" class="nav-buttons" href="#ultrasonic">Ultrasonic</a>
-            <a onclick="addActiveClass();" class="nav-buttons active" href="#line-follower">Line Follower</a>
+
+            <a onclick="addActiveClass('playground');" id = "playgroundNavBtn" class="nav-buttons active">Play Ground</a>
+            <a onclick="addActiveClass('line-follower');" id = "line-followerNavBtn" class="nav-buttons">Line Follower</a>
+            <a onclick="addActiveClass('ultrasonic');" id = "ultrasonicNavBtn" class="nav-buttons">Ultrasonic</a>
+            <a onclick="addActiveClass('bluetooth');" id = "bluetoothNavBtn" class="nav-buttons">Bluetooth</a>
     </div>
+    <div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="  document.getElementById('modalId').style.display='block';  handleOnChange(); return false;">GET CODE</button></div>
 
-
-<div class="codeScreen" id="line-follower">
 <div class="codeHere">
+<div class="scroll">
+    <div id="playground">
+        Coming soon :DDDD
+    </div>
+    <div id="line-follower" class="hide">
 <pre><code class="lang-cpp"> <form>
-<div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="  document.getElementById('modalId').style.display='block';  handleOnChange(); return false;">GET CODE</button></div>
 <!-- #define TRIGGER_PIN 9
 #define ECHO_PIN 10 
 
@@ -48,7 +53,6 @@
 #define EN1 6
 #define LM1 7
 #define LM2 8 -->
-
     float SP_EN1 = <input type="number" min="0" max="255" value="0" placeholder="SPEED 1" id="SP_EN1" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Left Motor Speed</span></div>
     float SP_EN2 = <input type="number" min="0" max="255" value="0" placeholder="SPEED 2" id="SP_EN2" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Right Motor Speed</span></div>
 <datalist id = "HL">
@@ -155,7 +159,10 @@ void loop(){
     int S5 = digitalRead(IR5); -->
 
     <!-- <button type="button" onclick="toggleUS();">Toggle Ultrasonic</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Include/Exclude Ultrasonic from Program</span></div> -->
-
+    <div class="nohighlight">
+        <input type="radio" id="sensors3" oninput="radioCheck('3');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors3">3 Sensors</label> <input type="radio" id="sensors5" oninput="radioCheck('5');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors5">5 Sensors</label><div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Choose how many sensors you want to be working.</span></div>
+    </div>
+    
     <div id="ifBlocks">
     if(S1 == <input class="SS" value="0" id="S1if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Value read by IR sensor (0/1)</span></div> && S2 == <input class="SS" id="S2if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S3 == <input class="SS" id="S3if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S4 == <input class="SS" id="S4if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S5 == <input class="SS" value="0" id="S5if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/>){
         <select name="functions" id="Fnif0" oninput="handleOnChange();">
@@ -171,9 +178,8 @@ void loop(){
 
 <!-- } -->
 </form> </code></pre>
-        </div>
     </div>
-    <div id="ultrasonic" class="codeHere">
+    <div id="ultrasonic" class="hide">
         <pre><code class="lang-cpp">
         <div id="ultrasonicBlock" style="display: block;">
             if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" value="0" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
@@ -185,12 +191,14 @@ void loop(){
                     <option value="stop">stop</option>
                   </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
                 delay(10);
+            }else{
+                forward();
             }
             </div>
             </code></pre>
     </div>
 
-    <div id="bluetooth" class="codeHere">
+    <div id="bluetooth" class="hide">
         <pre><code class="lang-cpp">
             // recieved is a variable in which serial data obtained from bluetooth controller is stored
 
@@ -327,7 +335,8 @@ void loop(){
           </footer>
         </div>
       </div>
-
+</div>
+</div>
       <a href="../index.html"><button class="bounce" id="homeBtn" title="Home"><img src="../assets/images/home.png"/></button></a>
 
 
