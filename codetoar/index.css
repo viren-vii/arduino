@@ -65,7 +65,7 @@ body {
   padding: 2%;
   border-radius: 50px 50px 100px 100px;
   background-color: #f0f0f0;
-  box-shadow: 10px black;
+  box-shadow: 2px 10px 10px rgba(0, 0, 0, 0.5);
   border: #ff8cb0 solid 2px;
   border-top: none;
 }
@@ -120,7 +120,7 @@ body {
 }
 .nav .active,
 .nav a:hover {
-  box-shadow: 0px -2px 5px #ffbadd;
+  box-shadow: 0px -1px 5px #ffbadd;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   transform: translate(0, 5px);
