@@ -1,10 +1,12 @@
 var mybutton;
-var lineFollowerCheck, ultrasoniceCheck, bluetoothCheck;
+var lineFollowerCheck, ultrasoniceCheck, bluetoothCheck, playgroundCheck;
 
 window.onload = function () {
     addIfBlockRef = document.getElementById("ifBlocks");
     document.getElementById("cover").style.display = "none";
     document.getElementById("loader").style.display = "none";
+
+    addPgBlockRef = document.getElementById("pgCode");
 
     mybutton = document.getElementById("myBtn");
     //Get the button:
@@ -17,6 +19,7 @@ window.onload = function () {
     lineFollowerCheck = document.getElementById('line-follower-check');
     ultrasoniceCheck = document.getElementById('ultrasonic-check');
     bluetoothCheck = document.getElementById('bluetooth-check');
+    playgroundCheck = document.getElementById('playground-check');
 
     handleOnChange();
     changeArduino();
@@ -133,7 +136,8 @@ var vfRM1, vfRM2, vfLM1, vfLM2,
     vd360RM1, vd360RM2, vd360LM1, vd360LM2, vd360ENA, vd360ENB;
 var vS1if0 = 0, vS2if0 = 0, vS3if0 = 0, vS4if0 = 0, vS5if0 = 0, vFnif0;
 
-var usDistFunction = `float c = 0;
+var usDistFunction = `
+float c = 0;
     int dist(){
     digitalWrite(TRIGGER_PIN,LOW);
     delayMicroseconds(2);
@@ -147,27 +151,28 @@ var usDistFunction = `float c = 0;
 
 var usPins = `    
 #define TRIGGER_PIN 9
-#define ECHO_PIN 10 `;
+#define ECHO_PIN 10
+`;
 
-var irPins = `#define IR1 A1
+var irPins = `
+#define IR1 A1
 #define IR2 A2
 #define IR3 A3
 #define IR4 A4
 #define IR5 A5
-int S1=0, S2=0, S3=0, S4=0, S5=0;`;
 
-var motorPins = `#define EN2 3
+int S1=0, S2=0, S3=0, S4=0, S5=0;
+`;
+
+var motorPins = `
+#define EN2 3
 #define RM1 4
 #define RM2 5
 #define EN1 6 
 #define LM1 7
 #define LM2 8`;
 
-function allFunctions() {
-    piece = `float SP_EN1 = ` + vSP_EN1 + `;
-float SP_EN2 = `+ vSP_EN2 + `;`;
-
-    return piece + `
+var functions = `
 void forward(){
     Serial.print("Forwards Triggered");
     digitalWrite(RM1,HIGH);
@@ -226,7 +231,48 @@ void stop(){
     digitalWrite(LM2,LOW);
     analogWrite(EN1,0);
     analogWrite(EN2,0);
-}`;
+}
+`;
+var motorAndEnablesSetup = `
+// MOTOR AND ENABLES
+pinMode (RM1, OUTPUT);
+pinMode (RM2, OUTPUT);
+pinMode (LM1, OUTPUT);
+pinMode (LM2, OUTPUT);
+pinMode (EN1, OUTPUT);
+pinMode (EN2, OUTPUT);
+`;
+var irSetup = `
+// IR ARRAY
+pinMode (IR1, INPUT);
+pinMode (IR2, INPUT);
+pinMode (IR3, INPUT);
+pinMode (IR4, INPUT);
+pinMode (IR5, INPUT);
+`;
+var usSetup = `
+// ULTRASONIC SENSOR
+pinMode(ECHO_PIN,INPUT);
+pinMode(TRIGGER_PIN,OUTPUT);
+`;
+var ledBlink = `
+digitalWrite(LED_BUILDIN,HIGH);
+delay(1000);
+digitalWrite(LED_BUILDIN,LOW);
+delay(1000);
+`;
+function irReads(){
+    return (comment ? "//" : "") + `S1 = digitalRead(IR1);
+	S2 = digitalRead(IR2);
+	S3 = digitalRead(IR3);
+	S4 = digitalRead(IR4);
+    `+ (comment ? "//" : "") + `S5 = digitalRead(IR5);`;
+}
+function allFunctions() {
+    piece = `float SP_EN1 = ` + vSP_EN1 + `;
+float SP_EN2 = `+ vSP_EN2 + `;`;
+
+    return piece + functions;
 }
 function handleOnChange() {
 
@@ -276,41 +322,16 @@ function changeArduino() {
 void setup(){
     Serial.begin(9600);
     `+ (!visibleUS && !visibleIR ? `pinMode(LED_BUILTIN, OUTPUT);` : "") + `
-    `+ (visibleUS || visibleIR ? `
-    // MOTOR AND ENABLES
-    pinMode (RM1, OUTPUT);
-    pinMode (RM2, OUTPUT);
-    pinMode (LM1, OUTPUT);
-    pinMode (LM2, OUTPUT);
-    pinMode (EN1, OUTPUT);
-    pinMode (EN2, OUTPUT);` : "") + `
-    `+ (visibleIR ? `
-    // IR ARRAY
-    pinMode (IR1, INPUT);
-    pinMode (IR2, INPUT);
-    pinMode (IR3, INPUT);
-    pinMode (IR4, INPUT);
-    pinMode (IR5, INPUT);` : "") + `
-    `+ (visibleUS ? `
-    // ULTRASONIC SENSOR
-    pinMode(ECHO_PIN,INPUT);
-    pinMode(TRIGGER_PIN,OUTPUT);` : "") + `
+    `+ (visibleUS || visibleIR ? motorAndEnablesSetup : "") + `
+    `+ (visibleIR ? irSetup : "") + `
+    `+ (visibleUS ? usSetup : "") + `
 }
 `+ (visibleUS ? usDistFunction : "") + `
 void loop(){
-    `+ (!visibleUS && !visibleIR ? `
-    digitalWrite(LED_BUILDIN,HIGH);
-    delay(1000);
-    digitalWrite(LED_BUILDIN,LOW);
-    delay(1000);` : "") + `
+    `+ (!visibleUS && !visibleIR ? ledBlink : "") + `
 
     `+ (visibleUS ? usBlock : "") + `
-    `+ (visibleIR ? `
-    `+ (comment ? "//" : "") + `S1 = digitalRead(IR1);
-	S2 = digitalRead(IR2);
-	S3 = digitalRead(IR3);
-	S4 = digitalRead(IR4);
-    `+ (comment ? "//" : "") + `S5 = digitalRead(IR5);
+    `+ (visibleIR ? irReads()+`
 
 	if(S1 == `+ vS1if0 + ` and S2 == ` + vS2if0 + ` and S3 == ` + vS3if0 + ` and S4 == ` + vS4if0 + ` and S5 == ` + vS5if0 + `){
             `+ vFnif0 + `();
@@ -388,25 +409,50 @@ function choiceCheck(st) {
     if(st=='bt' && bluetoothCheck.checked){
         lineFollowerCheck.checked = false;
         ultrasoniceCheck.checked = false;
+        playgroundCheck.checked = false;
         visibleUS = false;
         visibleIR = false;
         handleBtChanges();
         return;
+    }else if(st=='pg'){
+        lineFollowerCheck.checked = false;
+        ultrasoniceCheck.checked = false;
+        bluetoothCheck.checked = false;
+        handlePlaygroundChanges();
+        return;
     }
     visibleIR = lineFollowerCheck.checked;
     visibleUS = ultrasoniceCheck.checked;
+    playgroundCheck.checked = false;
     bluetoothCheck.checked = false;
     
     handleOnChange();
 }
 var comment = false;
 function radioCheck(num){
-    comment = num == 3? true : false;
-    handleOnChange();
+    comment = (num == 3? true : false);
 }
 var uVal, dVal, rVal, lVal, sVal, srVal, slVal;
+var uValv, dValv, rValv, lValv, sValv, srValv, slValv;
+
+var vIP1, vIP2, vIP3, vIP4, vIP5, vIP6, vIP7, vIP8;
+var ct='btn';
+function showHideBluetoothBlocks(controllerType){
+    ct = controllerType === null ? ct : controllerType;
+    if(ct ==='btn'){
+        document.getElementById("bluetoothBtnController").className = "show";
+        document.getElementById("bluetoothVoiceController").className = "hide";
+    }else if(ct === 'voice'){
+        document.getElementById("bluetoothBtnController").className = "hide";
+        document.getElementById("bluetoothVoiceController").className = "show";
+    }else{
+        document.getElementById("bluetoothBtnController").className = "hide";
+        document.getElementById("bluetoothVoiceController").className = "hide";
+    }
+}
 
 function handleBtChanges() {
+
     u = document.getElementById('btControlsU');
     d = document.getElementById('btControlsD');
     r = document.getElementById('btControlsR');
@@ -414,6 +460,7 @@ function handleBtChanges() {
     s = document.getElementById('btControlsS');
     sr = document.getElementById('btControlsSR');
     sl = document.getElementById('btControlsSL');
+    hr = document.getElementById('btControlsHR');
 
     uVal = u.options[u.selectedIndex].text;
     dVal = d.options[d.selectedIndex].text;
@@ -422,108 +469,78 @@ function handleBtChanges() {
     sVal = s.options[s.selectedIndex].text;
     srVal = sr.options[sr.selectedIndex].text;
     slVal = sl.options[sl.selectedIndex].text;
+    hrVal = hr.options[hr.selectedIndex].text;
 
+    console.log(uVal,dVal,rVal,lVal);
+
+    vIP1 = document.getElementById('vIP1').value;
+    vIP2 = document.getElementById('vIP2').value;
+    vIP3 = document.getElementById('vIP3').value;
+    vIP4 = document.getElementById('vIP4').value;
+    vIP5 = document.getElementById('vIP5').value;
+    vIP6 = document.getElementById('vIP6').value;
+    vIP7 = document.getElementById('vIP7').value;
+    vIP8 = document.getElementById('vIP8').value;
+
+    uv = document.getElementById('btControlsUv');
+    dv = document.getElementById('btControlsDv');
+    rv = document.getElementById('btControlsRv');
+    lv = document.getElementById('btControlsLv');
+    sv = document.getElementById('btControlsSv');
+    srv = document.getElementById('btControlsSRv');
+    slv = document.getElementById('btControlsSLv');
+    hrv = document.getElementById('btControlsHRv');
+
+    uValv = uv.options[uv.selectedIndex].text;
+    dValv = dv.options[dv.selectedIndex].text;
+    rValv = rv.options[rv.selectedIndex].text;
+    lValv = lv.options[lv.selectedIndex].text;
+    sValv = sv.options[sv.selectedIndex].text;
+    srValv = srv.options[srv.selectedIndex].text;
+    slValv = slv.options[slv.selectedIndex].text;
+    hrValv = hrv.options[hrv.selectedIndex].text;
+
+    btController(ct);
+    // btCodeHandler(controllerType);
+}
+var cd;
+function btController(cnt){
+    var vip = (cnt === 'btn' ? false : true);
+    cd = `
+    if(Serial.available() > 0){
+        recieved = Serial.read();
+        Serial.print(recieved);
+        Serial.print("\n");
+        if(recieved == `+(vip?vIP1:'u')+`)`+ (!vip?uVal:uValv) + `();  
+        else if(recieved == `+(vip?vIP2:'d')+`)`+ (!vip?dVal:dValv) + `();
+        else if(recieved == `+(vip?vIP3:'l')+`)`+ (!vip?rVal:rValv) + `();
+        else if(recieved == `+(vip?vIP4:'r')+`)`+ (!vip?lVal:lValv) + `();
+        else if(recieved == `+(vip?vIP5:'s')+`)`+ (!vip?sVal:sValv) + `();
+        else if(recieved == `+(vip?vIP6:'sr')+`)`+ (!vip?srVal:srValv) + `();
+        else if(recieved == `+(vip?vIP7:'sl')+`)`+ (!vip?slVal:slValv) + `();
+        else if(recieved == `+(vip?vIP8:'hr')+`)`+ (!vip?hrVal:hrValv) + `();
+    }
+    `;
+    // console.log(cd);
     btCodeHandler();
 }
 
 function btCodeHandler() {
 
-    code = `#define EN2 3 // right
-    #define RM1 4
-    #define RM2 5
-    #define EN1 6 // left
-    #define LM1 7
-    #define LM2 8
+    code = motorPins+`
     
     float SP_EN1 = 20;
-    float SP_EN2 = 20;
-    
-    void forward(){
-        Serial.print("Forwards Triggered");
-        digitalWrite(RM1,HIGH);
-        digitalWrite(RM2,LOW);
-        analogWrite(EN2,SP_EN2);
-        digitalWrite(LM1,HIGH);
-        digitalWrite(LM2,LOW);
-        analogWrite(EN1,SP_EN1);   
-    }
-    
-    void right(){
-        Serial.print("Right Triggered");
-        digitalWrite(RM1,LOW);
-        digitalWrite(RM2,LOW);
-        analogWrite(EN2,0);
-        digitalWrite(LM1,HIGH);
-        digitalWrite(LM2,LOW);
-        analogWrite(EN1,SP_EN1);
-    }
-    
-    void left(){
-        Serial.print("Right Triggered");
-        digitalWrite(RM1,HIGH);
-        digitalWrite(RM2,LOW);
-        analogWrite(EN2,SP_EN2);
-        digitalWrite(LM1,LOW);
-        digitalWrite(LM2,LOW);
-        analogWrite(EN1,0);
-    }
-    
-    void deg360(){
-        Serial.print("Right Triggered");
-        digitalWrite(RM1,HIGH);
-        digitalWrite(RM2,LOW);
-        analogWrite(EN2,SP_EN2);
-        digitalWrite(LM1,LOW);
-        digitalWrite(LM2,HIGH);
-        analogWrite(EN1,SP_EN1);
-    }
-    
-    void reverse(){
-        Serial.print("Reverse Triggered");
-        digitalWrite(RM1,LOW);
-        digitalWrite(RM2,HIGH);
-        analogWrite(EN2,SP_EN2);
-        digitalWrite(LM1,LOW);
-        digitalWrite(LM2,HIGH);
-        analogWrite(EN1,SP_EN1);   
-    }
-    
-    void stop(){
-        Serial.print("Right Triggered");
-        digitalWrite(RM1,LOW);
-        digitalWrite(RM2,LOW);
-        digitalWrite(LM1,LOW);
-        digitalWrite(LM2,LOW);
-        analogWrite(EN1,0);
-        analogWrite(EN2,0);
-    }
-    
+    float SP_EN2 = 20; 
+    `+functions+`
     char recieved = 's';
     
     void setup(){
         Serial.begin(9600);
-        // MOTOR AND ENABLES
-        pinMode (RM1, OUTPUT);
-        pinMode (RM2, OUTPUT);
-        pinMode (LM1, OUTPUT);
-        pinMode (LM2, OUTPUT);
-        pinMode (EN1, OUTPUT);
-        pinMode (EN2, OUTPUT);
+        `+motorAndEnablesSetup+`
     }
     void loop(){
     
-        if(Serial.available() > 0){
-            recieved = Serial.read();
-            Serial.print(recieved);
-            Serial.print("\n");
-            if(recieved == 'u')`+ uVal + `();  
-            else if(recieved == 'd')`+ dVal + `();
-            else if(recieved == 'r')`+ rVal + `();
-            else if(recieved == 'l')`+ lVal + `();
-            else if(recieved == 's')`+ sVal + `();
-            else if(recieved == 'sr')`+ srVal + `();
-            else if(recieved == 'sl')`+ slVal + `();
-        }
+    `+cd+`
     
     }`;
     document.getElementById("arduinoCodeDiv").innerText = code;
@@ -558,3 +575,53 @@ window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   }
 //---------------------------------------------actiive class end
+
+
+var pgBlock = `<div><select name="functions">
+    <option value="forward">forward</option>
+    <option value="reverse">reverse</option>
+    <option value="left">left</option>
+    <option value="right">right</option>
+    <option value="stop">stop</option>
+    </select>();<br>
+delay(<input class="SS ipPG" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>);<button id="deleteFnInPlaygroundBtn" onclick="deletePlaygroundBlock(this)">-</button></div><br>`;
+
+function addPlaygroundBlock(){
+    var fnDiv = document.createElement("div");
+    fnDiv.innerHTML = pgBlock;
+    addPgBlockRef.appendChild(fnDiv);
+}
+function deletePlaygroundBlock(ref){
+    ref.parentNode.remove();
+}
+function getPgData(){
+    var sels = document.getElementById("pgCode").getElementsByTagName("select");
+    var ips = document.getElementById("pgCode").getElementsByTagName("input");
+    var code = "";
+    for(i=0; i<sels.length; i++){
+        // console.log(sels[i].options[sels[i].selectedIndex].text);
+        // console.log(ips[i].value);
+        code+=`    
+    `+sels[i].options[sels[i].selectedIndex].text+`();
+    delay(`+ips[i].value+`);`;
+    }
+    return code;
+}
+function handlePlaygroundChanges(){
+    loopContent = getPgData();
+
+    code = `
+    `+motorPins+`
+float SP_EN1 = 20;
+float SP_EN2 = 20; 
+    `+functions+`
+void setup(){
+    Serial.begin(9600);
+    `+motorAndEnablesSetup+`
+}
+void loop(){
+    `+loopContent+`
+}`;
+
+    document.getElementById("arduinoCodeDiv").innerText = code;
+}

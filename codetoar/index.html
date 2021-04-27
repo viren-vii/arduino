@@ -33,9 +33,21 @@
 
 <div class="codeHere">
 <div class="scroll">
+    <pre>
     <div id="playground">
-        Coming soon :DDDD
+        //Choose function which you want to perform and time for which it should run!
+        <div id="pgCode">
+<select name="functions">
+    <option value="forward">forward</option>
+    <option value="reverse">reverse</option>
+    <option value="left">left</option>
+    <option value="right">right</option>
+    <option value="stop">stop</option>
+</select>();<br>
+delay(<input class="SS" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>);<br>
     </div>
+    <button id="addFnInPlaygroundBtn" onclick="addPlaygroundBlock()">+</button>
+    </div></pre>
     <div id="line-follower" class="hide">
 <pre><code class="lang-cpp"> <form>
 <!-- #define TRIGGER_PIN 9
@@ -160,7 +172,7 @@ void loop(){
 
     <!-- <button type="button" onclick="toggleUS();">Toggle Ultrasonic</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Include/Exclude Ultrasonic from Program</span></div> -->
     <div class="nohighlight">
-        <input type="radio" id="sensors3" oninput="radioCheck('3');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors3">3 Sensors</label> <input type="radio" id="sensors5" oninput="radioCheck('5');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors5">5 Sensors</label><div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Choose how many sensors you want to be working.</span></div>
+        <input type="radio" id="sensors3" oninput="radioCheck('3');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors3">3 Sensors</label> <input type="radio" id="sensors5" checked="checked" oninput="radioCheck('5');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors5">5 Sensors</label><div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Choose how many sensors you want to be working.</span></div>
     </div>
     
     <div id="ifBlocks">
@@ -200,11 +212,13 @@ void loop(){
 
     <div id="bluetooth" class="hide">
         <pre><code class="lang-cpp">
+            <input type="radio" checked="checked" oninput="showHideBluetoothBlocks('btn')" id="buttonControllerRadio" class="check" autocomplete="off" name="controllerType"><label class="radio-label" class="active" for="buttonControllerRadio">Button Controller</label> <input type="radio" oninput="showHideBluetoothBlocks('voice')" id="voiceControllerRadio" class="check" autocomplete="off" name="controllerType"><label class="radio-label" for="voiceControllerRadio">Voice Controller</label><div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Choose the mode of controller.</span></div>
+
+            <div id="bluetoothBtnController" class="show"> 
             // recieved is a variable in which serial data obtained from bluetooth controller is stored
 
-
             if(recieved == 'u'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/up-arrow.png"/></span></div>){
-                <select name="functions" id="btControlsU" oninput="handleOnChange();"> 
+                <select name="functions" id="btControlsU"> 
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -216,7 +230,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 'd'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/down-arrow.png"/></span></div>){
-                <select name="functions" id="btControlsD" oninput="handleOnChange();">
+                <select name="functions" id="btControlsD" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -228,7 +242,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 'r'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/left-arrow.png"/></span></div>){
-                <select name="functions" id="btControlsL" oninput="handleOnChange();">
+                <select name="functions" id="btControlsL" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -240,7 +254,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 'l'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/right-arrow.png"/></span></div>){
-                <select name="functions" id="btControlsR" oninput="handleOnChange();">
+                <select name="functions" id="btControlsR" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -252,7 +266,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 's'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/stop.png"/></span></div>){
-                <select name="functions" id="btControlsS" oninput="handleOnChange();">
+                <select name="functions" id="btControlsS" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -264,7 +278,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 'sl'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-left.png"/></span></div>){
-                <select name="functions" id="btControlsSL" oninput="handleOnChange();">
+                <select name="functions" id="btControlsSL" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -276,7 +290,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 'sr'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-right.png"/></span></div>){
-                <select name="functions" id="btControlsSR" oninput="handleOnChange();">
+                <select name="functions" id="btControlsSR" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -288,7 +302,7 @@ void loop(){
                 </select>();
             }
             else if(recieved == 'horn'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-right.png"/></span></div>){
-                <select name="functions" id="btControlsSR" oninput="handleOnChange();">
+                <select name="functions" id="btControlsHR" >
                     <option value="forward">forward</option>
                     <option value="reverse">reverse</option>
                     <option value="left">left</option>
@@ -299,14 +313,118 @@ void loop(){
                     <option value="stop">horn</option>
                 </select>();
             }
-            </code></pre>
-        </div>
+            </div>
+            <div id="bluetoothVoiceController" class="hide">
+                // voiceInput is a variable in which serial data (whatever you'll say on mic) obtained from bluetooth controller is stored
+
+                if(voiceInput == "<input type="text" id="vIP1"/>"){
+                    <select name="functions" id="btControlsUv" > 
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP2"/>"){
+                    <select name="functions" id="btControlsDv" >
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP3"/>"){
+                    <select name="functions" id="btControlsLv" >
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP4"/>"){
+                    <select name="functions" id="btControlsRv" >
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP5"/>"){
+                    <select name="functions" id="btControlsSv" >
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP6"/>"){
+                    <select name="functions" id="btControlsSLv">
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP7"/>"){
+                    <select name="functions" id="btControlsSRv">
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+                else if(voiceInput == "<input type="text" id="vIP8"/>"){
+                    <select name="functions" id="btControlsHRv">
+                        <option value="forward">forward</option>
+                        <option value="reverse">reverse</option>
+                        <option value="left">left</option>
+                        <option value="right">right</option>
+                        <option value="stop">stop</option>
+                        <option value="stop">spin right</option>
+                        <option value="stop">spin left</option>
+                        <option value="stop">horn</option>
+                    </select>();
+                }
+            </div>
+            
+        </code></pre>
+    </div>
 
     <div id="modalId" class="w3-modal">
         <div class="w3-modal-content w3-animate-zoom">
         <header class="w3-container"> 
             <h2 style="text-align: center;">Click on the button to copy code!</h2>
             <div id="choices">
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck('pg');" class="check" id="playground-check" name="playground-check" value="playground-check">
+                    <label class="check-label" for="playground-check">Playground</label>
                     <input type="checkbox"  autocomplete="off" oninput = "choiceCheck();" class="check" id="line-follower-check" name="line-follower-check" value="line-follower-check">
                     <label class="check-label" for="line-follower-check">Line Follower</label>
                     <input type="checkbox"  autocomplete="off" oninput = "choiceCheck();" class="check" id="ultrasonic-check" name="ultrasonic-check" value="ultrasonic-check">

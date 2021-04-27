@@ -299,6 +299,10 @@ input:focus {
   width: 100px;
 }
 
+#pgCode .tooltiptext {
+  width: auto;
+}
+
 /*------------------------------*/
 
 select {
@@ -399,6 +403,10 @@ select:focus {
   color: white;
   background-color: #ff3877;
 }
+#playground-check:checked + label {
+  color: white;
+  background-color: #ff3877;
+}
 
 .radio-label {
   color: black;
@@ -415,6 +423,14 @@ select:focus {
   background-color: #ff3877;
 }
 #sensors5:checked + label {
+  color: white;
+  background-color: #ff3877;
+}
+#buttonControllerRadio:checked + label {
+  color: white;
+  background-color: #ff3877;
+}
+#voiceControllerRadio:checked + label {
   color: white;
   background-color: #ff3877;
 }
@@ -445,3 +461,8 @@ select:focus {
 .show {
   display: block;
 }
+
+#pgCode {
+  padding: 2%;
+}
+
