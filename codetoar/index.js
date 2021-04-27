@@ -577,14 +577,13 @@ window.onbeforeunload = function () {
 //---------------------------------------------actiive class end
 
 
-var pgBlock = `<div><select name="functions">
+var pgBlock = `<select name="functions">
     <option value="forward">forward</option>
     <option value="reverse">reverse</option>
     <option value="left">left</option>
     <option value="right">right</option>
     <option value="stop">stop</option>
-    </select>();<br>
-delay(<input class="SS ipPG" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>);<button id="deleteFnInPlaygroundBtn" onclick="deletePlaygroundBlock(this)">-</button></div><br>`;
+    </select>();  delay(<input class="SS ipPG" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>);<button id="deleteFnInPlaygroundBtn" onclick="deletePlaygroundBlock(this)">-</button><br><br>`;
 
 function addPlaygroundBlock(){
     var fnDiv = document.createElement("div");

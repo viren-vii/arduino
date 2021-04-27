@@ -63,7 +63,7 @@ body {
 .codeHere {
   margin: 0% 5% 5% 5%;
   padding: 2%;
-  border-radius: 0 0 100px 100px;
+  border-radius: 50px 50px 100px 100px;
   background-color: #f0f0f0;
   box-shadow: 10px black;
   border: #ff8cb0 solid 2px;
@@ -92,9 +92,9 @@ body {
   text-align: center;
   /* transform-origin: left; */
   overflow: hidden;
-  background-color: #cacaca;
+  background-color: transparent;
   border-radius: 100px 100px 0 0;
-  border: #ff8cb0 solid 2px;
+  /* border: #ff8cb0 solid 2px; */
   border-bottom: none;
   /* width: 100%; Full width */
   margin: 0% 5% 0% 5%;
@@ -102,11 +102,12 @@ body {
 
 .nav a {
   float: left;
-  background-color: transparent;
-  /* box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); */
-  margin: 0px 5px 0 5px;
+  background-color: #dcdcdc;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
+  margin: 0px 2px 5px 2px;
   font-weight: lighter;
-  width: auto;
+  width: 10%;
   display: inline-block;
   color: black;
   text-align: center;
@@ -119,8 +120,10 @@ body {
 }
 .nav .active,
 .nav a:hover {
+  box-shadow: 0px -2px 5px #ffbadd;
   transition: all 0.3s ease 0s;
   cursor: pointer;
+  transform: translate(0, 5px);
   background-color: #f0f0f0;
   border-radius: 20px 20px 0 0;
   color: #ff3877;
@@ -465,4 +468,3 @@ select:focus {
 #pgCode {
   padding: 2%;
 }
-
