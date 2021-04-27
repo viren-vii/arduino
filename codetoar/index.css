@@ -118,14 +118,22 @@ body {
 .nav a:first-child {
   margin-left: 50px;
 }
-.nav .active,
-.nav a:hover {
+.nav .active {
   box-shadow: 0px -1px 5px #ffbadd;
   transition: all 0.3s ease 0s;
   cursor: pointer;
   transform: translate(0, 5px);
   background-color: #f0f0f0;
   border-radius: 20px 20px 0 0;
+  color: #ff3877;
+}
+.nav a:hover {
+  box-shadow: 0px -1px 5px #ffbadd;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  /* transform: translate(0, 5px); */
+  background-color: #f0f0f0;
+  /* border-radius: 20px 20px 0 0; */
   color: #ff3877;
 }
 div.scroll {
