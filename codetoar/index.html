@@ -41,7 +41,7 @@
     <option value="left">left</option>
     <option value="right">right</option>
     <option value="stop">stop</option>
-</select>();  delay(<input class="SS" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>);
+</select>();  delay(<input class="SS" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Delay in milliseconds (There are 1000 milliseconds in a second)</span></div>
     </div></code></pre>
     <button id="addFnInPlaygroundBtn" onclick="addPlaygroundBlock()">+</button>
     </div></pre>
@@ -311,7 +311,7 @@ void loop(){
                 </select>();
             }
             </div>
-            <div id="bluetoothVoiceController" class="hide">
+            <div id="bluetoothVoiceController" class="hide"><div id="bluetoothVoiceBlock">
             // voiceInput is a variable in which serial data (whatever you'll say on mic) obtained from bluetooth controller is stored
 
             if(voiceInput == "<input type="text"/>"){
@@ -328,6 +328,8 @@ void loop(){
             }
             </div>
             <button onclick="addVoiceControlBlock()">+</button>
+            </div>
+            
         </code></pre>
     </div>
 

@@ -1,13 +1,21 @@
 var mybutton;
 var lineFollowerCheck, ultrasoniceCheck, bluetoothCheck, playgroundCheck;
 
+
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//     document.querySelectorAll('pre code').forEach((el) => {
+//       hljs.highlightElement(el);
+//     });
+//   });
+var observer;
 window.onload = function () {
     addIfBlockRef = document.getElementById("ifBlocks");
     document.getElementById("cover").style.display = "none";
     document.getElementById("loader").style.display = "none";
 
     addPgBlockRef = document.getElementById("pgCode");
-    addVoiceBlockRef = document.getElementById("bluetoothVoiceController");
+    addVoiceBlockRef = document.getElementById("bluetoothVoiceBlock");
 
     mybutton = document.getElementById("myBtn");
     //Get the button:
@@ -16,7 +24,6 @@ window.onload = function () {
     ultrasonicCodeBlock = document.getElementById('ultrasonic');
     bluetoothCodeBlock = document.getElementById('bluetooth');
 
-
     lineFollowerCheck = document.getElementById('line-follower-check');
     ultrasoniceCheck = document.getElementById('ultrasonic-check');
     bluetoothCheck = document.getElementById('bluetooth-check');
@@ -24,11 +31,17 @@ window.onload = function () {
 
     handleOnChange();
     changeArduino();
+
+
+}
+function highlight(){
+    hljs.highlightAll();
+    console.log("done");
 }
 var body = document.getElementsByTagName('body')[0];
 var idCount = 0;
 function addIfBlock() {
-
+    // console.log("in");
     var ifDiv = document.createElement("div");
     idCount += 1;
     ifDiv.id = "if" + idCount;
@@ -522,8 +535,8 @@ function btController(cnt){
     }`
     }else{
         cd = '';
-        let sels = document.getElementById("bluetoothVoiceController").getElementsByTagName("select");
-        let ips = document.getElementById("bluetoothVoiceController").getElementsByTagName("input");
+        let sels = document.getElementById("bluetoothVoiceBlock").getElementsByTagName("select");
+        let ips = document.getElementById("bluetoothVoiceBlock").getElementsByTagName("input");
         for(let i=0; i<sels.length; i++){
             cd+=(i==0?"":"else ")+`if(voiceInput == "`+ips[i].value+`"){
             `+sels[i].options[sels[i].selectedIndex].text+`();
@@ -573,6 +586,7 @@ function addVoiceControlBlock(){
             }<button onclick="deleteVoiceBlock(this)">-</button>
     `;
     addVoiceBlockRef.appendChild(voiceDiv);
+    // highlight();
 }
 
 function deleteVoiceBlock(ref){
@@ -620,6 +634,7 @@ function addPlaygroundBlock(){
     var fnDiv = document.createElement("div");
     fnDiv.innerHTML = pgBlock;
     addPgBlockRef.appendChild(fnDiv);
+    // highlight();
 }
 function deletePlaygroundBlock(ref){
     ref.parentNode.remove();
