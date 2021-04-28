@@ -307,9 +307,9 @@ input:focus {
 }
 
 #bluetooth .tooltiptext {
-  width: 100px;
+  min-width: 100px;
+  width: auto;
 }
-
 #pgCode .tooltiptext {
   width: auto;
 }

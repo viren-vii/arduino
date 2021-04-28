@@ -7,6 +7,7 @@ window.onload = function () {
     document.getElementById("loader").style.display = "none";
 
     addPgBlockRef = document.getElementById("pgCode");
+    addVoiceBlockRef = document.getElementById("bluetoothVoiceController");
 
     mybutton = document.getElementById("myBtn");
     //Get the button:
@@ -471,56 +472,64 @@ function handleBtChanges() {
     slVal = sl.options[sl.selectedIndex].text;
     hrVal = hr.options[hr.selectedIndex].text;
 
-    console.log(uVal,dVal,rVal,lVal);
 
-    vIP1 = document.getElementById('vIP1').value;
-    vIP2 = document.getElementById('vIP2').value;
-    vIP3 = document.getElementById('vIP3').value;
-    vIP4 = document.getElementById('vIP4').value;
-    vIP5 = document.getElementById('vIP5').value;
-    vIP6 = document.getElementById('vIP6').value;
-    vIP7 = document.getElementById('vIP7').value;
-    vIP8 = document.getElementById('vIP8').value;
+    // vIP1 = document.getElementById('vIP1').value;
+    // vIP2 = document.getElementById('vIP2').value;
+    // vIP3 = document.getElementById('vIP3').value;
+    // vIP4 = document.getElementById('vIP4').value;
+    // vIP5 = document.getElementById('vIP5').value;
+    // vIP6 = document.getElementById('vIP6').value;
+    // vIP7 = document.getElementById('vIP7').value;
+    // vIP8 = document.getElementById('vIP8').value;
 
-    uv = document.getElementById('btControlsUv');
-    dv = document.getElementById('btControlsDv');
-    rv = document.getElementById('btControlsRv');
-    lv = document.getElementById('btControlsLv');
-    sv = document.getElementById('btControlsSv');
-    srv = document.getElementById('btControlsSRv');
-    slv = document.getElementById('btControlsSLv');
-    hrv = document.getElementById('btControlsHRv');
+    // uv = document.getElementById('btControlsUv');
+    // dv = document.getElementById('btControlsDv');
+    // rv = document.getElementById('btControlsRv');
+    // lv = document.getElementById('btControlsLv');
+    // sv = document.getElementById('btControlsSv');
+    // srv = document.getElementById('btControlsSRv');
+    // slv = document.getElementById('btControlsSLv');
+    // hrv = document.getElementById('btControlsHRv');
 
-    uValv = uv.options[uv.selectedIndex].text;
-    dValv = dv.options[dv.selectedIndex].text;
-    rValv = rv.options[rv.selectedIndex].text;
-    lValv = lv.options[lv.selectedIndex].text;
-    sValv = sv.options[sv.selectedIndex].text;
-    srValv = srv.options[srv.selectedIndex].text;
-    slValv = slv.options[slv.selectedIndex].text;
-    hrValv = hrv.options[hrv.selectedIndex].text;
+    // uValv = uv.options[uv.selectedIndex].text;
+    // dValv = dv.options[dv.selectedIndex].text;
+    // rValv = rv.options[rv.selectedIndex].text;
+    // lValv = lv.options[lv.selectedIndex].text;
+    // sValv = sv.options[sv.selectedIndex].text;
+    // srValv = srv.options[srv.selectedIndex].text;
+    // slValv = slv.options[slv.selectedIndex].text;
+    // hrValv = hrv.options[hrv.selectedIndex].text;
 
     btController(ct);
     // btCodeHandler(controllerType);
 }
 var cd;
 function btController(cnt){
-    var vip = (cnt === 'btn' ? false : true);
-    cd = `
+    if(cnt == 'btn'){
+        cd =`
     if(Serial.available() > 0){
         recieved = Serial.read();
         Serial.print(recieved);
         Serial.print("\n");
-        if(recieved == `+(vip?vIP1:'u')+`)`+ (!vip?uVal:uValv) + `();  
-        else if(recieved == `+(vip?vIP2:'d')+`)`+ (!vip?dVal:dValv) + `();
-        else if(recieved == `+(vip?vIP3:'l')+`)`+ (!vip?rVal:rValv) + `();
-        else if(recieved == `+(vip?vIP4:'r')+`)`+ (!vip?lVal:lValv) + `();
-        else if(recieved == `+(vip?vIP5:'s')+`)`+ (!vip?sVal:sValv) + `();
-        else if(recieved == `+(vip?vIP6:'sr')+`)`+ (!vip?srVal:srValv) + `();
-        else if(recieved == `+(vip?vIP7:'sl')+`)`+ (!vip?slVal:slValv) + `();
-        else if(recieved == `+(vip?vIP8:'hr')+`)`+ (!vip?hrVal:hrValv) + `();
+        if(recieved ==      'u')`+uVal+`();  
+        else if(recieved == 'd')`+dVal+`();
+        else if(recieved == 'l')`+lVal+`();
+        else if(recieved == 'r')`+rVal+`();
+        else if(recieved == 's')`+sVal+`();
+        else if(recieved == 'sr')`+srVal+`();
+        else if(recieved == 'sl')`+slVal+`();
+        else if(recieved == 'hr')`+hrVal+`();
+    }`
+    }else{
+        cd = '';
+        let sels = document.getElementById("bluetoothVoiceController").getElementsByTagName("select");
+        let ips = document.getElementById("bluetoothVoiceController").getElementsByTagName("input");
+        for(let i=0; i<sels.length; i++){
+            cd+=(i==0?"":"else ")+`if(voiceInput == "`+ips[i].value+`"){
+            `+sels[i].options[sels[i].selectedIndex].text+`();
+        }`;
+        }
     }
-    `;
     // console.log(cd);
     btCodeHandler();
 }
@@ -546,7 +555,29 @@ function btCodeHandler() {
     document.getElementById("arduinoCodeDiv").innerText = code;
 }
 
+function addVoiceControlBlock(){
+    // console.log("in");
+    var voiceDiv = document.createElement("div");
+    voiceDiv.innerHTML = `
+            if(voiceInput == "<input type="text"/>"){
+                <select name="functions" > 
+                <option value="forward">forward</option>
+                <option value="reverse">reverse</option>
+                <option value="left">left</option>
+                <option value="right">right</option>
+                <option value="stop">stop</option>
+                <option value="stop">spin right</option>
+                <option value="stop">spin left</option>
+                <option value="stop">horn</option>
+                </select>();
+            }<button onclick="deleteVoiceBlock(this)">-</button>
+    `;
+    addVoiceBlockRef.appendChild(voiceDiv);
+}
 
+function deleteVoiceBlock(ref){
+    ref.parentNode.remove();
+}
 //---------------------------------------------actiive class
 
 function addActiveClass(elt) {

@@ -32,7 +32,7 @@
 <div class="codeHere">
 <div class="scroll">
     <pre>
-    <div id="playground">
+    <div id="playground"><pre><code class="lang-cpp">
         //Choose function which you want to perform and time for which it should run!
         <div id="pgCode">
 <select name="functions">
@@ -42,7 +42,7 @@
     <option value="right">right</option>
     <option value="stop">stop</option>
 </select>();  delay(<input class="SS" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>);
-    </div>
+    </div></code></pre>
     <button id="addFnInPlaygroundBtn" onclick="addPlaygroundBlock()">+</button>
     </div></pre>
     <div id="line-follower" class="hide">
@@ -312,106 +312,22 @@ void loop(){
             }
             </div>
             <div id="bluetoothVoiceController" class="hide">
-                // voiceInput is a variable in which serial data (whatever you'll say on mic) obtained from bluetooth controller is stored
+            // voiceInput is a variable in which serial data (whatever you'll say on mic) obtained from bluetooth controller is stored
 
-                if(voiceInput == "<input type="text" id="vIP1"/>"){
-                    <select name="functions" id="btControlsUv" > 
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP2"/>"){
-                    <select name="functions" id="btControlsDv" >
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP3"/>"){
-                    <select name="functions" id="btControlsLv" >
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP4"/>"){
-                    <select name="functions" id="btControlsRv" >
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP5"/>"){
-                    <select name="functions" id="btControlsSv" >
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP6"/>"){
-                    <select name="functions" id="btControlsSLv">
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP7"/>"){
-                    <select name="functions" id="btControlsSRv">
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
-                else if(voiceInput == "<input type="text" id="vIP8"/>"){
-                    <select name="functions" id="btControlsHRv">
-                        <option value="forward">forward</option>
-                        <option value="reverse">reverse</option>
-                        <option value="left">left</option>
-                        <option value="right">right</option>
-                        <option value="stop">stop</option>
-                        <option value="stop">spin right</option>
-                        <option value="stop">spin left</option>
-                        <option value="stop">horn</option>
-                    </select>();
-                }
+            if(voiceInput == "<input type="text"/>"){
+                <select name="functions" > 
+                <option value="forward">forward</option>
+                <option value="reverse">reverse</option>
+                <option value="left">left</option>
+                <option value="right">right</option>
+                <option value="stop">stop</option>
+                <option value="stop">spin right</option>
+                <option value="stop">spin left</option>
+                <option value="stop">horn</option>
+                </select>();
+            }
             </div>
-            
+            <button onclick="addVoiceControlBlock()">+</button>
         </code></pre>
     </div>
 
