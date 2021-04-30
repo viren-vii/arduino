@@ -9,21 +9,17 @@
     <meta name="author" content="RoboMonkee">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
     <title>RoboMonkee</title>
-<!--
 
-ART FACTORY
-
-https://templatemo.com/tm-537-art-factory
-
--->
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css">
     <link rel="stylesheet" type="text/css" href="assets/css/owl-carousel.css">
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/editor.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
 
 
     </head>
@@ -48,21 +44,22 @@ https://templatemo.com/tm-537-art-factory
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="#" class="logo">RoboMonkee</a>
+                        <a href="#" class="logoi">RoboMonkee</a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="#welcome" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#bot">Our Ultimate Product</a></li>
                             <li class="scroll-to-section"><a href="#services">Courses</a></li>
-                            <li class="scroll-to-section"><a href="#frequently-question">Frequently Questions</a></li>
+                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="#offer">Services</a></li>
                             <li class="submenu">
-                                <a href="javascript:;">Drop Down</a>
+                                <a href="javascript:;">More</a>
                                 <ul>
-                                    <li><a href="">About Us</a></li>
-                                    <li><a href="">Features</a></li>
-                                    <li><a href="">FAQ's</a></li>
-                                    <li><a href="">Blog</a></li>
+                                    <li class="scroll-to-section"><a href="#frequently-question">FAQ</a></li>
+                                    <li class="scroll-to-section"><a href="#review">Reviews</a></li>
+                                    <li class="scroll-to-section"><a href="#editors">Our Editors</a></li>
+                                    
                                 </ul>
                             </li>
                             <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
@@ -88,7 +85,8 @@ https://templatemo.com/tm-537-art-factory
                 <div class="row">
                     <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h1>Perfect Robot Making Site <strong>for YOU</strong></h1>
-                        <p>RoboMonkee presents you easy way to learn Arduino coding in playful manner!</p>
+                        <p>Presenting the new way for learning and exploring the world of robotics.
+                        </p>
                         <a href="#editors" class="main-button-slider">Find Out Editors!</a>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
@@ -100,52 +98,22 @@ https://templatemo.com/tm-537-art-factory
         <!-- ***** Header Text End ***** -->
     </div>
     <!-- ***** Welcome Area End ***** -->
-
-    <!-- ***** Carousel Start ***** -->
-    <div id="editors" class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active">BLOCKS</li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1">CODE</li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="assets/images/block-coding.png" class="d-block w-75 carousel-image" alt="...">
-              <button type="button" class="carousel-btn shadow-lg">Block Coding</button>
-            </div>
-            <div class="carousel-item">
-              <img src="assets/images/c++-coding.png" class="d-block w-75 carousel-image" alt="...">
-              <button type="button" onclick="if(detec()){alert('Following Feature Is Not Available for Mobile Phones');return false;}else{window.location.href = './codetoar/index.html';}"class="carousel-btn shadow-lg">C++ Coding</button>
-            </div>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-
-    <!-- ***** Carousel End ***** -->
-
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section" id="about">
+    <!-- ***** Bot info ***** -->
+    <section class="section" id="bot">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
-                </div>
+                
                 <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
                     <div class="left-heading">
-                        <h5>Our GOAL</h5>
+                        <h5>LEO</h5>
                     </div>
                     <div class="left-text">
-                        <p>Our aim is to make the Arduino conding easy ever possible! Usage and significance of Arduino is too high. This is the best way to start learning it and understanding all its schemas with fun! <br><br>
-                        Arduino is one of the finest microcontrollers which helps you to start with this world of Robotics and explore it to more depths!</p>
-                        <a href="#about2" class="main-button">Discover More</a>
+                        <p>Leo-Bot is a STEM coding robot kit for beginners, moderates, and specialists that makes instructing and learning robot coding easy and exciting. Simply with a screwdriver, and bit by bit directions, and a master syllabus, children can fabricate a robot without any preparation and experience the delights of hands-on creation. As they get along, they will find out about an assortment of mechanical apparatus and electronic parts, will grasp the essentials of block-based programming as well as C++, and build their logical thinking to the next level.</p>
+                        <a href="botinfo.html" class="main-button">Find More About Leo !</a>
                     </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="assets/images/botimg.png" style="padding: 20px;" class="rounded img-fluid d-block mx-auto" alt="App">
                 </div>
             </div>
             <div class="row">
@@ -155,49 +123,10 @@ https://templatemo.com/tm-537-art-factory
             </div>
         </div>
     </section>
-    <!-- ***** Features Big Item End ***** -->
+    <!-- ***** Bot info End ***** -->
+  
 
-
-    <!-- ***** Features Big Item Start ***** -->
-    <section class="section" id="about2">
-        <div class="container">
-            <div class="row">
-                <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
-                    <div class="left-heading">
-                        <h5>What do we do?</h5>
-                    </div>
-                    <p>We want kids to start learning all the real life applications and develop the skill rather than mugging up the books!</p>
-                    <ul>
-                        <li>
-                            <img src="assets/images/about-icon-01.png" alt="">
-                            <div class="text">
-                                <h6>Highlight the skills</h6>
-                                <p>By interesting ways of teaching we bring out the hidden skills from students.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="assets/images/about-icon-02.png" alt="">
-                            <div class="text">
-                                <h6>Made hard concepts easy</h6>
-                                <p>We realized the difficulties it came when we started learning it. It is made easy than ever!</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="assets/images/about-icon-03.png" alt="">
-                            <div class="text">
-                                <h6>Easy to use</h6>
-                                <p>You can use our editors online without any extra hardware!</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-                    <img src="assets/images/right-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Big Item End ***** -->
+   
 
 
     <!-- ***** Features Small Start ***** -->
@@ -205,49 +134,147 @@ https://templatemo.com/tm-537-art-factory
         <div class="container">
             <div class="row" id="courses">
                 <div class="owl-carousel owl-theme">
-                    <div class="item service-item">
+                    <div class="item service-item" style="padding: 10%;">
                         <div class="icon">
                             <i><img src="assets/images/code.png" alt=""></i>
                         </div>
-                        <h5 class="service-title">Arduino Block Coding</h5>
-                        <p>Course Designed for Children (low level)</p>
-                        <a href="#" class="main-button">Read More</a>
+                        <h5 class="service-title" >Arduino Block Coding</h5>
+                        <p style="font-size: 10px;">Arduino Block Coding is functional for kids in range 7-12, where the code of Arduino generates by arranging the blocks.
+                        </p>
+                        <a href="#" class="main-button">BUY</a>
+
                     </div>
-                    <div class="item service-item">
+                    <div class="item service-item" style="padding: 10%;">
                         <div class="icon">
                             <i><img src="assets/images/c++-logo.png" alt=""></i>
                         </div>
                         <h5 class="service-title">C++ Coding</h5>
-                        <p>Course Designed for Middle age (mid level)</p>
-                        <a href="#" class="main-button">Read More</a>
+                        <p style="font-size: 10px;">C++ Coding is especially for the age group 11-14, where kids do actual coding along with block coding.</p>
+                        <a href="#" class="main-button">BUY</a>
                     </div>
-                    <div class="item service-item">
+                    <div class="item service-item" style="padding: 10%;">
                         <div class="icon">
                             <i><img src="assets/images/arduino.png" alt=""></i>
                         </div>
                         <h5 class="service-title">Arduino Hands On</h5>
-                        <p>Course Designed for Higher age (high level)</p>
-                        <a href="#" class="main-button">Read More</a>
+                        <p style="font-size: 10px;">Arduino hands-on is for kids above 14 where they code the whole project by themselves with proper guidance.
+                        </p>
+                        <a href="#" class="main-button">BUY</a>
                     </div>
                 </div>
-                <div class="card text-center">
-                    <div class="card-header">
-                      Hardware Course
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">RoboMonkee Bot</h5>
-                      <p class="card-text">You can use editors provided on our website along with the RoboMonkee bot to have full fledge experience!</p>
-                      <a href="#" class="btn main-button">Read More</a>
-                    </div>
-                    <!-- <div class="card-footer text-muted">
-                      2 days ago
-                    </div> -->
-                </div>
+                
             </div>
         </div>
     </section>
     <!-- ***** Features Small End ***** -->
+ <!-- ***** Features Big Item Start ***** -->
+ <section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <img src="assets/images/knowledge.png" class="rounded img-fluid d-block mx-auto" alt="App" style="width: 70%; height: 80%;">
+            </div>
+            <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                <div class="left-heading">
+                    <h5>Our Dream</h5>
+                </div>
+                <div class="left-text">
+                    <p>Now when the world is switching manpower with robots, we must be the ones who build these robots. Thus, we aim to teach robotics to this new generation in depth so that they can be familiar with these tech skills. We try to provide the guidance and platform which we lacked in our learning times.
+                        Exploring microcontrollers and other components not just increases knowledge of your child but also enhances his/her overall growth.
+                        </p>
+                    <a href="#about2" class="main-button">Why Us ?</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Big Item End ***** -->
 
+
+<!-- ***** Features Big Item Start ***** -->
+<section class="section" id="about2">
+    <div class="container">
+        <div class="row">
+            <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
+                <div class="left-heading">
+                    <h5>Our Objective</h5>
+                </div>
+                <p>We want kids to start learning all the real life applications and develop the skill rather than mugging up the books!</p>
+                <ul>
+                    <li>
+                        <img src="assets/images/about-icon-01.png" alt="">
+                        <div class="text">
+                            <h6>Get hands-on experience</h6>
+                            <p>Building projects about what you learned.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/images/about-icon-02.png" alt="">
+                        <div class="text">
+                            <h6>Products for all age groups</h6>
+                            <p>Designed by considering the age and grasping power of the kid.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="assets/images/about-icon-03.png" alt="">
+                        <div class="text">
+                            <h6>Futuristic learning</h6>
+                            <p>Building projects in interesting ways with knowledgeable video content.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <img src="assets/images/goal.png" class="rounded img-fluid d-block mx-auto" alt="App">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Features Big Item End ***** -->
+    <!-- ***** What we offer Start ***** -->
+    <section class="section" id="offer">
+        <div class="container">
+            <p style="color: aliceblue; text-align: center;font-size: 30px;">What We Offer </p><br><br><br><br>
+            <div class="row" id="courses">
+                
+                <div class="owl-carousel owl-theme">
+                    <div class="item service-item" style="padding: 5%;">
+                        <div class="icon">
+                            <i><img src="assets/images/robotic-arm (2).png" alt=""></i>
+                        </div>
+                        <h5 class="service-title" style="font-size: 15px;">Setup A Complete Robotics Lab For You</h5>
+                        <p style="font-size: 10px;">We will make sure that you have complete robotics lab where you can dive into the world of robotics </p><br>
+                        <a href="#" class="main-button">Get Appointment</a>
+                    </div>
+                    <div class="item service-item" style="padding: 5%;">
+                        <div class="icon">
+                            <i><img src="assets/images/tutor.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title" style="font-size: 15px;">Home Tutor</h5>
+                        <p style="font-size: 10px;">We provide home tutor who will be always there through your journey of robotics</p><br><br><br>
+                        <a href="#" class="main-button">Contact Us</a>
+                    </div>
+                    <div class="item service-item" style="padding: 5%;">
+                        <div class="icon">
+                            <i><img src="assets/images/training.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title" style="font-size: 15px;">We Conduct Workshops</h5>
+                        <p style="font-size: 10px;">May it be your school coaching class or anything else .Wew are always ready to conduct workshop related to robotics , AI , ML ,Game Development, Python , C++ , Java and many more topics</p>
+                        <a href="#" class="main-button">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** What We Offer End ***** -->
 
     <!-- ***** Frequently Question Start ***** -->
     <section class="section" id="frequently-question">
@@ -260,20 +287,16 @@ https://templatemo.com/tm-537-art-factory
                     </div>
                 </div>
                 <div class="offset-lg-3 col-lg-6">
-                    <div class="section-heading">
-                        <p>Vivamus venenatis eu mi ac mattis. Maecenas ut elementum sapien. Nunc euismod risus ac lobortis congue. Sed erat quam.</p>
-                    </div>
+                    
                 </div>
             </div>
             <!-- ***** Section Title End ***** -->
 
             <div class="row">
                 <div class="left-text col-lg-6 col-md-6 col-sm-12">
-                    <h5>Class aptent taciti sociosqu ad litora torquent per conubia</h5>
+                    <h5>Hello Folks !!</h5>
                     <div class="accordion-text">
-                        <p>Curabitur placerat diam in risus lobortis, laoreet porttitor est elementum. Nulla ultricies risus quis risus scelerisque, a aliquam tellus maximus. Cras pretium nulla ac convallis iaculis. Aenean bibendum erat vitae odio sodales, in facilisis tellus volutpat.</p>
-                        <p>Sed lobortis pellentesque magna ac congue. Suspendisse quis molestie magna, id eleifend ex. Ut mollis ultricies diam nec dictum. Morbi commodo hendrerit mi vel vulputate. Proin non tincidunt dui. Lorem ipsum dolor sit amet.</p>
-                        <span>Email: <a href="#">email@company.com</a><br></span>
+                        <p>Feel Free To Contact Us at Any Part If You Have Any Questions.</p>
                         <a href="#contact-us" class="main-button">Contact Us</a>
                     </div>
                 </div>
@@ -281,37 +304,37 @@ https://templatemo.com/tm-537-art-factory
                     <div class="accordions is-first-expanded">
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>First Common Question</span>
+                                <span>1. Who can enroll in these courses?
+                                </span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Duis vulputate porttitor urna sit amet pretium. Phasellus sed pulvinar eros, condimentum consequat ex. Suspendisse potenti.
-                                    <br><br>
-                                    Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam erat volutpat.</p>
+                                    <p>Our courses are designed for the young enthusiasts of age group 7-18 who get fascinated by science, technologies, and robotization.
+                                    </p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Second Question Answer</span>
+                                <span>2. Who teaches these courses?
+                                </span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Sed odio elit, cursus sed consequat at, rutrum eget augue. Cras ac eros iaculis, tempor quam sit amet, scelerisque mi. Quisque eu risus eget nunc porttitor vestibulum at a ante.
-                                    <br><br>
-                                    Praesent ut placerat turpis, vel pellentesque dolor. Sed rutrum eleifend tortor, eu luctus orci sagittis in. In blandit fringilla mollis.</p>
+                                    <p>Our courses are made and taught by experts who have deep knowledge in the field of electronic automation.</p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Third Answer for you</span>
+                                <span>3.What modes of payment are available?
+                                </span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -326,44 +349,48 @@ https://templatemo.com/tm-537-art-factory
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Fourth Question Asked</span>
+                                <span>4.What is your teaching methodology?
+                                </span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Phasellus eu purus ornare, eleifend orci nec, egestas nulla. Sed sed aliquet sapien. Proin placerat, ipsum eu posuere blandit, tellus quam consectetur nisi, id sollicitudin diam ex at nisi.
-                                    <br><br>
-                                    Aenean fermentum eget turpis egestas semper. Sed finibus mollis venenatis. Praesent at sem in massa iaculis pharetra.</p>
+                                    <p>We have explanatory videos, and are based on "doing while watching".
+                                        Thus, the kid may refer to the videos and build the project step-by-step as instructed by adding their creativity.
+                                        </p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Fifth Ever Question</span>
+                                <span>5.What are the material requirements while following this course?
+                                </span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Quisque aliquet ipsum ut magna rhoncus, euismod lacinia elit rhoncus. Sed sapien elit, mollis ut ultricies quis, fermentum nec ante.
-                                    <br><br>
-                                    Sed nec ex nec tortor fermentum sollicitudin id ut ligula. Ut sagittis rutrum lectus, non sagittis ante euismod eu. </p>
+                                    <p>A desktop computer/laptop/tablet with a stable internet connection is enough for the kid to kick-start.
+                                    </p>
                                 </div>
                             </div>
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Sixth Sense Question</span>
+                                <span>6.Will my child be able to understand Programming and such complex concepts?
+                                </span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Suspendisse potenti. Ut dapibus leo ut massa vulputate semper. Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam erat volutpat.</p>
+                                    <p>Yes, and that's special about Robomonkee. Honestly, we don't aim our teaching by one single method. The method that suits best for the child is our priority.
+                                        No worry about the complexities, they are broken into chains, and after learning it individually, we connect all those chains.
+                                        </p>
                                 </div>
                             </div>
                         </article>
@@ -373,8 +400,101 @@ https://templatemo.com/tm-537-art-factory
         </div>
     </section>
     <!-- ***** Frequently Question End ***** -->
+<!-- ***** Review Starts ***** -->
+    <div id="review" class="rev-section">
+        <div class="section-heading">
+            <h2>See What Our Coustmers Say About Us</h2>
+        </div>
+        <div class="reviews">
+        
+        <div class="review">
+           <div class="head-review">
+              <img class="reviewss" src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80" width="250px">
+           </div>
+           <div class="body-review">
+              <div class="name-review">Om Singh</div>
+              <div class="place-review" style="color: black;">Mumbai</div>
+              <div class="rating">
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+              </div>
+              <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
+           </div>
+        </div>
+        <div class="review">
+           <div class="head-review">
+              <img class="reviewss" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px">
+           </div>
+           <div class="body-review">
+              <div class="name-review">Ratik Zade</div>
+              <div class="place-review" style="color: black;">Wardha</div>
+              <div class="rating">
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+              </div>
+              <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
+           </div>
+        </div>
+        <div class="review">
+           <div class="head-review">
+              <img class="reviewss" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="250px">
+           </div>
+           <div class="body-review">
+              <div class="name-review">Shreyash Chunarkar</div>
+              <div class="place-review" style="color: black;">Amravati</div>
+              <div class="rating">
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star"></i>
+                 <i class="fas fa-star-half"></i>
+              </div>
+              <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
+           </div>
+        </div>
+        
+        </div>
+        
+        </div>
+        <br><br><br><br><br><br>
+         <!-- *****Review End ***** -->
+          <!-- ***** Editors Start ***** -->
+         <div id="editors" class="overflow">
+            <section class="panels">
+              <article class="panels__side panels__side--left">
+                <div class="panels__side panels__side--inner-left">
+                  <p style="color: white;">This code editor is specially designed for little children who will for sure not understand how to code .
+                    So for improving there logic and to do robotics stuff our team has specially designed this editor .
+                    Once you purchase our product you will be getting this editor.</p>
+                </div>
+                <div class="panels__side panels__side--inner">
+                  <h1 class="panels__headline">Block Code Editor</h1>      
+                  <svg class="arrow arrow--left" width="40" height="40" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M20 11h-12.17l5.59-5.59-1.42-1.41-8 8 8 8 1.41-1.41-5.58-5.59h12.17v-2z"/></svg>
+                </div>
+              </article>
+              <article class="panels__side panels__side--right">
+                <div class="panels__side panels__side--inner">
+                  <h1 class="panels__headline">C++ Code Editor</h1>
+                  <svg class="arrow arrow--right" width="40" height="40" viewBox="0 0 24 24"><path d="M0 0h24v24h-24z" fill="none"/><path d="M12 4l-1.41 1.41 5.58 5.59h-12.17v2h12.17l-5.58 5.59 1.41 1.41 8-8z"/></svg>
+                </div>
+                <div class="panels__side panels__side--inner-right">
+                  <p style="color: white;">This code editor is designed for the students who can understand the code . once you purchase the product you will
+                     get this editor for free .</p>
+                </div>
+              </article>
+            </section>
+          </div>
+                   <!-- *****Editors End ***** -->
+                                   <!-- ***** Bot Info Strats ***** -->
 
-
+                  
+                <!-- ***** Bot Info Ends ***** -->
     <!-- ***** Contact Us Start ***** -->
     <section class="section" id="contact-us">
         <div class="container-fluid">
@@ -391,8 +511,9 @@ https://templatemo.com/tm-537-art-factory
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
-                <!-- ***** Contact Map End ***** -->
+                <!-- ***** Contact Map End *****   -->
 
+                
                 <!-- ***** Contact Form Start ***** -->
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="contact-form">
@@ -427,16 +548,14 @@ https://templatemo.com/tm-537-art-factory
         </div>
     </section>
     <!-- ***** Contact Us End ***** -->
-
+    
     
     <!-- ***** Footer Start ***** -->
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-12 col-sm-12">
-                    <p class="copyright">Made by RoboMonkee Website Team
-                </div>
-                <div class="col-lg-5 col-md-12 col-sm-12">
+                
+                <div class="col-lg-7 col-md-12 col-sm-12" style="align-items: center;align-self: center;align-content: center;">
                     <ul class="social">
                         <li><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
                         <li><a href="tel:9136899925" target="_blank"><i class="fa fa-phone"></i></a></li>
@@ -446,6 +565,7 @@ https://templatemo.com/tm-537-art-factory
                     </ul>
                 </div>
             </div>
+            <p class="copyright" style="text-align: center;">Made by RoboMonkee Website Team</p>
         </div>
     </footer>
     
@@ -465,7 +585,8 @@ https://templatemo.com/tm-537-art-factory
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/imgfix.min.js"></script> 
-    
+    <script src="assets/js/editor.js"></script> 
+
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
 
