@@ -283,8 +283,8 @@ function irReads(){
     `+ (comment ? "//" : "") + `S5 = digitalRead(IR5);`;
 }
 function allFunctions() {
-    piece = `float SP_EN1 = ` + vSP_EN1 + `;
-float SP_EN2 = `+ vSP_EN2 + `;`;
+    piece = `float SP_EN1 = ` + (vSP_EN1=="0"?"20":vSP_EN1) + `;
+float SP_EN2 = `+ (vSP_EN2=="0"?"20":vSP_EN2) + `;`;
 
     return piece + functions;
 }
