@@ -299,6 +299,8 @@ header
 .background-header .logoi,
 .background-header .main-nav .nav li a {
   color: #1e1e1e !important;
+  font-size: 10px;
+  
 }
 
 .background-header .main-nav .nav > li:hover > a {
@@ -334,7 +336,7 @@ header
 .header-area .main-nav .logoi {
   line-height: 80px;
   color: #fff;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -1667,14 +1669,9 @@ nnnnnnnnnnnneeeeeeeeeeeeeeeeeewwwwwwwwwwww
 .desc-review{
   line-height: 1.5rem;
   letter-spacing: 1px;
-  color: rgb(150, 150, 150);
+  color: rgb(12, 12, 12);
 }
 
-@media (max-width: 678px){
-  .review{
-    margin-top: 1.5rem;
-  }
-}
 
 /* hardware accelatator class */	
 	.trans3d
