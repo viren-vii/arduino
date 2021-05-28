@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="RoboMonkee">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>RoboMonkee</title>
+
+    <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {height: 800px}
+        
+        /* Set gray background color and 100% height */
+        .sidenav {
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+        
+        /* Set black background color, white text and some padding */
+        footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        }
+        
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+          .sidenav {
+            height: auto;
+            padding: 15px;
+          }
+          .row.content {height: auto;} 
+        }
+      </style>
+    </head>
+    
+    <body>
+        <section >
+            <div style="width: auto;" >
+              <img src="assets/images/workshop.png" style="width: 100%;">
+            
+            </div>
+            
+            </section>
+            <section style="padding-top: 10%;">
+                <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">About Course</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Age Groups</h3>
+                      <br>
+                      <p style="text-align: center;">Begineers - 3-5 Days</p>
+                      <p style="text-align: center;">Moderate - 5-8 Days</p>
+                      <p style="text-align: center;">Expert - 8-10 Days</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+                <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/leocourse.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Leo</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                       
+                           <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                        
+                        
+                                            
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/drone.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Drone</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>         
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/python.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Python</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>        
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/Cpp.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On C++</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/android.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Android/Web Dev</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/robotmaking.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Wired/Wireless Robot</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/bluebot.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On BT controlled Bot</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>                 
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/gesturebot.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Gesture Based Robot</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>      
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/IOT.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On IOT</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/rpi.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On R Pi</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>                 
+                    </div>
+                    </div>
+                    <div class="card">
+                      <img class="card-img-top" src="assets/images/Arduinocou.png" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">Workshop On Arduino</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>      
+                    </div>
+                    </div>
+                    
+                  </div>
+            </section>
+            <section id="callback">
+                <h2 style="text-align: center;padding-top: 5%;padding-bottom: 5%;">Get A Call Back</h2>
+                <div style="padding: 0%;">
+                    <div class="row content">
+                      <div class="col-sm-3 ">
+                        <img src="assets/images/callback.png">
+                      </div>
+                  
+                      <div class="col-sm-9 ">
+                        <form style="margin-top: 10%; padding-right: 10%;padding-left: 10%;">
+                            <div class="form-row">
+                              <div class="form-group col-md-6">
+                                <label for="inputEmail4">Student's Name</label>
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="Student's Name">
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="inputPassword4">Parent's Name</label>
+                                <input type="text" class="form-control" id="inputPassword4" placeholder="Parent's Name">
+                              </div>
+                            </div>
+                            <div class="form-group" >
+                              <label for="inputAddress">Parent's Contact Number</label>
+                              <input type="number" class="form-control" id="inputAddress" placeholder="Parent's Contact Number">
+                            </div>
+                            <div class="form-group">
+                              <label for="inputAddress2">Email Id (Optional)</label>
+                              <input type="email" class="form-control" id="inputAddress2" placeholder="Email Id (Optional)">
+                            </div>
+                            
+                            
+                            <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Get A Call Back</button>
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+    <!-- Global Init -->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/vdoplayer.js"></script>
+
+  </body>
+</html>
