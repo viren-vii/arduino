@@ -26,9 +26,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
     <style>
         /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-        html{
+        /* html{
           overflow: hidden;
-        }
+        } */
         .row.content {height: 800px}
         
         /* Set gray background color and 100% height */
@@ -42,6 +42,33 @@
           background-color: #555;
           color: white;
           padding: 15px;
+        }
+        a.bannerButton {
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+
+          text-decoration: none;
+          color: initial;
+
+          width: auto; 
+          height:auto; 
+          font-size: xx-large; 
+          font-weight: 900; 
+          padding:20px; 
+          position:absolute; 
+          left:50%; transform: 
+          translate(-50%, -50%); 
+          bottom: 0; 
+          margin-bottom: 20px;
+          color: white;
+          background-color: rgb(19, 19, 19);
+          transition: 0.5s;
+
+        }
+        a.bannerButton:hover{
+          transition: 0.5s;
+          background-color: rgb(51, 51, 51);
         }
         
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -57,13 +84,13 @@
     
     <body>
         <section >
+            <a href="./index.html"><img src="assets/images/robomonkee.png" style="width: 20%; position:absolute; margin-left: 2%;"/></a>
+            <a class="bannerButton" href="#workshops">Learn More</a>
             <div style="width: auto;" >
               <img src="assets/images/workshop.png" style="width: 100%;">
-            
             </div>
-            
-            </section>
-            <section style="padding-top: 10%;">
+          </section>
+            <section style="padding-top: 10%;" id="workshops">
                 <!-- The Modal -->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog">

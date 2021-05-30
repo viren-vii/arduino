@@ -5,7 +5,11 @@ html {
   font-family: muli;
   height: 100%;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  scroll-behavior: smooth;
+}
+html {
+  overflow: hidden;
 }
 
 h1,
