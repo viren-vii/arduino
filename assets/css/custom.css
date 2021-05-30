@@ -60,6 +60,7 @@ html {
 .carousel-image {
   border: 10px solid #f55858;
   border-radius: 50px;
+  height: 720px;
 }
 #courses {
   margin: 0;
