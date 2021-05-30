@@ -19,12 +19,28 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>RoboMonkee</title>
 
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css">
+
     <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
     <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
     <style>
+              
+        ::selection {
+          background: #ff589e;
+          color: #fff;
+        }
+
+        ::-moz-selection {
+          background: #ff589e;
+          color: #fff;
+        }
+
         /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
         .row.content {height: 800px}
         
@@ -33,13 +49,42 @@
           background-color: #f1f1f1;
           height: 100%;
         }
+
+        a.bannerButton {
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+
+          text-decoration: none;
+          color: initial;
+
+          width: auto; 
+          height:auto; 
+          font-size: xx-large; 
+          font-weight: 900; 
+          padding:20px; 
+          position:absolute; 
+          float: right;
+          left:50%; transform: 
+          translate(-50%, -50%); 
+          bottom: 0; 
+          margin-bottom: 20px;
+          color: white;
+          background-color: rgb(19, 19, 19);
+          transition: 0.5s;
+
+        }
+        a.bannerButton:hover{
+          transition: 0.5s;
+          background-color: rgb(51, 51, 51);
+        }
         
         /* Set black background color, white text and some padding */
-        footer {
+        /* footer {
           background-color: #555;
           color: white;
           padding: 15px;
-        }
+        } */
         
         /* On small screens, set height to 'auto' for sidenav and grid */
         @media screen and (max-width: 767px) {
@@ -49,18 +94,29 @@
           }
           .row.content {height: auto;} 
         }
+
+        body.modal-open {
+          height: 100vh;
+          overflow: visible;
+        }
+        body:not(.modal-open){
+          padding-right: 0px !important;
+        }
+        
       </style>
     </head>
     
     <body>
         <section >
             <div style="width: auto;" >
+              <a href="./index.html"><img src="assets/images/robomonkee.png" style="width: 20%; position:absolute; left: 50%; transform: translate(-50%); "/></a>
+              <a class="bannerButton" href="#projects">Learn More</a>
               <img src="assets/images/Project Assistance.png" style="width: 100%;">
             
             </div>
             
             </section>
-            <section style="padding-top: 10%;">
+            <section style="padding-top: 10%;" id="projects">
                 <!-- The Modal -->
 
 
@@ -569,6 +625,28 @@
                     </div>
                   </div>
                 </section>
+
+    <!-- ***** Footer Start ***** -->
+    <hr style="width: 60%; margin: auto;   border: 1px solid rgb(186, 186, 186); border-radius: 5px;">
+    <footer>
+      <div class="containerC" style="width: 100%;">
+          <div class="row">
+              
+              <div class="col-lg-7 col-md-12 col-sm-12" style="align-items: center;align-self: center;align-content: center;">
+                  <ul class="social">
+                      <li><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                      <li><a href="tel:9136899925" target="_blank"><i class="fa fa-phone"></i></a></li>
+                      <li><a href="#"><i class="fa fa-envelope-o"></i></a></li>
+                      <li><a href="https://api.whatsapp.com/send?phone=9136899925" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                      <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  </ul>
+              </div>
+          </div>
+          <p class="copyright" style="text-align: center;">Made by RoboMonkee Website Team</p>
+      </div>
+  </footer>
+      <!-- ***** Footer End ***** -->
+
     <!-- Global Init -->
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/vdoplayer.js"></script>
