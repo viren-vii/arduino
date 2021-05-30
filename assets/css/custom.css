@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 .bd-example {
   margin: 50px 0 50px 0;
