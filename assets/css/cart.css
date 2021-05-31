@@ -463,7 +463,7 @@ button:hover {
 @media (max-width: 1440px) {
 
   .myback {
-    height: 90%;
+    height: 110%;
   
     align-items: center;
     background-image: linear-gradient(
