@@ -10,6 +10,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap">
     <title>RoboMonkee</title>
 
     <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
@@ -21,46 +29,99 @@
     </head>
     
     <body>
-        <section style="padding: 1%;">
-        <div class='container'>
-            <div class='background-element' id='background-element'>
+        <section >
+          <div class="container">
+            <div class="heading-section">
+                <h2>Product Details</h2>
             </div>
-            <div class='highlight-window' id='product-img' ><div class='highlight-overlay' id='highlight-overlay'></div></div>
-            <div class='window'>
-              <div class='main-content'>
-                <h2>ROBOMONKEE</h2>
-                <h1>LEO</h1>
-            <div class='description' id='description'>
-                Leo is a bot with various functionalities with vast applications in the real world. The bot consists of three modes, line follower, Bluetooth mode, and avoiding obstacles. Firstly, we need to work on basics by learning about the essential components and their mechanisms with proper video tutorials through our app. Furthermore, the kid will start implementing the procedure of each mode by block coding, mix, or actual coding as per their selected course by adding their imagination and creativity. And then the main work is arranging everything and making our Leo ready.                <div class='highlight-window  mobile' id='product-img'><div class='highlight-overlay' id='highlight-overlay-mobile'></div></div>
-                <div class='options'>
-                  <div class='color-options'>
-                    Color:
-                <div class='color-picker'>
-                  <div class='color overlay' id='color-overlay'><div class='check'></div></div>
-                  <div class='color color-a' id='color-a'></div>
-                  <div class='color color-b' id='color-b'></div>
+            <div class="row">
+              <div class="col-md-6" style="padding-right: 5%;">
+                <div id="slider" class="owl-carousel product-slider">
+              <div class="item">
+                  <img src="assets/images/BlackSheetLeo.png" />
+                          </div>
+                          <div class="item">
+                              <img src="assets/images/RoboLeoBlackBg.png" />
+                          </div>
+                          <div class="item">
+                            <img src="assets/images/UpdatedLeoCycles.png" />
+                          </div>
+                          <div class="item">
+                              <img src="assets/images/BlackSheetLeo.png" />
+                          </div>
+  
+              
+            </div>
+            <div id="thumb" class="owl-carousel product-thumb">
+              <div class="item">
+                              <img src="assets/images/BlackSheetLeo.png" />
+                        </div>
+                        <div class="item">
+                          <img src="assets/images/RoboLeoBlackBg.png" />
+                      </div>
+                      <div class="item">
+                        <img src="assets/images/UpdatedLeoCycles.png" />
+                      </div>
+                      <div class="item">
+                          <img src="assets/images/BlackSheetLeo.png" />
+                      </div>
+            </div>
+              </div>
+              <div class="col-md-6">
+                <div class="product-dtl">
+                  <div class="product-info">
+                    <div class="product-name">LEO</div>
+                    <div class="reviews-counter">
+                  <div class="rate">
+                      <input type="radio" id="star5" name="rate" value="5" checked />
+                      <label for="star5" title="text">5 stars</label>
+                      <input type="radio" id="star4" name="rate" value="4"  />
+                      <label for="star4" title="text">4 stars</label>
+                      <input type="radio" id="star3" name="rate" value="3"  />
+                      <label for="star3" title="text">3 stars</label>
+                      <input type="radio" id="star2" name="rate" value="2"  />
+                      <label for="star2" title="text">2 stars</label>
+                      <input type="radio" id="star1" name="rate" value="1" />
+                      <label for="star1" title="text">1 star</label>
+                    </div>
+                  <span>330 Reviews</span>
                 </div>
-                            <span class='small' style='color:#8d9690'>COLOR: <span id='color-name'>WHITE</span></span>
+                    <div class="product-price-discount"><span>₹4999.00</span><span class="line-through">₹10000.00</span></div>
                   </div>
-                  <div class='size-picker'>
-                   CATEGORY:
-            <div class='range-picker' id='range-picker'>
-              <div>3-7</div><div class='active'>7+</div><div>16+</div>
-            </div>
-                    <a class='small align-right' href='#'>DIFFERENT CATEGORIES</a>
-                  </div>  
-              </div>
-                      <div class='divider'></div>
-          
-                    <div class='purchase-info'>
-                <div class='price'>₹4999.00</div>
-                      <button>ADD TO CART</button>
-              </div>
+                  <p>Leo is a bot with various functionalities with vast applications in the real world. The bot consists of three modes, line follower, Bluetooth mode, and avoiding obstacles. Firstly, we need to work on basics by learning about the essential components and their mechanisms with proper video tutorials through our app. Furthermore, the kid will start implementing the procedure of each mode by block coding, mix, or actual coding as per their selected course by adding their imagination and creativity. And then the main work is arranging everything and making our Leo ready.</p>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label for="size">Category</label>
+                  <select id="size" name="size" class="form-control">
+                    <option>7-10</option>
+                    <option>10-16</option>
+                    <option>16+</option>
+                  </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="color">color</label>
+                  <select id="color" name="color" class="form-control">
+                    <option>White</option>
+                    <option>Black</option>
+                  </select>
+                    </div>
+                  </div>
+                  <div class="product-count">
+                    <label for="size">Quantity</label>
+                    <form action="#" class="display-flex">
+                    <div class="qtyminus">-</div>
+                    <input type="text" name="quantity" value="1" class="qty">
+                    <div class="qtyplus">+</div>
+                </form>
+                <a href="#" class="round-black-btn">BUY</a>
+                  </div>
+                </div>
               </div>
             </div>
            
-            
-          </div>
+        
+      </div>
+      </div>
         </section>
         <section>
           <div class="card-group" style="padding-left: 20%;padding-right: 20%; padding-top: 5%;padding-bottom: 5%;">
@@ -90,69 +151,63 @@
             </div>
           </div>
       </section>
+      
       <section style="padding-top: 5%;">
         <div  >
-          <img src="assets/images/BlackSheetLeo.png">
+          <img src="assets/images/iso leo.png">
         
         </div>
         
         </section>
-        <section >
-          <div  >
-            <img src="assets/images/RoboLeoBlackBg.png">
-          
-          </div>
-          
-          </section>
-          <section >
-            <div  >
-              <img src="assets/images/UpdatedLeoCycles.png">
-            
-            </div>
-            
-            </section>
+        
+         
       
-<section class="myback" style="align-items: center;align-self: center;align-content: center;">
-  <div class="row" style="align-items: center;align-self: center;align-content: center;padding-left: 13%;padding-top: 8%;padding-bottom: 5%;">
-    <div><h5 style="color: aliceblue;margin-left: 105px;">Control Mode</h2>
-  <video class="video-fluid z-depth-1" autoplay loop controls muted style="max-width: 350px;max-height: 500px;padding-bottom: 5%;border-radius: 0%;margin-right: 120px;">
-   
-    <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-  </video></div>
-  <br><br>
-  <div><h5 style="text-align: left;color: aliceblue;margin-left: 75px;">Obstacle Avodiance Mode</h2>
-    <video class="video-fluid z-depth-1" autoplay loop controls muted style="max-width: 350px;max-height: 500px;padding-bottom: 5%;border-radius: 0%;margin-right: 120px;">
-     
-      <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-    </video></div>
-  <br><br>
-  <div><h5 style="text-align: left;color: aliceblue;margin-left: 85px;">Line Follower Mode</h2>
-    <video class="video-fluid z-depth-1" autoplay loop controls muted style="max-width: 350px;max-height: 500px;padding-bottom: 5%;border-radius: 0%;margin-right: 120px;">
-     
-      <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-    </video></div>
-  <br><br>
-</div>
-<div class="row" style="align-items: center;align-self: center;align-content: center;padding-left: 13%;padding-bottom: 5%;">
-  <div><h5 style="text-align: left;color: aliceblue;margin-left: 70px;">Game Based learning</h2>
-    <video class="video-fluid z-depth-1" autoplay loop controls muted style="max-width: 350px;max-height: 500px;padding-bottom: 5%;border-radius: 0%;margin-right: 120px;">
-     
-      <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-    </video></div>
-  <br><br>
-  <div><h5 style="text-align: left;color: aliceblue;margin-left: 70px;">Advanced Programming</h2>
-    <video class="video-fluid z-depth-1" autoplay loop controls muted style="max-width: 350px;max-height: 500px;padding-bottom: 5%;border-radius: 0%;margin-right: 120px;">
-     
-      <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-    </video></div>
-  <br><br>
-  <div><h5 style="text-align: left;color: aliceblue;margin-left: 70px;">Different Expanssion</h2>
-    <video class="video-fluid z-depth-1" autoplay loop controls muted style="max-width: 350px;max-height: 500px;padding-bottom: 5%;border-radius: 0%;margin-right: 120px;">
-     
-      <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
-    </video></div>
-  <br><br>
-</div>
+<section class="myback">
+  <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 5%;padding-bottom: 5%;">
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: aliceblue;">Obstacle Avodiance Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop controls muted style="padding-bottom: 5%;border-radius: 0%;">
+
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>           
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: aliceblue;">Control Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop controls muted style="padding-bottom: 5%;border-radius: 0%;">
+
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>            
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: aliceblue;">Line Follower Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop controls muted style="padding-bottom: 5%;border-radius: 0%;">
+
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>          
+    </div></div>
+    <div class="card-group" style="padding-left:10%;padding-right: 10%; padding-top: 2%;padding-bottom: 5%;">
+      <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+        <h5 class="card-title" style="text-align: center;color: aliceblue;">Game Based learning</h5>
+      <video class="video-fluid z-depth-1" autoplay loop controls muted style="padding-bottom: 5%;border-radius: 0%;">
+
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>           
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: aliceblue;">Advanced Programming</h5>
+      <video class="video-fluid z-depth-1" autoplay loop controls muted style="padding-bottom: 5%;border-radius: 0%;">
+
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>            
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: aliceblue;">Different Expanssion</h5>
+      <video class="video-fluid z-depth-1" autoplay loop controls muted style="padding-bottom: 5%;border-radius: 0%;">
+
+        <source src="https://mdbootstrap.com/img/video/Sail-Away.mp4" type="video/mp4" />
+      </video>         
+    </div>
+  </div>
 
 </section>
 <section style="margin-top: 10%;">
@@ -409,6 +464,8 @@
     <!-- Global Init -->
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/vdoplayer.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
