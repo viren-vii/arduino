@@ -22,6 +22,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
     <link rel="stylesheet" type="text/css" href="assets/css/editor.css">
     <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/reviews.css">
+
     <style>
         
         
@@ -94,7 +96,8 @@
                             <li class="scroll-to-section"><a href="#editors">Editors</a></li>
                             <li class="scroll-to-section"><a href="#offer">Services</a></li>
                             <li class="scroll-to-section"><a href="#about">About</a></li>
-                            <li class="scroll-to-section"><a href="#frequently-question">FAQs And Reviews</a></li>
+                            <li class="scroll-to-section"><a href="#frequently-question">FAQs And Rewiews</a></li>
+                            
                             <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -186,12 +189,20 @@
 
    
    <!-- ***** What we offer Start ***** -->
-   <section class="section" id="offer" style="height: 1200px;">
+   <section class="section" id="offer" style="height: 800px;">
     <div class="container">
         <p style="color: aliceblue; text-align: center;font-size: 60px; font-weight: bolder;">What We Offer </p><br><br><br><br>
         <div class="row" id="courses">
             
             <div class="owl-carousel owl-theme">
+                <div class="item service-item" style="padding: 5%;">
+                    <div class="icon">
+                        <i><img src="assets/images/training.png" alt=""></i>
+                    </div>
+                    <h5 class="service-title" style="font-size: 15px;">Leo - The Coding Robot</h5>
+                    <p style="font-size: 10px;padding-bottom: 16%;">Leo, a codable STEM robot kit for your kid(age 10+)</p>
+                    <a href="projects.html" class="main-button">Know More</a>
+                </div>
                 <div class="item service-item" style="padding: 5%;">
                     <div class="icon">
                         <i><img src="assets/images/robotic-arm (2).png" alt=""></i>
@@ -220,19 +231,7 @@
                 </div>
                 
             </div>
-            <div class="card text-center">
-                <div class="card-header">
-                  Hardware Course
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Leo - The Coding Robot</h5>
-                  <p class="card-text">Leo, a codable STEM robot kit for your kid(age 10+)</p>
-                  <a href="#" class="btn main-button">Read More</a>
-                </div>
-                <!-- <div class="card-footer text-muted">
-                  2 days ago
-                </div> -->
-            </div>
+           
         </div>
     </div>
 </section>
@@ -322,76 +321,43 @@
             <!-- ***** Section Title End ***** -->
 
             <div class="row" style="padding-top: 10%;">
-                <div class="left-text col-lg-6 col-md-6 col-sm-12">
-                    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                          <div class="carousel-item active" data-interval="10000">
-                            <div class="review">
-                                <div class="head-review">
-                                   <img class="reviewss" src="https://images.unsplash.com/photo-1488161628813-04466f872be2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80" width="250px">
-                                </div>
-                                <div class="body-review">
-                                   <div class="name-review" style="color: black;">Om Singh</div>
-                                   <div class="place-review" style="color: black;">Mumbai</div>
-                                   <div class="rating">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star-half"></i>
-                                   </div>
-                                   <div class="desc-review" style="color: black;" >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
-                                </div>
-                             </div>
+                <div class="left-text col-lg-6 col-md-6 col-sm-12" style="padding-right: 0%;">
+                    <div class="container33">
+                        <div class="card-carousel">
+                          <div class="card" id="1">
+                            <div class="image-container"></div>
+                            <h4 style="padding-bottom: 5%;">Om Singh</h4>
+                            
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
                           </div>
-                          <div class="carousel-item" data-interval="2000">
-                            <div class="review">
-                                <div class="head-review">
-                                   <img class="reviewss" src="https://images.unsplash.com/photo-1479936343636-73cdc5aae0c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" width="250px">
-                                </div>
-                                <div class="body-review">
-                                   <div class="name-review" style="color: black;">Ratik Zade</div>
-                                   <div class="place-review" style="color: black;">Wardha</div>
-                                   <div class="rating">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                   </div>
-                                   <div class="desc-review" style="color: black;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
-                                </div>
-                             </div>
+                          <div class="card" id="2">
+                            <div class="image-container"></div>
+                            <h4 style="padding-bottom: 5%;">Ratik zade</h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
                           </div>
-                          <div class="carousel-item">
-                            <div class="review">
-                                <div class="head-review">
-                                   <img class="reviewss" src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" width="250px">
-                                </div>
-                                <div class="body-review">
-                                   <div class="name-review" style="color: black;">Shreyash Chunarkar</div>
-                                   <div class="place-review" style="color: black;">Amravati</div>
-                                   <div class="rating">
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star"></i>
-                                      <i class="fas fa-star-half"></i>
-                                   </div>
-                                   <div class="desc-review" style="color: black;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati eligendi suscipit illum officia ex eos.</div>
-                                </div>
-                             </div>
+                          <div class="card" id="3">
+                            <div class="image-container"></div>
+                            <h4 style="padding-bottom: 5%;">Shreyash</h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+                          </div>  
+                          <div class="card" id="4">
+                            <div class="image-container"></div>
+                            <h4 style="padding-bottom: 5%;">Aseet</h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+                          </div>
+                          <div class="card" id="5">
+                            <div class="image-container"></div>
+                            <h4 style="padding-bottom: 5%;">Abhijeet</h4>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
                           </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
                       </div>
+                      
+                      
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="accordions is-first-expanded">
@@ -637,8 +603,6 @@
             <p class="copyright" style="text-align: center;">Made by RoboMonkee Website Team</p>
         </div>
     </footer>
-        <!-- ***** Footer End ***** -->
-
     
 
     <script src="assets/js/jquery-2.1.0.min.js"></script>
@@ -657,6 +621,7 @@
     <script src="assets/js/jquery.counterup.min.js"></script>
     <script src="assets/js/imgfix.min.js"></script> 
     <script src="assets/js/editor.js"></script> 
+    <script src="assets/js/reviews.js"></script> 
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
