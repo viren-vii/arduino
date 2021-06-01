@@ -18,7 +18,7 @@
   }
   
   .cola{
-    width: calc(30% - 2rem);
+    width: calc(35% - 2rem);
     margin: 1rem;
     cursor: pointer;
   }
