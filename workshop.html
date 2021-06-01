@@ -38,7 +38,9 @@
           overflow: hidden;
         } */
         .row.content {height: 800px}
-        
+        .card-text{
+          margin-bottom: 2%;
+        }
         /* Set gray background color and 100% height */
         .sidenav {
           background-color: #f1f1f1;
@@ -65,10 +67,9 @@
           font-weight: 900; 
           padding:20px; 
           position:absolute; 
+          bottom: 0;
           left:50%; transform: 
-          translate(-50%, -50%); 
-          bottom: 0; 
-          margin-bottom: 20px;
+          translate(-50%, -50%);
           color: white;
           background-color: rgb(19, 19, 19);
           transition: 0.5s;
@@ -93,16 +94,22 @@
             padding: 15px;
           }
           .row.content {height: auto;} 
+          a.bannerButton{
+            font-size: small;
+            padding: 5px;
+          }
         }
       </style>
     </head>
     
     <body>
         <section >
+          <div style="position: relative;">
             <a href="./index.html"><img src="assets/images/robomonkee.png" style="width: 20%; position:absolute; margin-left: 2%;"/></a>
             <a class="bannerButton" href="#workshops">Learn More</a>
             <div style="width: auto;" >
               <img src="assets/images/workshop.png" style="width: 100%;">
+            </div>
             </div>
           </section>
             <section style="padding-top: 10%;" id="workshops">
@@ -144,7 +151,7 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
                           </button>                       
-                           <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                           <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                         
                         
                                             
@@ -157,7 +164,8 @@
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>         
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                     <div class="card">
@@ -167,7 +175,8 @@
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>        
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                   </div>
@@ -189,7 +198,8 @@
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                     <div class="card">
@@ -199,7 +209,8 @@
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                   </div>
@@ -211,7 +222,8 @@
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>                 
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                     <div class="card">
@@ -221,7 +233,8 @@
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>      
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                     <div class="card">
@@ -231,7 +244,8 @@
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                   </div>
@@ -243,7 +257,8 @@
                         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>                 
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                     <div class="card">
@@ -253,7 +268,8 @@
                         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>      
+                          </button> 
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
                     </div>
                     </div>
                     

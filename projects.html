@@ -64,11 +64,11 @@
           font-weight: 900; 
           padding:20px; 
           position:absolute; 
-          float: right;
-          left:50%; transform: 
-          translate(-50%, -50%); 
+          
+          left:50%;
+          transform: translate(-50%, -50%); 
           bottom: 0; 
-          margin-bottom: 20px;
+          margin-bottom: 0px;
           color: white;
           background-color: rgb(19, 19, 19);
           transition: 0.5s;
@@ -93,6 +93,11 @@
             padding: 15px;
           }
           .row.content {height: auto;} 
+
+        a.bannerButton{
+            font-size: small;
+            padding: 5px;
+          }
         }
 
         body.modal-open {
@@ -108,13 +113,12 @@
     
     <body>
         <section >
-            <div style="width: auto;" >
+            <div style="width: auto; position: relative;" >
               <a href="./index.html"><img src="assets/images/robomonkee.png" style="width: 20%; position:absolute; left: 50%; transform: translate(-50%); "/></a>
               <a class="bannerButton" href="#projects">Learn More</a>
               <img src="assets/images/Project Assistance.png" style="width: 100%;">
             
             </div>
-            
             </section>
             <section style="padding-top: 10%;" id="projects">
                 <!-- The Modal -->
@@ -481,7 +485,8 @@
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
                           </button>                       
-                           <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a> 
+
                         
                         
                                             
@@ -493,7 +498,7 @@
                         <h5 class="card-title">LED Cube</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>         
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>          
                     </div>
                     </div>
                     <div class="card">
@@ -502,7 +507,7 @@
                         <h5 class="card-title">Quad Copter</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>        
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>         
                     </div>
                     </div>
                   </div>
@@ -514,7 +519,7 @@
                         </h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>    
                     </div>
                     </div>
                     <div class="card">
@@ -523,7 +528,7 @@
                         <h5 class="card-title">Better and Faster Emergency care during accidents and vehicle impact</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>    
                     </div>
                     </div>
                     <div class="card">
@@ -533,7 +538,7 @@
                         </h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal6" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>    
                     </div>
                     </div>
                   </div>
@@ -544,7 +549,7 @@
                         <h5 class="card-title">Person Tracking and Counting</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>                 
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>                  
                     </div>
                     </div>
                     <div class="card">
@@ -553,7 +558,7 @@
                         <h5 class="card-title">Fetching emergency medical records using facial scan</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>      
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>       
                     </div>
                     </div>
                     <div class="card">
@@ -563,7 +568,7 @@
                         </h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>   
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>    
                     </div>
                     </div>
                   </div>
@@ -574,7 +579,7 @@
                         <h5 class="card-title">BATTERY MANAGEMENT SYSTEM FOR LIPO(Battery)</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal10" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>                 
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>                  
                     </div>
                     </div>
                     <div class="card">
@@ -583,7 +588,7 @@
                         <h5 class="card-title">VOLTAGE AND CURRENT SENSOR</h5>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal11" style="text-align: center;font-size: small; margin-bottom: 3%;">
                             Know More
-                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a>      
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back </button></a>       
                     </div>
                     </div>
                     
