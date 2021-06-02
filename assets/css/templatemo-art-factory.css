@@ -1330,9 +1330,10 @@ contact
 footer
 --------------------------------------------- 
 */
-footer {
+/* footer {
   background-color: #fff;
-  padding: 60px 0px;
+  padding: 0px 0px;
+  bottom: 0;
 }
 
 footer .social {
@@ -1383,6 +1384,15 @@ footer .copyright {
     text-align: center;
     margin-top: 15px;
   }
+} */
+
+footer li i {
+  color: #cb2b5e;
+}
+footer li a:hover {
+  transition: 0.1s;
+  font-weight: bolder;
+  color: #cb2b5e;
 }
 
 /* 
