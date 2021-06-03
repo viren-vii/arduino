@@ -107,11 +107,30 @@
         body:not(.modal-open){
           padding-right: 0px !important;
         }
+        .floatingHomeButton{
+          box-shadow: 2px 6px 6px rgb(82, 82, 82); 
+          position: fixed;
+          margin: 20px 20px;
+          z-index :1; 
+          float:left; 
+          width: 3%; 
+          padding:10px; 
+          border: none;
+          background-color: white; 
+          border-radius: 500px ;
+          height: auto;
+          outline:none
+        }
+
+        .floatingHomeButton:hover img{transition: 0.2s; filter: invert(100);}
+        .floatingHomeButton:hover{transition: 0.2s; background-color: black;}
         
       </style>
     </head>
     
     <body>
+      <a href="./index.html"><button class="floatingHomeButton"><img style="max-width: 100%;" src="./assets/images/home.png"></button></a>
+
         <section >
             <div style="width: auto; position: relative;" >
               <a class="bannerButton" href="#projects" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Learn More</a>
