@@ -46,7 +46,65 @@
 
         .floatingHomeButton:hover img{transition: 0.2s; filter: invert(100);}
         .floatingHomeButton:hover{transition: 0.2s; background-color: black;}
+ 
 
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
       </style>
     </head>
     
@@ -153,29 +211,26 @@
         <section>
           <div class="row">
             <div class="col-6">
-          <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 10%;padding-bottom: 5%;">
+          <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 0%;padding-bottom: 5%;">
             <div class="card"  style="border: 0em;">
-              <img class="card-img-top" src="assets/images/fast.png" alt="Card image cap" style="max-width: 100px;max-height: 100px;align-self: center;">
+              <img class="card-img-top" src="assets/images/clipart/free shipping.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
               <div class="card-body">
                 <h5 class="card-title" style="text-align: center;">FREE SHIPPING</h5>
                 <p class="card-text" style="text-align: center;">Free shipping above ₹9999.00</p>
-                <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
             <div class="card"  style="border: 0em;">
-              <img class="card-img-top" src="assets/images/money-back.png" alt="Card image cap" style="max-width: 100px;max-height: 100px;align-self: center;">
+              <img class="card-img-top" src="assets/images/clipart/money back.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
               <div class="card-body">
                 <h5 class="card-title" style="text-align: center;">MONEY BACK GURANTEE</h5>
                 <p class="card-text" style="text-align: center;">100% money back guarantee.</p>
-                <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
             <div class="card"  style="border: 0em;">
-              <img class="card-img-top" src="assets/images/credit-card.png" alt="Card image cap" style="max-width: 100px;max-height: 100px;align-self: center;">
+              <img class="card-img-top" src="assets/images/clipart/secure payment.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
               <div class="card-body">
                 <h5 class="card-title" style="text-align: center;">SECURE PAYMENT</h5>
                 <p class="card-text" style="text-align: center;" >Secure payment via Credit cards, PayPal or bank transfer.</p>
-                <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
           </div>
@@ -234,7 +289,7 @@
         <source src="assets/images/line follower.mp4" type="video/mp4" />
       </video>          
     </div></div>
-    <div class="card-group" style="padding-left:10%;padding-right: 10%; padding-top: 2%;padding-bottom: 5%;">
+    <div class="card-group" style="padding-left:10%;padding-right: 10%; padding-top: 0%;padding-bottom:   15%;">
       <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
         <h5 class="card-title" style="text-align: center;color: aliceblue;">Voice Control</h5>
       <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
@@ -263,35 +318,31 @@
   <h2 style="text-align: center;margin-bottom: 60px;">The First STEM Robot Friend of Kids</h2>
   <div class="card-deck" style="padding-left: 10%;padding-right: 10%;">
     <div class="card"  style="border: 0em;">
-      <img class="card-img-top" src="assets/images/home-repair.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
+      <img class="card-img-top" src="assets/images/clipart/easy to build.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Easy Building</h5>
         <p class="card-text" style="text-align: center;">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
     <div class="card"  style="border: 0em;">
-      <img class="card-img-top" src="assets/images/playing-videogame.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
+      <img class="card-img-top" src="assets/images/clipart/simple playing.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Simple Playing</h5>
         <p class="card-text" style="text-align: center;">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
     <div class="card"  style="border: 0em;">
-      <img class="card-img-top" src="assets/images/confetti.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
+      <img class="card-img-top" src="assets/images/clipart/fun programming.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Fun Programming</h5>
         <p class="card-text" style="text-align: center;">This card has supporting text below as a natural lead-in to additional content.</p>
-        <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
     <div class="card"  style="border: 0em;">
-      <img class="card-img-top" src="assets/images/robot.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
+      <img class="card-img-top" src="assets/images/clipart/own robot.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title" style="text-align: center;">Create your own Robot</h5>
         <p class="card-text" style="text-align: center;">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-        <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
       </div>
     </div>
   </div>
@@ -302,13 +353,80 @@
         <div class="container3" style="padding: 10%;">
             <h2 style="text-align: center; font-family: monospace;">In The Box</h2>
             <br><br>
-            <img src="assets/images/inthebox2.png" style="padding-left: 10%;padding-right: 10%;">
+            <img src="assets/images/leo in the box.png" style="padding-left: 10%;padding-right: 10%;">
           </div>
         </section>
         <section>
           <div class="container3" style="padding-left: 20%;padding-right: 20%;padding-bottom: 10%;">
             <h2 style="text-align: center; padding-bottom: 5%;">Reviews</h2>
-            <div class="card"  style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+            <span class="heading">User Rating</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.1 average based on 254 reviews.</p>
+<hr style="border:1px solid #8a8a8a" style="margin-bottom: 5%;">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-5" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>150</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-4" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>63</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-3" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>15</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-2" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>6</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-1" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>20</div>
+  </div>
+</div>
+
+            <div class="card"  style="border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
               <div class="card-body">
                 <h5 class="card-title" style="color: white;">Good Product</h5>
                 <div>
@@ -365,42 +483,34 @@
             </div>
             <br>
             
-           
+            <h2 style="margin-top: 5%;">Write Your Review</h2>
+            <div class="form-group">
+              <label class="control-label" for="review"> <br>  Your Review:</label>
+              <textarea class="form-control" rows="10" placeholder="Your Reivew" name="review" id="review" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></textarea>
+              <span id="reviewInfo" class="help-block pull-right">
+            </div>
+            <h2>Your Info:</h2>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" placeholder="Name" name="name" id="name" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
+              </div>
+              <div class="form-group">
+                <label for="city">City:</label>
+                <input class="form-control" type="text" placeholder="City" name="city" id="city" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" type="text" placeholder="Email" name="email" id="email" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
+              </div>
+              <a href="#" id="submit" class="btn btn-primary" style="border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">Submit</a>
+              <input id="submitForm" type="submit" style="display:none;">
+              <span id="submitInfo" class="help-block">
+                By clicking <strong>Submit</strong>, I authorize the sharing of my name and review on the web. (email will not be shared)
+              </span>
         </section>
-        <section style="margin-bottom: 10%;">
-          <h2 style="text-align: center;margin-bottom: 60px;">Let Them Speak for Us </h2>
-          <div class="card-deck" style="padding-left: 10%;padding-right: 10%;">
-            <div class="card"  style="border: 0em;">
-              <img class="card-img-top" src="assets/images/home-repair.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title" style="text-align: center;">A</h5>
-                <p class="card-text" style="text-align: center;">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            <div class="card"  style="border: 0em;">
-              <img class="card-img-top" src="assets/images/playing-videogame.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title" style="text-align: center;">B</h5>
-                <p class="card-text" style="text-align: center;">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            <div class="card"  style="border: 0em;">
-              <img class="card-img-top" src="assets/images/confetti.png" style="max-width: 200px; max-height: 200px; align-self: center;" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title" style="text-align: center;">C</h5>
-                <p class="card-text" style="text-align: center;">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text" style="text-align: center;"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            
-          </div>
-        
-        </section>
+       
         <section style="background-color: rgb(73, 73, 95);height: 80%;"> 
-          <img src="assets/images/chatbot.png" style="max-width: 200px;max-height: 200px;margin-left: 45%;margin-right: 45%;margin-top: 5%;">
-          <div class="card-deck" style="padding-top: 0%;align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%;">
+          <img src="assets/images/chatbot.png" style="max-width: 200px;max-height: 200px;margin-left: 45%;margin-right: 45%;margin-top: 5%;">          <div class="card-deck" style="padding-top: 0%;align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%;">
           <div class="card"  style="border: 0em;max-width: 1000px;border-radius: 40px;">
             <div class="card-body">
              
