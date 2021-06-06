@@ -377,21 +377,31 @@ void loop(){
 
 
 function copyToClipboard(element,st){
-    var textarea = document.createElement('textarea');
-    textarea.textContent = document.getElementById(element).innerText;
-    document.body.appendChild(textarea);
+
+
+    var dummy = document.createElement("textarea");
+          document.body.appendChild(dummy);
+          dummy.value = document.getElementById(element).innerText;
+          dummy.select();
+          document.execCommand("copy");
+          document.body.removeChild(dummy);
+
+
+    // var textarea = document.createElement('textarea');
+    // textarea.textContent = document.getElementById(element).innerText;
+    // document.body.appendChild(textarea);
   
-    var selection = document.getSelection();
-    var range = document.createRange();
+    // var selection = document.getSelection();
+    // var range = document.createRange();
     
-    range.selectNode(textarea);
-    selection.removeAllRanges();
-    selection.addRange(range);
+    // range.selectNode(textarea);
+    // selection.removeAllRanges();
+    // selection.addRange(range);
   
     alert(st=='upload'?'Copy success! Paste the code in editor.':'Copy success!', document.execCommand('copy'));
-    selection.removeAllRanges();
+    // selection.removeAllRanges();
   
-    document.body.removeChild(textarea);
+    // document.body.removeChild(textarea);
     
   }
 
@@ -670,3 +680,5 @@ void loop(){
 
     document.getElementById("arduinoCodeDiv").innerText = code;
 }
+
+

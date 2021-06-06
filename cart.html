@@ -102,10 +102,13 @@ nav{
     rgba(203, 43, 94, 1) 0%,
     rgba(117, 58, 136, 1) 100%
   );
-  
+  width: 100%;
   color: white;
 }
+.navbar{
+  border-radius: 0;
 
+}
 /* Individual bars */
 .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
 .bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
@@ -142,13 +145,13 @@ nav{
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
+                Reviews
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#reviewsSection">Reviews Stats</a>
+                <a class="dropdown-item" href="#parentReviews">Happy Parents</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="#writeReview">Write a review!</a>
               </div>
             </li>
           </ul>
@@ -400,7 +403,7 @@ nav{
             <img src="assets/images/leo in the box.png" style="padding-left: 10%;padding-right: 10%;">
           </div>
         </section>
-        <section>
+        <section id="reviewsSection">
           <div class="container3" style="padding-left: 20%;padding-right: 20%;padding-bottom: 10%;">
             <h2 style="text-align: center; padding-bottom: 5%;">Reviews</h2>
             <span class="heading">User Rating</span>
@@ -470,7 +473,7 @@ nav{
   </div>
 </div>
 
-            <div class="card"  style="border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+            <div id="parentReviews" class="card"  style="border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
               <div class="card-body">
                 <h5 class="card-title" style="color: white;">Good Product</h5>
                 <div>
@@ -528,7 +531,7 @@ nav{
             <br>
             
             <h2 style="margin-top: 5%;">Write Your Review</h2>
-            <div class="form-group">
+            <div class="form-group" id="writeReview">
               <label class="control-label" for="review"> <br>  Your Review:</label>
               <textarea class="form-control" rows="10" placeholder="Your Reivew" name="review" id="review" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></textarea>
               <span id="reviewInfo" class="help-block pull-right">
