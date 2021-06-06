@@ -23,6 +23,7 @@
     <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
 
     <!-- Additional CSS Files -->
+
     <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
     <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
     <style>
@@ -88,6 +89,22 @@
   text-align: center;
   color: white;
 }
+nav{
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(117, 58, 136, 1) 0%,
+    rgba(203, 43, 94, 1) 0%,
+    rgba(117, 58, 136, 1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(117, 58, 136, 1) 0%,
+    rgba(203, 43, 94, 1) 0%,
+    rgba(117, 58, 136, 1) 100%
+  );
+  
+  color: white;
+}
 
 /* Individual bars */
 .bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
@@ -109,12 +126,39 @@
     </head>
     
     <body>
-      <a href="./index.html"><button class="floatingHomeButton"><img style="max-width: 100%;" src="./assets/images/home.png"></button></a>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-light" href="./index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="#botInfo">Bot Information <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#botGallery">Gallery</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-        <section >
+        <section id="botInfo">
           <div class="container">
             <div class="heading-section">
-                <h2>Bot Details</h2>
+                <h2>  </h2>
             </div>
             <div class="row">
               <div class="col-md-6" style="padding-right: 5%;">
@@ -262,11 +306,11 @@
         
         </section>
         
-         <section class="myback">
+         <section class="myback" id='botGallery'>
            <h1 style="color: aliceblue;text-align: center;padding-top: 20%;">Space For Image</h1>
          </section>
       
-<section class="myback">
+<section class="myback" >
   <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 5%;padding-bottom: 5%;">
     <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
       <h5 class="card-title" style="text-align: center;color: aliceblue;">Obstacle Avodiance Mode</h5>

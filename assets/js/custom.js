@@ -1,6 +1,6 @@
 (function($) {
   "use strict";
-
+  try{
   $(".owl-carousel").owlCarousel({
     loop: true,
     margin: 30,
@@ -18,6 +18,9 @@
       }
     }
   });
+}catch(err){
+  console.log(err);
+}
 
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
