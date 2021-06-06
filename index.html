@@ -164,7 +164,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="assets/images/block-coding.png" class="d-block w-75 carousel-image" alt="...">
-          <button type="button" class="carousel-btn shadow-lg" >Block Coding</button>
+          <button type="button" class="carousel-btn shadow-lg" onclick="window.location.href = './Arduino-Blockly/index1.html';">Block Coding</button>
         </div>
         <div class="carousel-item">
           <img src="assets/images/c++-coding.png" class="d-block w-75 carousel-image" alt="...">
@@ -611,22 +611,22 @@
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Full Name" required="" class="contact-field" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;">
+                                <input name="name" type="text" id="name" placeholder="Full Name" required="" class="contact-field" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;" required>
                               </fieldset>
                             </div>
                             <div class="col-md-6 col-sm-12">
                               <fieldset>
-                                <input name="email" type="text" id="email" placeholder="E-mail" required="" class="contact-field" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;">
+                                <input name="email" type="text" id="email" placeholder="E-mail" required="" class="contact-field" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;" required>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Your Message" required="" class="contact-field" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 25px;"></textarea>
+                                <textarea name="message" rows="6" id="message" placeholder="Your Message" required="" class="contact-field" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 25px;" required></textarea>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="submit" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;">Send It</button>
+                                <button type="button" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;" onclick="return storeToFirebase('contactUs', 'contactUsCollection');">Send It</button>
                               </fieldset>
                             </div>
                           </div>
@@ -696,9 +696,9 @@
           <p class="text-muted mb-4">To get Latest Updates and news from us, subscribe our newsletter!</p>
           <div class="p-1 rounded border">
             <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+              <input id="newsletterEmail" type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
               <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                <button id="button-addon1" type="button" class="btn btn-link" onclick="return storeToFirebase('newsletter', 'newsletterCollection');"><i class="fa fa-paper-plane"></i></button>
               </div>
             </div>
           </div>
@@ -715,10 +715,10 @@
   </footer>
   <!-- End Footer-->
     
-
+    <script src="./assets/js/firebase.js" ></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
-
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>

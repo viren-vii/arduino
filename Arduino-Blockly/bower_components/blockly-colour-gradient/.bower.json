@@ -1,0 +1,15 @@
+{
+  "name": "blockly-colour-gradient",
+  "homepage": "https://github.com/SPE-Systemhaus/blockly-colour-gradient",
+  "version": "1.0.2",
+  "_release": "1.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.0.2",
+    "commit": "bc8298eea5fa9b25fd08e495b272935b62c7d8b3"
+  },
+  "_source": "https://github.com/SPE-Systemhaus/blockly-colour-gradient.git",
+  "_target": "^1.0.2",
+  "_originalSource": "blockly-colour-gradient",
+  "_direct": true
+}

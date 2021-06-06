@@ -502,7 +502,7 @@
                 <label for="email">Email:</label>
                 <input class="form-control" type="text" placeholder="Email" name="email" id="email" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
               </div>
-              <a href="#" id="submit" class="btn btn-primary" style="border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">Submit</a>
+              <a id="submit" class="btn btn-primary" style="border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;" onclick="return storeToFirebase('review', 'reviewCollection');">Submit</a>
               <input id="submitForm" type="submit" style="display:none;">
               <span id="submitInfo" class="help-block">
                 By clicking <strong>Submit</strong>, I authorize the sharing of my name and review on the web. (email will not be shared)
@@ -516,8 +516,8 @@
              
               <h5 class="card-title" >Hi RoboMonkee ,</h5>
               <p class="card-text" style="padding-bottom: 2%;">I Want To Buy Leo - The Robotot.</p>
-                  <input name="email" type="text" id="email" placeholder="   E-mail" required="" class="contact-field" style="margin-bottom: 5%;padding-bottom: 2%;padding-top: 2%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 15px;">
-                  <button type="submit" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;margin-left: 5%;">Join US</button>
+                  <input name="email" type="text" id="emailBuy" placeholder="   E-mail" required="" class="contact-field" style="margin-bottom: 5%;padding-bottom: 2%;padding-top: 2%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 15px;">
+                  <button type="button" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;margin-left: 5%;" onclick="return storeToFirebase('iWantBot', 'iWantBotCollection');">Join US</button>
           </div>
         </div>
         </section>
@@ -558,9 +558,9 @@
           <p class="text-muted mb-4">To get Latest Updates and news from us, subscribe our newsletter!</p>
           <div class="p-1 rounded border">
             <div class="input-group">
-              <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+              <input type="email" id="newsletterEmail" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
               <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn btn-link"><i class="fa fa-paper-plane"></i></button>
+                <button id="button-addon1" type="button" class="btn btn-link" onclick="return storeToFirebase('newsletter','newsletterCollection');"><i class="fa fa-paper-plane"></i></button>
               </div>
             </div>
           </div>
@@ -576,6 +576,14 @@
     </div>
   </footer>
   <!-- End Footer-->
+
+  <script src="./assets/js/firebase.js" ></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
         
     <!-- Global Init -->
     <script src="assets/js/cart.js"></script>

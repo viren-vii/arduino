@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>
+        Robo Monkee Editor
+      </title>
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <link rel="icon" type="image/x-icon" href="l.svg">
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <link rel="stylesheet" href="index.css">
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <script type="text/javascript" src="blockly_compressed.js"></script>
+      <script type="text/javascript" src="blocks_compressed.js"></script>
+      <script type="text/javascript" src="javascript_compressed.js"></script>
+      <script type="text/javascript" src="msg/js/en.js"></script>
+      <script type="text/javascript" src="FileSaver.min.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script type="text/javascript" src="block_setup.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <script type="text/javascript" src="block_code_generator.js"></script>
+      <script type="text/javascript" src="functions.js"></script>
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/styles/default.min.css">
+      <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/highlight.min.js"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <script type="text/javascript" src="bower_components/blockly-colour-gradient/colour-gradient.js"></script>
+      <!--   --------------------------------------------------------------------------------------------------------------------------------------     -->
+  </head>
+  <body onload="auto_save_and_restore_blocks()">
+    <img src="robomonkee.svg">
+    <div id="fakeload"></div>
+      <div id="load"></div>
+    <div id="sideBar">
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+          <header class="w3-container bg">
+            <span onclick="document.getElementById('id01').style.display='none'" 
+              class="w3-button w3-display-topright">&times;</span>
+            <h2 id="modal_header">Modal Header</h2>
+            <button class="button" style="font-size: 20px;" onclick="copycode()">Copy Code</button>
+          </header>
+          <div class="w3-container" id="content">
+            <br>
+            <br>
+          </div>
+        </div>
+        <br>
+        <br>
+      </div>
+      <!--
+        <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top w3-card-4">
+        <header class="w3-container bg"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2 class="modal_header">Modal Header</h2>
+          <button class="button" style="font-size: 20px;">Copy Code</button>
+        </header>
+        <div class="w3-container" id="content">
+          <br>
+          <br>
+        </div>
+        </div>
+            <br>
+        <br>
+        </div>
+        -->
+      <!--        <div class="closeButton">x</div>-->
+      <ul>
+        <!--            <li style="text-align: right;">x</li>-->
+        <li onclick="save()">Download Code</li>
+        <li onclick="copycode()">Copy Code</li>
+        <li onclick="showcode()">Show Code</li>
+        <li onclick="uploadClick()">Upload Code</li>
+        <li onclick="discard()">Discard Code</li>
+        <li onclick=document.getElementById("sideBar").classList.toggle("active");>Close</li>
+      </ul>
+    </div>
+    <div id="overlay"></div>
+    <div class="codeScreen">
+      <div class="codeHere">
+        <div class="navBar">
+          <div class="buttons">
+            <button class="button" style="margin-left: 10px; margin-right: 10px;" onclick="undo()">Undo</button>
+            <button class="button" style="margin-left: 10px; margin-right: 10px;" onclick="redo()">Redo</button>
+            <button class="button" style="margin-left: 10px; margin-right: 10px;" onclick="show()">Get Code</button>
+          </div>
+        </div>
+        <div id="blocklyDiv"></div>
+        <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="Logic" colour="#5b80a5">
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block type="logic_null"></block>
+    <block type="logic_ternary"></block>
+  </category>
+  <category name="Loops" colour="#5ba55b">
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_whileUntil">
+      <field name="MODE">WHILE</field>
+    </block>
+    <block type="controls_for">
+      <field name="VAR" id="l;Pnhy),kN{$h30$xac)">i</field>
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach">
+      <field name="VAR" id="Je^ZrjDx!~cd3(zw)6$.">j</field>
+    </block>
+    <block type="controls_flow_statements">
+      <field name="FLOW">BREAK</field>
+    </block>
+  </category>
+  <category name="Math" colour="#5b67a5">
+    <block type="math_number">
+      <field name="NUM">0</field>
+    </block>
+    <block type="math_arithmetic">
+      <field name="OP">ADD</field>
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <field name="OP">ROOT</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <field name="OP">SIN</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant">
+      <field name="CONSTANT">PI</field>
+    </block>
+    <block type="math_number_property">
+      <mutation divisor_input="false"></mutation>
+      <field name="PROPERTY">EVEN</field>
+      <value name="NUMBER_TO_CHECK">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_round">
+      <field name="OP">ROUND</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">3.1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_on_list">
+      <mutation op="SUM"></mutation>
+      <field name="OP">SUM</field>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constrain">
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">50</field>
+        </shadow>
+      </value>
+      <value name="LOW">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="HIGH">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_int">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_float"></block>
+  </category>
+  <category name="Text" colour="#5ba58c">
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
+    <block type="text_append">
+      <field name="VAR" id="KyN*wt(|sf5[)[Y[KpW0">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_isEmpty">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="i#|vX#Je{k]_FsI.T[)x">text</field>
+        </block>
+      </value>
+      <value name="FIND">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="i#|vX#Je{k]_FsI.T[)x">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="i#|vX#Je{k]_FsI.T[)x">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_changeCase">
+      <field name="CASE">UPPERCASE</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="Lists" colour="#745ba5">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with">
+      <mutation items="3"></mutation>
+    </block>
+    <block type="lists_repeat">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="F1]x|E5+iusKdHkeEpKW">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <mutation statement="false" at="true"></mutation>
+      <field name="MODE">GET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="F1]x|E5+iusKdHkeEpKW">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <mutation at="true"></mutation>
+      <field name="MODE">SET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="F1]x|E5+iusKdHkeEpKW">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="F1]x|E5+iusKdHkeEpKW">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <mutation mode="SPLIT"></mutation>
+      <field name="MODE">SPLIT</field>
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort">
+      <field name="TYPE">NUMERIC</field>
+      <field name="DIRECTION">1</field>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+  <sep></sep>
+  <category name="Arduino" colour="#14c9cd">
+    <block type="arduino"></block>
+    <block type="delay">
+      <field name="delay">0</field>
+    </block>
+    <block type="comment">
+      <field name="comment">Add Comment</field>
+    </block>
+    <block type="print">
+      <field name="print">Print</field>
+    </block>
+    <block type="global_speed">
+      <value name="left">
+        <block type="_150">
+          <field name="NAME">150</field>
+        </block>
+      </value>
+      <value name="right">
+        <block type="_150">
+          <field name="NAME">150</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <category name="Libraries" colour="#a7226e">
+    <block type="line"></block>
+    <block type="wall"></block>
+  </category>
+  <sep></sep>
+  <category name="Line Follower" colour="#6b0772">
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="ir1">
+          <value name="S1">
+            <block type="s1">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+          <value name="S2">
+            <block type="s2">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+          <value name="S3">
+            <block type="s3">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+          <value name="S4">
+            <block type="s4">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+          <value name="S5">
+            <block type="s5">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="move_line_follower">
+          <field name="move_dropdown">left</field>
+          <value name="speed">
+            <block type="en">
+              <value name="right_moto_speed">
+                <block type="_150">
+                  <field name="NAME">150</field>
+                </block>
+              </value>
+              <value name="left_motor_speed">
+                <block type="_150">
+                  <field name="NAME">150</field>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block type="ir1">
+      <value name="S1">
+        <block type="s1">
+          <field name="Value_LS4">low</field>
+        </block>
+      </value>
+      <value name="S2">
+        <block type="s2">
+          <field name="Value_LS4">low</field>
+        </block>
+      </value>
+      <value name="S3">
+        <block type="s3">
+          <field name="Value_LS4">low</field>
+        </block>
+      </value>
+      <value name="S4">
+        <block type="s4">
+          <field name="Value_LS4">low</field>
+        </block>
+      </value>
+      <value name="S5">
+        <block type="s5">
+          <field name="Value_LS4">low</field>
+        </block>
+      </value>
+    </block>
+    <block type="move">
+      <field name="move_dropdown">left</field>
+      <value name="speed">
+        <block type="en">
+          <value name="right_moto_speed">
+            <block type="_150">
+              <field name="NAME">150</field>
+            </block>
+          </value>
+          <value name="left_motor_speed">
+            <block type="_150">
+              <field name="NAME">150</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="ir2">
+          <value name="S2">
+            <block type="s2">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+          <value name="S3">
+            <block type="s3">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+          <value name="S4">
+            <block type="s4">
+              <field name="Value_LS4">low</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="s1">
+      <field name="Value_LS4">low</field>
+    </block>
+    <block type="s2">
+      <field name="Value_LS4">low</field>
+    </block>
+    <block type="s3">
+      <field name="Value_LS4">low</field>
+    </block>
+    <block type="s4">
+      <field name="Value_LS4">low</field>
+    </block>
+    <block type="s4">
+      <field name="Value_LS4">low</field>
+    </block>
+    <block type="ir2"></block>
+    <block type="ir1"></block>
+    <block type="controls_if"></block>
+  </category>
+  <category name="Wall Follower" colour="#fea120">
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="logic_compare">
+          <field name="OP">EQ</field>
+          <value name="A">
+            <block type="distance"></block>
+          </value>
+          <value name="B">
+            <block type="_0">
+              <field name="NAME">0</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="move">
+          <field name="move_dropdown">left</field>
+          <value name="speed">
+            <block type="en">
+              <value name="right_moto_speed">
+                <block type="_150">
+                  <field name="NAME">150</field>
+                </block>
+              </value>
+              <value name="left_motor_speed">
+                <block type="_150">
+                  <field name="NAME">150</field>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+      </statement>
+    </block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+      <value name="A">
+        <block type="distance"></block>
+      </value>
+      <value name="B">
+        <block type="_0">
+          <field name="NAME">0</field>
+        </block>
+      </value>
+    </block>
+    <block type="move">
+      <field name="move_dropdown">left</field>
+      <value name="speed">
+        <block type="en">
+          <value name="right_moto_speed">
+            <block type="_150">
+              <field name="NAME">150</field>
+            </block>
+          </value>
+          <value name="left_motor_speed">
+            <block type="_150">
+              <field name="NAME">150</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+      <value name="A">
+        <block type="logic_compare">
+          <field name="OP">EQ</field>
+          <value name="A">
+            <block type="distance"></block>
+          </value>
+          <value name="B">
+            <block type="_0">
+              <field name="NAME">0</field>
+            </block>
+          </value>
+        </block>
+      </value>
+      <value name="B">
+        <block type="logic_compare">
+          <field name="OP">EQ</field>
+          <value name="A">
+            <block type="distance"></block>
+          </value>
+          <value name="B">
+            <block type="_0">
+              <field name="NAME">0</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="delay">
+      <field name="delay">0</field>
+    </block>
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+    <block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block type="logic_null"></block>
+    <block type="logic_negate"></block>
+  </category>
+  <sep></sep>
+  <category name="Remote" colour="#fcc300">
+    <block type="remote">
+      <value name="button_set_1">
+        <block type="_1">
+          <value name="set1">
+            <block type="button_horizontal_slot_2">
+              <value name="button_set_3">
+                <block type="remote_option_1">
+                  <field name="options_dropdown">forward()</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="set2">
+            <block type="button_horizontal_slot_1">
+              <value name="button_set_1">
+                <block type="remote_option_4">
+                  <field name="options_dropdown">left()</field>
+                </block>
+              </value>
+              <value name="button_set_2">
+                <block type="remote_option_2">
+                  <field name="options_dropdown">right()</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="set3">
+            <block type="button_horizontal_slot_2">
+              <value name="button_set_3">
+                <block type="remote_option_3">
+                  <field name="options_dropdown">backward()</field>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+      </value>
+      <value name="button_set_2">
+        <block type="_1">
+          <value name="set1">
+            <block type="button_horizontal_slot_2">
+              <value name="button_set_3">
+                <block type="remote_option_5">
+                  <field name="options_dropdown">led()</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="set2">
+            <block type="button_horizontal_slot_1">
+              <value name="button_set_1">
+                <block type="remote_option_8">
+                  <field name="options_dropdown">spin_left()</field>
+                </block>
+              </value>
+              <value name="button_set_2">
+                <block type="remote_option_6">
+                  <field name="options_dropdown">spin_right()</field>
+                </block>
+              </value>
+            </block>
+          </value>
+          <value name="set3">
+            <block type="button_horizontal_slot_2">
+              <value name="button_set_3">
+                <block type="remote_option_7">
+                  <field name="options_dropdown">buzzer()</field>
+                </block>
+              </value>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="remote"></block>
+    <block type="_1"></block>
+    <block type="button_horizontal_slot_1"></block>
+    <block type="button_horizontal_slot_2"></block>
+    <block type="remote_option_1">
+      <field name="options_dropdown">forward()</field>
+    </block>
+    <block type="remote_option_2">
+      <field name="options_dropdown">right()</field>
+    </block>
+    <block type="remote_option_4">
+      <field name="options_dropdown">left()</field>
+    </block>
+    <block type="remote_option_3">
+      <field name="options_dropdown">backward()</field>
+    </block>
+    <block type="remote_option_5">
+      <field name="options_dropdown">led()</field>
+    </block>
+    <block type="remote_option_6">
+      <field name="options_dropdown">spin_right()</field>
+    </block>
+    <block type="remote_option_7">
+      <field name="options_dropdown">buzzer()</field>
+    </block>
+    <block type="remote_option_7">
+      <field name="options_dropdown">buzzer()</field>
+    </block>
+  </category>
+  <category name="Voice Control" colour="#aa0114">
+    <block type="set_command">
+      <statement name="NAME">
+        <block type="voice">
+          <field name="NAME">*Enter Command*</field>
+          <field name="move_dropdown">left</field>
+          <next>
+            <block type="voice">
+              <field name="NAME">*Enter Command*</field>
+              <field name="move_dropdown">right</field>
+              <next>
+                <block type="voice">
+                  <field name="NAME">*Enter Command*</field>
+                  <field name="move_dropdown">forward</field>
+                  <next>
+                    <block type="voice">
+                      <field name="NAME">*Enter Command*</field>
+                      <field name="move_dropdown">backward</field>
+                      <next>
+                        <block type="voice">
+                          <field name="NAME">*Enter Command*</field>
+                          <field name="move_dropdown">deg360</field>
+                          <next>
+                            <block type="voice">
+                              <field name="NAME">*Enter Command*</field>
+                              <field name="move_dropdown">stop</field>
+                              <next>
+                                <block type="voice">
+                                  <field name="NAME">*Enter Command*</field>
+                                  <field name="move_dropdown">led</field>
+                                  <next>
+                                    <block type="voice">
+                                      <field name="NAME">*Enter Command*</field>
+                                      <field name="move_dropdown">buzzer</field>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="set_command"></block>
+    <block type="voice">
+      <field name="NAME">*Enter Command*</field>
+      <field name="move_dropdown">left</field>
+    </block>
+  </category>
+  <category name="Arena" colour="#264653">
+    <block type="start">
+      <statement name="NAME">
+        <block type="move_hard_code">
+          <field name="move_dropdown">left</field>
+          <field name="delay">10</field>
+          <next>
+            <block type="move_hard_code">
+              <field name="move_dropdown">right</field>
+              <field name="delay">10</field>
+              <next>
+                <block type="move_hard_code">
+                  <field name="move_dropdown">forward</field>
+                  <field name="delay">10</field>
+                  <next>
+                    <block type="move_hard_code">
+                      <field name="move_dropdown">backward</field>
+                      <field name="delay">10</field>
+                      <next>
+                        <block type="move_hard_code">
+                          <field name="move_dropdown">spin_left</field>
+                          <field name="delay">10</field>
+                          <next>
+                            <block type="move_hard_code">
+                              <field name="move_dropdown">spin_right</field>
+                              <field name="delay">10</field>
+                              <next>
+                                <block type="led">
+                                  <field name="led_buzzer">led</field>
+                                  <field name="delay">2</field>
+                                  <next>
+                                    <block type="led">
+                                      <field name="led_buzzer">buzzer</field>
+                                      <field name="delay">2</field>
+                                    </block>
+                                  </next>
+                                </block>
+                              </next>
+                            </block>
+                          </next>
+                        </block>
+                      </next>
+                    </block>
+                  </next>
+                </block>
+              </next>
+            </block>
+          </next>
+        </block>
+      </statement>
+    </block>
+    <block type="start"></block>
+    <block type="move_hard_code">
+      <field name="move_dropdown">left</field>
+      <field name="delay">10</field>
+    </block>
+    <block type="led">
+      <field name="led_buzzer">led</field>
+      <field name="delay">2</field>
+    </block>
+  </category>
+</xml>
+      </div>
+    </div>
+    <script>
+      var toolbox = document.getElementById("toolbox");
+      
+      var options = { 
+      toolbox : toolbox, 
+      collapse : true, 
+      comments : true, 
+      disable : true, 
+      maxBlocks : Infinity, 
+      trashcan : true, 
+      horizontalLayout : false, 
+      toolboxPosition : 'start', 
+      css : true, 
+      media : 'https://blockly-demo.appspot.com/static/media/', 
+      rtl : false, 
+      scrollbars : true, 
+      sounds : true, 
+      oneBasedIndex : true, 
+      grid : {
+      spacing : 20, 
+      length : 3, 
+      colour : '#888', 
+      snap : false
+      }, 
+      zoom : {
+      controls : true, 
+      wheel : true, 
+      startScale : 1, 
+      maxScale : 3, 
+      minScale : 0.3, 
+      scaleSpeed : 1.2
+      }
+      };
+        
+      
+      /* Inject your workspace */ 
+      var workspace = Blockly.inject("blocklyDiv", options);
+      
+      /* Load Workspace Blocks from XML to workspace. Remove all code below if no blocks to load */
+      
+      /* TODO: Change workspace blocks XML ID if necessary. Can export workspace blocks XML from Workspace Factory. */
+      var workspaceBlocks = document.getElementById("workspaceBlocks");
+      
+      /* Load blocks to workspace. */
+      Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+    </script>
+      <script type="text/javascript" src="bower_components/blockly-colour-gradient/colour-gradient.js"></script>
+  </body>
