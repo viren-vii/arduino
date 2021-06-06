@@ -1394,6 +1394,9 @@ footer li a:hover {
   font-weight: bolder;
   color: #cb2b5e;
 }
+.fa {
+  font-size: 30px;
+}
 /* 
 ---------------------------------------------
 preloader
