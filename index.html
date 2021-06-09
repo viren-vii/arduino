@@ -4,7 +4,7 @@
   <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=1440">
+    <meta name="viewport" content="width=1440" >
     <meta name="description" content="Robo Monkee">
     <meta name="keywords" content="Robot, Robo Monkee, robomonkee, Robomonkee, RoboMonkee, Robot Tutorials, Arduino, C++, Robotics Workshop">
     <meta name="author" content="RoboMonkee">
@@ -117,7 +117,11 @@
 
 
     <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area" id="welcome">
+    <div class="welcome-area1" id="welcome1" style="background-image: linear-gradient(
+      to right,
+      rgb(211, 91, 55),
+      rgb(153, 47, 163)
+    );">
 
         <!-- ***** Header Text Start ***** -->
      
@@ -128,14 +132,14 @@
                 
                 <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
                     <div class="left-heading"><br>
-                        <h5 style="color: aliceblue; margin-top: 40%;">LEO - The Programmable Robot</h5>
+                        <h5 style="color: aliceblue; margin-top: 15%;">LEO - The Programmable Robot</h5>
                     </div>
                     <div class="left-text">
-                        <p style="color: aliceblue; size: 100px;padding-top: 5%;" >Leo is a STEM coding robot kit for beginners, moderates, and specialists that makes instructing and learning robot coding easy and exciting. Simply with a screwdriver, and bit by bit directions, and a master syllabus, children can fabricate a robot without any preparation and experience the delights of hands-on creation. As they get along, they will find out about an assortment of mechanical apparatus and electronic parts, will grasp the essentials of block-based programming as well as C++, and build their logical thinking to the next level.</p>
+                        <p style="color: aliceblue; size: 100px;padding-top: 15%;padding-bottom: 10%;" >Leo is a STEM coding robot kit for beginners, moderates, and specialists that makes instructing and learning robot coding easy and exciting. Simply with a screwdriver, and bit by bit directions, and a master syllabus, children can fabricate a robot without any preparation and experience the delights of hands-on creation. As they get along, they will find out about an assortment of mechanical apparatus and electronic parts, will grasp the essentials of block-based programming as well as C++, and build their logical thinking to the next level.</p>
                         <a href="cart.html" class="main-button" style="box-shadow: 2px 2px 6px rgba(0,0,0,0.5);">Find More About Leo !</a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-top: 10%;padding-left: 25px;padding-bottom: 15%;">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-top: 0%;padding-left: 25px;padding-bottom: 5%;">
                     <div width="400" style="padding: 5%;border-radius: 80px;" controls  >
                       <a href="cart.html" > <i><img src="assets/images/clipart/leo trans.png" alt=""></i></a>
                         </div>
@@ -206,9 +210,9 @@
  <div id="editors" class="bd-example">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active">BLOCKS</li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1">CODE</li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2">ARDUINO</li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" style="max-height: 40%;text-align: center;" class="active"><h3 style="margin-top: 8%;">BLOCKS</h3></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1" style="max-height: 40%;" ><h3 style="margin-top: 8%;">CODE</h3></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2" style="max-height: 40%;"><h3 style="margin-top: 8%;">ARDUINO</h3></li>
 
       </ol>
       <div class="carousel-inner">
@@ -874,7 +878,12 @@
     </div>
   </footer>
   <!-- End Footer-->
-    
+    <script>var viewMode = getCookie("view-mode");
+      if(viewMode == "desktop"){
+          viewport.setAttribute('content', 'width=1024');
+      }else if (viewMode == "mobile"){
+          viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
+      }</script>
     <script src="./assets/js/firebase.js" ></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
