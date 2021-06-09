@@ -4,7 +4,7 @@
   <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=1440">
     <meta name="description" content="">
     <meta name="author" content="RoboMonkee">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
@@ -125,6 +125,21 @@ nav{
     display: none;
   }
 }
+
+        .blink {
+          animation: blink-animation 1s steps(5, start) infinite;
+          -webkit-animation: blink-animation 2s steps(5, start) infinite;
+        }
+        @keyframes blink-animation {
+          to {
+            visibility: hidden;
+          }
+        }
+        @-webkit-keyframes blink-animation {
+          to {
+            visibility: hidden;
+          }
+        }
       </style>
     </head>
     
@@ -179,7 +194,7 @@ nav{
                     <img id="three" src="assets/images/clipart/3w.png" />
                   </div>
                   <div class="item">
-                    <img id="four11" src="assets/images/clipart/4w.png" />
+                    <img id="four" src="assets/images/clipart/4w.png" />
                   </div>
                   <div class="item">
                     <img id="five" src="assets/images/clipart/5w.png" />
@@ -227,7 +242,7 @@ nav{
                     <div class="product-price-discount"><span>₹6999.00</span><span class="line-through">₹10000.00</span></div>
                   </div>
                   <p>Leo is a bot with various functionalities with vast applications in the real world. The bot consists of three modes, line follower, Bluetooth mode, and avoiding obstacles. Firstly, we need to work on basics by learning about the essential components and their mechanisms with proper video tutorials through our app. Furthermore, the kid will start implementing the procedure of each mode by block coding, mix, or actual coding as per their selected course by adding their imagination and creativity. And then the main work is arranging everything and making our Leo ready.</p>
-                  <h7>Video Tutorials <img src="assets/images/coming-soon.png" style="max-width: 40px;max-height: 40px;"></h7>
+                  <h7 style="font-size: 2em;">Video Tutorials <img class="blink" src="assets/images/coming-soon.png" style="max-width: 40px;max-height: 40px;"></h7>
                   <div class="row">
                     
                     <div class="col-md-6">
@@ -263,13 +278,13 @@ nav{
               <img class="card-img-top" src="assets/images/clipart/free shipping.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
               <div class="card-body">
                 <h5 class="card-title" style="text-align: center;">FREE SHIPPING</h5>
-                <p class="card-text" style="text-align: center;">Free shipping above ₹9999.00</p>
+                <p class="card-text" style="text-align: center;">Free shipping above ₹6999.00</p>
               </div>
             </div>
             <div class="card"  style="border: 0em;">
               <img class="card-img-top" src="assets/images/clipart/money back.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
               <div class="card-body">
-                <h5 class="card-title" style="text-align: center;">MONEY BACK GURANTEE</h5>
+                <h5 class="card-title" style="text-align: center;">MONEY BACK GUARANTEE</h5>
                 <p class="card-text" style="text-align: center;">100% money back guarantee.</p>
               </div>
             </div>
@@ -301,7 +316,7 @@ nav{
       
       <section style="padding-top: 5%;">
         <div  >
-          <h2 style="text-align: center;padding-bottom: 5%;">Various Shapes, for Free & Flex Building.</h2>
+          <h2 style="text-align: center;padding-bottom: 5%;">Various Shapes, for Free & Flex Building</h2>
           <img src="assets/images/iso leo.png" style="padding-left: 30%;padding-right: 30%;padding-bottom: 10%;">
         
         </div>
@@ -316,7 +331,7 @@ nav{
 <section id="botFunctions">
   <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 5%;padding-bottom: 5%;">
     <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
-      <h5 class="card-title" style="text-align: center;color: black;">Obstacle Avodiance Mode</h5>
+      <h5 class="card-title" style="text-align: center;color: black;">Obstacle Avoiding Mode</h5>
       <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
 
         <source src="assets/images/videos/obstacles.mp4" type="video/mp4" />
@@ -330,7 +345,7 @@ nav{
       </video>            
     </div>
     <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
-      <h5 class="card-title" style="text-align: center;color: black;">Voice Control</h5>
+      <h5 class="card-title" style="text-align: center;color: black;">Voice Control Mode</h5>
       <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
         <source src="assets/images/videos/voiceControl.mp4" type="video/mp4" />
 
@@ -338,7 +353,7 @@ nav{
     </div></div>
     <div class="card-group" style="padding-left:10%;padding-right: 10%; padding-top: 0%;padding-bottom:   15%;">
       <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
-        <h5 class="card-title" style="text-align: center;color: black;">Bluetooth Controled</h5>
+        <h5 class="card-title" style="text-align: center;color: black;">Bluetooth Control Mode</h5>
       <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
         <source src="assets/images/videos/btControl.mp4" type="video/mp4" />
 
@@ -473,7 +488,7 @@ nav{
     <div>3</div>
   </div>
 </div>
-<h4 style="color: #8a8a8a;padding-top: 10%;font-size: small;"><i>* Recent Four Reviews Will be Displayed</i></h4>
+<h4 style="color: #8a8a8a;padding-top: 10%;font-size: small;"><i>*Recent four reviews are displayed</i></h4>
 
             <div id="parentReviews" class="card"  style="border-radius: 50px;margin-top: 5%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
               <div class="card-body">
@@ -536,7 +551,7 @@ nav{
             <h2 style="margin-top: 5%;">Write Your Review</h2>
             <div class="form-group" id="writeReview">
               <label class="control-label" for="review"> <br>  Your Review:</label>
-              <textarea class="form-control" rows="10" placeholder="Your Reivew" name="review" id="review" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></textarea>
+              <textarea class="form-control" rows="10" placeholder="   Your Review" name="review" id="review" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></textarea>
               <span id="reviewInfo" class="help-block pull-right">
             </div>
             <h2>Your Info:</h2>
@@ -559,23 +574,16 @@ nav{
               </span>
         </section>
        
-        <section style="background-color: rgb(73, 73, 95);height: 80%;"> 
-                  <div class="card-deck" style="padding-top: 10%;align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%;">
+        <section style="background-color: rgb(73, 73, 95);height: 60%;"> 
+                  <div class="card-deck" style="padding-top: 7%;align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%;">
           <div class="card"  style="border: 0em;max-width: 1000px;border-radius: 40px;">
             <div class="card-body">
-              <div class="row">
-                <div class="col-sm">
-                  <h5 class="card-title"  >Hi RoboMonkee ,</h5>
-                  <p class="card-text" style="padding-bottom: 2%;" >I Want To Buy Leo - The Codable Robot.</p>
+             
+              <h5 class="card-title"  >Hi RoboMonkee ,</h5>
+              <p class="card-text" style="padding-bottom: 2%;" >I Want To Buy Leo - The Codable Robot.</p>
                   <input name="email" type="text" id="emailBuy" placeholder="   E-mail" required="" class="contact-field" style="margin-bottom: 5%;padding-bottom: 2%;padding-top: 2%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 15px;">
                   <button type="button" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;margin-left: 5%;" onclick="return storeToFirebase('iWantBot', 'iWantBotCollection');">Join US</button>
-                </div>
-                </div>
-                <div class="col-sm">
-                  <img style="max-width: 70%; max-height: 70%;" src="/assets/images/clipart/robomonkee.png" alt="">
-              </div>
-            </div>
-        </div>
+          </div>
         </div>
         </section>
   <!-- Footer -->
@@ -601,7 +609,7 @@ nav{
         <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
           <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Programmable Bot</a></li>
+            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Coding Bot</a></li>
             <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
             <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
             <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
@@ -663,7 +671,7 @@ nav{
         document.getElementById("one").src = "assets/images/clipart/1w.png";
         document.getElementById("two").src = "assets/images/clipart/2w.png";
         document.getElementById("three").src = "assets/images/clipart/3w.png";
-        document.getElementById("four11").src = "assets/images/clipart/4w.png";
+        document.getElementById("four").src = "assets/images/clipart/4w.png";
         document.getElementById("five").src = "assets/images/clipart/5w.png";
         document.getElementById("six").src = "assets/images/clipart/6w.png";
 
@@ -675,23 +683,27 @@ nav{
         document.getElementById("six6").src = "assets/images/clipart/6w.png";
       }
       if(strUser == "Black"){
+        document.getElementById("one").src = "assets/images/clipart/1b.jpg";
+        document.getElementById("two").src = "assets/images/clipart/2b.png";
+        document.getElementById("three").src = "assets/images/clipart/3b.png";
+        document.getElementById("four").src = "assets/images/clipart/4b.png";
+        document.getElementById("five").src = "assets/images/clipart/5b.png";
+        document.getElementById("six").src = "assets/images/clipart/6b.png";
+
         document.getElementById("one1").src = "assets/images/clipart/1b.jpg";
         document.getElementById("two2").src = "assets/images/clipart/2b.png";
         document.getElementById("three3").src = "assets/images/clipart/3b.png";
         document.getElementById("four4").src = "assets/images/clipart/4b.png";
         document.getElementById("five5").src = "assets/images/clipart/5b.png";
         document.getElementById("six6").src = "assets/images/clipart/6b.png";
-
-        document.getElementById("one").src = "assets/images/clipart/1b.jpg";
-        document.getElementById("two").src = "assets/images/clipart/2b.png";
-        document.getElementById("three").src = "assets/images/clipart/3b.png";
-        document.getElementById("four11").src = "assets/images/clipart/4b.png";
-        document.getElementById("five").src = "assets/images/clipart/5b.png";
-        document.getElementById("six").src = "assets/images/clipart/6b.png";
-
-        
       }
     }
   </script>
+  <script>var viewMode = getCookie("view-mode");
+    if(viewMode == "desktop"){
+        viewport.setAttribute('content', 'width=1024');
+    }else if (viewMode == "mobile"){
+        viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
+    }</script>
   </body>
 </html>

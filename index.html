@@ -1,11 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="viewport" content="width=1440" >
+    <meta name="description" content="Robo Monkee">
+    <meta name="keywords" content="Robot, Robo Monkee, robomonkee, Robomonkee, RoboMonkee, Robot Tutorials, Arduino, C++, Robotics Workshop">
     <meta name="author" content="RoboMonkee">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -94,7 +96,7 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="scroll-to-section"><a href="#welcome" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#editors">Editors</a></li>
+                            <li class="scroll-to-section"><a href="#editors">Softwares</a></li>
                             <li class="scroll-to-section"><a href="#offer">Services</a></li>
                             <li class="scroll-to-section"><a href="#about">About</a></li>
                             <li class="scroll-to-section"><a href="#frequently-question">FAQs And Rewiews</a></li>
@@ -116,7 +118,11 @@
 
 
     <!-- ***** Welcome Area Start ***** -->
-    <div class="welcome-area" id="welcome">
+    <div class="welcome-area1" id="welcome1" style="background-image: linear-gradient(
+      to right,
+      rgb(211, 91, 55),
+      rgb(153, 47, 163)
+    );">
 
         <!-- ***** Header Text Start ***** -->
      
@@ -127,14 +133,14 @@
                 
                 <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
                     <div class="left-heading"><br>
-                        <h5 style="color: aliceblue; margin-top: 40%;">LEO - The Programmable Robot</h5>
+                        <h5 style="color: aliceblue; margin-top: 15%;">LEO - The Programmable Robot</h5>
                     </div>
                     <div class="left-text">
-                        <p style="color: aliceblue; size: 100px;padding-top: 5%;" >Leo-Bot is a STEM coding robot kit for beginners, moderates, and specialists that makes instructing and learning robot coding easy and exciting. Simply with a screwdriver, and bit by bit directions, and a master syllabus, children can fabricate a robot without any preparation and experience the delights of hands-on creation. As they get along, they will find out about an assortment of mechanical apparatus and electronic parts, will grasp the essentials of block-based programming as well as C++, and build their logical thinking to the next level.</p>
+                        <p style="color: aliceblue; size: 100px;padding-top: 15%;padding-bottom: 10%;" >Leo is a STEM coding robot kit for beginners, moderates, and specialists that makes instructing and learning robot coding easy and exciting. Simply with a screwdriver, and bit by bit directions, and a master syllabus, children can fabricate a robot without any preparation and experience the delights of hands-on creation. As they get along, they will find out about an assortment of mechanical apparatus and electronic parts, will grasp the essentials of block-based programming as well as C++, and build their logical thinking to the next level.</p>
                         <a href="cart.html" class="main-button" style="box-shadow: 2px 2px 6px rgba(0,0,0,0.5);">Find More About Leo !</a>
                     </div>
                 </div>
-                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-top: 10%;padding-left: 25px;padding-bottom: 15%;" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" style="padding-top: 0%;padding-left: 25px;padding-bottom: 5%;">
                     <div width="400" style="padding: 5%;border-radius: 80px;" controls  >
                       <a href="cart.html" > <i><img src="assets/images/clipart/leo trans.png" alt=""></i></a>
                         </div>
@@ -152,13 +158,62 @@
     </div>
     <!-- ***** Welcome Area End ***** -->
 
+    <section id="botFunctions">
+  <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 5%;padding-bottom: 5%;">
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Obstacle Avoiding Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+
+        <source src="assets/images/videos/obstacles.mp4" type="video/mp4" />
+      </video>           
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Block Coding</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+
+        <source src="assets/images/videos/bc.mp4" type="video/mp4" />
+      </video>            
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Voice Control Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+        <source src="assets/images/videos/voiceControl.mp4" type="video/mp4" />
+
+      </video>          
+    </div></div>
+    <div class="card-group" style="padding-left:10%;padding-right: 10%; padding-top: 0%;padding-bottom:   15%;">
+      <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+        <h5 class="card-title" style="text-align: center;color: black;">Bluetooth Control Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+        <source src="assets/images/videos/btControl.mp4" type="video/mp4" />
+
+      </video>           
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Line Follower Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+
+        <source src="assets/images/videos/llf.mp4" type="video/mp4" />
+      </video>            
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">C++ Coding</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius:50px;">
+
+        <source src="assets/images/videos/c++.mp4" type="video/mp4" />
+      </video>         
+    </div>
+  </div>
+
+</section>
+    
  <!-- ***** Carousel Start ***** -->
  <div id="editors" class="bd-example">
     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active">BLOCKS</li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1">CODE</li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2">ARDUINO</li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" style="max-height: 40%;text-align: center;" class="active"><h3 style="margin-top: 8%;">BLOCKS</h3></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1" style="max-height: 40%;" ><h3 style="margin-top: 8%;">CODE</h3></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2" style="max-height: 40%;"><h3 style="margin-top: 8%;">ARDUINO</h3></li>
 
       </ol>
       <div class="carousel-inner">
@@ -200,7 +255,7 @@
                     <div >
                         <i><img src="assets/images/clipart/leo.png" alt=""></i>
                     </div>
-                    <h5 class="service-title" style="font-size: 15px;">Leo - The Programmable Robot</h5>
+                    <h5 class="service-title" style="font-size: 15px;">Leo - The Coding Robot</h5>
                     <p style="font-size: 10px;padding-bottom: 16%;">Leo, a codable STEM robot kit for your kid(age 10+)</p>
                     <a href="cart.html" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);">Know More</a>
                 </div>
@@ -382,7 +437,7 @@
                         <div class="card" id="1" style="height: 100%;width: 10%;">
                           <h4 style="padding-bottom: 5%;font-size: medium;">Hrishika , Mother of Aisha</h4>
                           
-                          <p style="font-size: small;">Leo is a great initiative for students to learn robotics and to have some practical knowledge. My daughter is a keen learner and she is very delighted to make her codes. I would recommend every parent to get this for their children. </p>
+                          <p style="font-size: small;">Leo is a great initiative for students to learn robotics and to have some practical knowledge. My daughter is a keen learner and she is very delighted to make her codes.</p>
                         </div>
                         <div class="card" id="2" style="height: 100%;width: 10%;">
                           <h4 style="padding-bottom: 5%;font-size: medium;">Yashaswi</h4>
@@ -464,7 +519,7 @@
                         <div class="card" id="16" style="height: 100%;width: 10%;">
                           <h4 style="padding-bottom: 5%;font-size: medium;">Arvind, Father of Preeti</h4>
 
-                          <p style="font-size:small;"> My daughter is extremely excited to make her robot. Thank you Robo Monkee for developing her interest in the field of robotics.  The visualization and website are child-friendly making it easy for children to access. I would recommend all the parents to enroll in the courses for their children. </p>
+                          <p style="font-size:small;"> My daughter is extremely excited to make her robot. Thank you Robo Monkee for developing her interest in the field of robotics.  The visualization and website are child-friendly making it easy for children to access.</p>
                         </div>
                         <div class="card" id="17" style="height: 100%;width: 10%;">
                           <h4 style="padding-bottom: 5%;font-size: medium;">Anita,Mother of Satyam</h4>
@@ -774,7 +829,6 @@
           <p class="font-italic text-muted">Join our 6,200 students' family!</p>
           <p style="color: #6c757d; margin-top: 20px;">Office No. 7, 
             Amar Business Park,<br>
-            Laxman Nagar,
             Baner - 411045<br>info@robomonkee.com<br>8176061349</p>
             <ul class="list-inline mt-4" style="margin-top: 10px !important;">
               <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
@@ -787,7 +841,7 @@
         <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
           <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Programmable Bot</a></li>
+            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo</a></li>
             <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
             <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
             <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
@@ -825,7 +879,12 @@
     </div>
   </footer>
   <!-- End Footer-->
-    
+    <script>var viewMode = getCookie("view-mode");
+      if(viewMode == "desktop"){
+          viewport.setAttribute('content', 'width=1024');
+      }else if (viewMode == "mobile"){
+          viewport.setAttribute('content', 'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');
+      }</script>
     <script src="./assets/js/firebase.js" ></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
@@ -856,6 +915,5 @@
 
     <!-- Global Init -->
     <script src="assets/js/custom.js"></script>
-
   </body>
 </html>
