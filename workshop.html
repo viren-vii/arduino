@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="RoboMonkee">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css">
+
+
+    <title>RoboMonkee</title>
+
+    <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        /* html{
+          overflow: hidden;
+        } */
+        .placeholder{
+          color: #f1f1f1;
+        }
+        
+        .card2{
+          background-image: url("cardblue.png");
+        }
+        .card3{
+          background-image: url("cardorange.png");
+        }
+        .row.content {height: 800px}
+        .card-text{
+          margin-bottom: 2%;
+        }
+        /* Set gray background color and 100% height */
+        .sidenav {
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+        
+        /* Set black background color, white text and some padding */
+        /* footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        } */
+        a.bannerButton {
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+
+          text-decoration: none;
+          color: initial;
+
+          width: auto; 
+          height:auto; 
+          font-size: xx-large; 
+          font-weight: 900; 
+          padding:20px; 
+          position:absolute; 
+          bottom: 0;
+          left:50%; transform: 
+          translate(-50%, -50%);
+          color: white;
+          background-color: rgb(19, 19, 19);
+          transition: 0.5s;
+
+        }
+        a.bannerButton:hover{
+          transition: 0.5s;
+          background-color: rgb(51, 51, 51);
+        }
+        body.modal-open {
+          height: 100vh;
+          overflow: visible;
+        }
+        body:not(.modal-open){
+          padding-right: 0px !important;
+        }
+        .fa {
+          font-size: 30px;
+        }
+        
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+          .sidenav {
+            height: auto;
+            padding: 15px;
+          }
+          .row.content {height: auto;} 
+          a.bannerButton{
+            font-size: small;
+            padding: 5px;
+          }
+        }
+        .floatingHomeButton{
+          box-shadow: 2px 6px 6px rgb(82, 82, 82); 
+          position: fixed;
+          margin: 20px 20px;
+          z-index :1; 
+          float:left; 
+          width: 3%; 
+          padding:10px; 
+          border: none;
+          background-color: white; 
+          border-radius: 500px ;
+          height: auto;
+          outline:none
+        }
+
+        .floatingHomeButton:hover img{transition: 0.2s; filter: invert(100);}
+        .floatingHomeButton:hover{transition: 0.2s; background-color: black;}
+      </style>
+    </head>
+    
+    <body>
+      <a href="./index.html"><button class="floatingHomeButton"><img style="max-width: 100%;" src="./assets/images/home.png"></button></a>
+
+        <section >
+          <div style="position: relative;">
+            <a class="bannerButton" href="#workshops" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Learn More</a>
+            <div style="width: auto;" >
+              <img src="assets/images/bgworkshop.png" style="width: 100%;">
+            </div>
+            </div>
+          </section>
+            <section style="padding-top: 10%;" id="workshops">
+                <!-- The Modal -->
+            <div class="modal" id="myModal" >
+                <div class="modal-dialog" >
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #f1f1f1;">Leo</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body" style="padding-bottom: 20%;">
+                      <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%; font-size:medium;">Leo-Bot is a STEM coding robot kit for beginners, moderates, and specialists that makes instructing and learning robot coding easy and exciting. Simply with a screwdriver, and bit by bit directions, and a master syllabus, children can fabricate a robot without any preparation and experience the delights of hands-on creation. As they get along, they will find out about an assortment of mechanical apparatus and electronic parts, will grasp the essentials of block-based programming as well as C++, and build their logical thinking to the next level.</h4>
+
+                      <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                      <br>
+                      <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                      <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                      <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <!-- <div class="modal-footer">
+                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                    </div> -->
+                    
+                  </div>
+                </div>
+              </div> 
+
+                  <!-- The Modal -->
+            <div class="modal" id="myModal2" >
+              <div class="modal-dialog" >
+                <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: #f1f1f1;">Drone</h4>
+                    <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body" style="padding-bottom: 20%;">
+                    <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">workshop includes an understanding in the robot grouping, plan, computations, optimal design, segment choice, control framework, coding and alignment, fundamental directing for RC planes or quadcopters, applications and future occupation patterns. </h4>
+
+                    <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                    <br>
+                    <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <!-- <div class="modal-footer">
+                      <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                  </div> -->
+                  
+                </div>
+              </div>
+            </div> 
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal3" >
+                  <div class="modal-dialog" >
+                    <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f1f1f1;">Python</h4>
+                        <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-bottom: 20%;">
+                        <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">Something beyond a Python direct for kids, The Python Workshop takes you through the full range of fundamental to cutting edge points, outfitting you with the abilities you need to begin with information science and then some. Loaded up with pragmatic bit by bit models and intelligent activities, you'll learn by doing as you develop your new Python range of abilities. </h4>
+  
+                        <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                        <br>
+                        <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+  
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <!-- <div class="modal-footer">
+                          <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                      </div> -->
+                      
+                    </div>
+                  </div>
+                </div> 
+
+                    <!-- The Modal -->
+            <div class="modal" id="myModal4" >
+              <div class="modal-dialog" >
+                <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: #f1f1f1;">C++</h4>
+                    <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body" style="padding-bottom: 20%;">
+                    <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">the workshop assists you with acquiring a strong comprehension of the language structure and life systems of C++ 
+                      Carry out prescribed procedures when constructing superior C++ programs 
+                      Plan for genuine advancement assignments by handling drawing in exercises. </h4>
+
+                    <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                    <br>
+                    <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <!-- <div class="modal-footer">
+                      <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                  </div> -->
+                  
+                </div>
+              </div>
+            </div> 
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal5" >
+                  <div class="modal-dialog" >
+                    <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f1f1f1;">Andriod Dev</h4>
+                        <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-bottom: 20%;">
+                        <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">You’ll learn how to build your first Android app using Android Studio, how to run your app on a device or emulator, and how to add an interactive button that displays a second screen when the button is clicked.
+                          Earn your certification by passing a performance-based exam that proves you have the skills of an entry-level Android developer. Available in Kotlin or Java. </h4>
+  
+                        <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                        <br>
+                        <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+  
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <!-- <div class="modal-footer">
+                          <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                      </div> -->
+                      
+                    </div>
+                  </div>
+                </div> 
+
+                    <!-- The Modal -->
+            <div class="modal" id="myModal6" >
+              <div class="modal-dialog" >
+                <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: #f1f1f1;">Wire/Wireless Bot</h4>
+                    <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body" style="padding-bottom: 20%;">
+                    <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">This workshop essentially manages basics of Robotics, Programming ideas, Electronics Components, and their utilization in Autonomous Robots utilizing a Microcontroller. After the workshop, members think of a "Wired/Wireless Control robot, Beam Robotics (Line supporter Without Microcontroller ), Line devotee Robot utilizing Microcontroller, Light Searching Robot, Wall Follower Robot/Edge Avoider Robot, DTMF Technique, Mobile DTMF Controlled Robot". </h4>
+
+                    <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                    <br>
+                    <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <!-- <div class="modal-footer">
+                      <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                  </div> -->
+                  
+                </div>
+              </div>
+            </div> 
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal7" >
+                  <div class="modal-dialog" >
+                    <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f1f1f1;">BT control</h4>
+                        <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-bottom: 20%;">
+                        <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">Bluetooth Controlled Robotics includes the activity of Robots as per the signs sent from a cell phone utilizing an Android Application and Bluetooth Communication. In the Bluetooth Based Robotics Workshop, sequential programming of the Microcontrollers is an essential part. The workshop assists members with understanding the ideas and utilization of accelerometer sensors, Arduino Uno, and Arduino programming in Bluetooth Controlled Robot planning. </h4>
+  
+                        <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                        <br>
+                        <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+  
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <!-- <div class="modal-footer">
+                          <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                      </div> -->
+                      
+                    </div>
+                  </div>
+                </div> 
+
+                    <!-- The Modal -->
+            <div class="modal" id="myModal8" >
+              <div class="modal-dialog" >
+                <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: #f1f1f1;">Gesture Control</h4>
+                    <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body" style="padding-bottom: 20%;">
+                    <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">Motion Based Robotics (otherwise called Accelerometer Controlled Robotics) manages robots that include human-machine association - where a robot is controlled through hand developments detected by an accelerometer. 
+                      The workshop assists members with understanding the ideas and uses of an accelerometer sensor, microcontrollers, and other electronic parts utilized in Robotics. 
+                       </h4>
+
+                    <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                    <br>
+                    <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <!-- <div class="modal-footer">
+                      <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                  </div> -->
+                  
+                </div>
+              </div>
+            </div> 
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal9" >
+                  <div class="modal-dialog" >
+                    <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f1f1f1;">IOT</h4>
+                        <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-bottom: 20%;">
+                        <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">Internet of Things (IoT) discovers its application in businesses that favors robotization, energy-proficient frameworks, shrewd gadgets, and so forth Indeed, even reports express that in excess of 65 billion gadgets will be associated with IoT by 2022. However, learning IoT isn't exceptionally basic, as the framework chips away at complex strategies and modules. The most ideal approach to learn IoT is by building activities and learning while at the same time doing it. </h4>
+  
+                        <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                        <br>
+                        <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+  
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <!-- <div class="modal-footer">
+                          <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                      </div> -->
+                      
+                    </div>
+                  </div>
+                </div> 
+
+                    <!-- The Modal -->
+            <div class="modal" id="myModal10" >
+              <div class="modal-dialog" >
+                <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h4 class="modal-title" style="color: #f1f1f1;">RPi</h4>
+                    <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                  </div>
+                  
+                  <!-- Modal body -->
+                  <div class="modal-body" style="padding-bottom: 20%;">
+                    <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">Utilizing a Raspberry Pi PC and a DHT sensor, you will foster an electronic gadget that streams temperature and dampness information over the web. You can program the framework so that say at whatever point the temperature surpasses a specific cutoff, the gadget will consequently send an email.
+                      Aside from acquiring useful abilities on the Internet of Things, by doing this task you will find out about the Raspberry Pi improvement stage which is mainstream among individuals who love creative undertakings. </h4>
+
+                    <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                    <br>
+                    <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                    <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+
+                  </div>
+                  
+                  <!-- Modal footer -->
+                  <!-- <div class="modal-footer">
+                      <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                  </div> -->
+                  
+                </div>
+              </div>
+            </div> 
+
+                <!-- The Modal -->
+                <div class="modal" id="myModal11" >
+                  <div class="modal-dialog" >
+                    <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                    
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title" style="color: #f1f1f1;">Arduino</h4>
+                        <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                      </div>
+                      
+                      <!-- Modal body -->
+                      <div class="modal-body" style="padding-bottom: 20%;">
+                        <h4 class="modal-title" style="color: #f1f1f1; text-align: center;padding-bottom: 20%;padding-top: 20%;font-size:medium;">Comprehend what an Arduino is and how it works.Learn programming ideas utilizing C and C++ alongside Arduino explicit programming 
+                          See best practice ideas for programming and prototyping 
+                          Utilize a wide assortment of equipment and parts and model your activities utilizing a breadboard. 
+                          Construct your own creative venture with Arduino </h4>
+  
+                        <h3 style="text-align: center;" style="color: #f1f1f1;">Age Groups</h3>
+                        <br>
+                        <p style="text-align: center;" style="color: #ffffff;">Begineers - 3-5 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Moderate - 5-8 Days</p>
+                        <p style="text-align: center;" style="color: #f1f1f1;">Expert - 8-10 Days</p>
+  
+                      </div>
+                      
+                      <!-- Modal footer -->
+                      <!-- <div class="modal-footer">
+                          <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;">Get A Call Back</a> 
+                      </div> -->
+                      
+                    </div>
+                  </div>
+                </div> 
+                <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card12.png);">
+                      <img class="card-img-top" src="assets/images/clipart/leo.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(255, 255, 255);">Workshop On <br>  Leo</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                       
+                           <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                        
+                        
+                                            
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card11.png);">
+                      <img class="card-img-top" src="assets/images/clipart/quadcopter.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(255, 255, 255);">Workshop On <br> Drone</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/python.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: rgb(255, 255, 255);">Workshop On <br> Python</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/c1++.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On<br>  C++</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                        <a href="#callback" class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49) ;border: 0em;border-radius: 25px;">Get A Call Back</a>   
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card16.png);">
+                      <img class="card-img-top" src="assets/images/clipart/andriod dev.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On <br> Android/Web Dev</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card15.png);">
+                      <img class="card-img-top" src="assets/images/clipart/wireless bot.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On<br>  Wired/Wireless Robot</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal6" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 1%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/bluetooth.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On <br> BT controlled Bot</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/gesture.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On <br> Gesture Based Robot</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/iot.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On <br> IOT</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 25%;padding-right: 25%;padding-bottom: 5%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/cardrpi.png);">
+                      <img class="card-img-top" src="assets/images/clipart/rpi.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On <br> R Pi</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal10" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/arduino.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Workshop On <br> Arduino</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal11" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button> 
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+                    </div>
+                    </div>
+                    
+                  </div>
+            </section>
+            <section id="callback" style=" max-height: 90%;">
+              <h2 style="text-align: center;padding-top: 5%;padding-bottom: 5%; color: #575454;">Get A Call Back</h2>
+              <div style="padding: 0%;">
+                  <div class="row content">
+                    <div class="col-sm-3 " style="padding-left: 5%;">
+                      <img src="assets/images/clipart/get a call.png" style="min-height: 300px;min-width: 300px;">
+                    </div>
+                
+                    <div class="col-sm-9 ">
+                      <form style="margin-top: 3%; padding-right: 10%;padding-left: 10%;">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control" id="inputEmail4" placeholder="Student's Name" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px; margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;color: #f1f1f1;">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control" id="inputPassword4" placeholder="Parent's Name" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px;margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;">
+                            </div>
+                          </div>
+                          <div class="form-group" >
+                            <input type="number" class="form-control" id="inputAddress" placeholder="Parent's Contact Number" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px;margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;">
+                          </div>
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="inputAddress2" placeholder="Email Id (Optional)" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px;margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;">
+                          </div>
+                          
+                          
+                          <button type="button" class="btn btn-primary" style="margin-top: 5%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 50px;background-color: rgb(49, 49, 49);" onclick="return storeToFirebase('getCallBack', 'getCallBackCollection');">Get A Call Back</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
+  <!-- Footer -->
+  <footer class="bg-white">
+    <div class="container py-5">
+      <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+          <p class="font-italic text-muted">Join our 6,200 students' family!</p>
+          <p style="color: #6c757d; margin-top: 20px;">Office No. 7, 
+            Amar Business Park,<br>
+            Laxman Nagar,
+            Baner - 411045<br>info@robomonkee.com<br>8176061349</p>
+            <ul class="list-inline mt-4" style="margin-top: 10px !important;">
+              <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
+              <li class="list-inline-item"><a href="mailto:info@robomonkee.com" target="_blank"><i class="fa fa-envelope-o icon-large" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="tel:8176061349" target="_blank"><i class="fa fa-phone" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="https://api.whatsapp.com/send?phone=8176061349" target="_blank"><i class="fa fa-whatsapp" style="color: #f55858;"></i></a></li>
+            </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Programmable Bot</a></li>
+            <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
+            <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
+            <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+          <p class="text-muted mb-4">To get Latest Updates and news from us, subscribe our newsletter!</p>
+          <div class="p-1 rounded border">
+            <div class="input-group">
+              <input id="newsletterEmail" type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+              <div class="input-group-append">
+                <button id="button-addon1" type="button" class="btn btn-link" onclick="return storeToFirebase('newsletter', 'newsletterCollection');"><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">© 2021 RoboMonkee All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer-->
+
+  <script src="./assets/js/firebase.js" ></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+      <script src="assets/js/bootstrap.min.js"></script> 
+      <script src="assets/js/jquery-2.1.0.min.js"></script>
+      <script src="assets/js/popper.js"></script>
+      
+    <!-- Global Init -->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/vdoplayer.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="RoboMonkee">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>RoboMonkee</title>
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/templatemo-art-factory.css">
+
+    <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
+    <style>
+              
+        ::selection {
+          background: #ff589e;
+          color: #fff;
+        }
+
+        ::-moz-selection {
+          background: #ff589e;
+          color: #fff;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {height: 800px}
+        
+        /* Set gray background color and 100% height */
+        .sidenav {
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+
+        a.bannerButton {
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+
+          text-decoration: none;
+          color: initial;
+
+          width: auto; 
+          height:auto; 
+          font-size: xx-large; 
+          font-weight: 900; 
+          padding:20px; 
+          position:absolute; 
+          
+          left:50%;
+          transform: translate(-50%, -50%); 
+          bottom: 0; 
+          margin-bottom: 0px;
+          color: white;
+          background-color: rgb(19, 19, 19);
+          transition: 0.5s;
+
+        }
+        .fa {
+          font-size: 30px;
+        }
+        a.bannerButton:hover{
+          transition: 0.5s;
+          background-color: rgb(51, 51, 51);
+        }
+        
+        /* Set black background color, white text and some padding */
+        /* footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        } */
+        
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+          .sidenav {
+            height: auto;
+            padding: 15px;
+          }
+          .row.content {height: auto;} 
+
+        a.bannerButton{
+            font-size: small;
+            padding: 5px;
+          }
+        }
+
+        body.modal-open {
+          height: 100vh;
+          overflow: visible;
+        }
+        body:not(.modal-open){
+          padding-right: 0px !important;
+        }
+        .floatingHomeButton{
+          box-shadow: 2px 6px 6px rgb(82, 82, 82); 
+          position: fixed;
+          margin: 20px 20px;
+          z-index :1; 
+          float:left; 
+          width: 3%; 
+          padding:10px; 
+          border: none;
+          background-color: white; 
+          border-radius: 500px ;
+          height: auto;
+          outline:none
+        }
+
+        .floatingHomeButton:hover img{transition: 0.2s; filter: invert(100);}
+        .floatingHomeButton:hover{transition: 0.2s; background-color: black;}
+        
+      </style>
+    </head>
+    
+    <body>
+      <a href="./index.html"><button class="floatingHomeButton"><img style="max-width: 100%;" src="./assets/images/home.png"></button></a>
+
+        <section >
+            <div style="width: auto; position: relative;" >
+              <a class="bannerButton" href="#projects" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Learn More</a>
+              <img src="assets/images/bgproject.png" style="width: 100%;">
+            
+            </div>
+            </section>
+             <section style="padding-top: 10%;" id="projects">
+                <!-- The Modal -->
+
+
+
+
+
+            <div class="modal fade" id="myModal1">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button" data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Vehicle Theft Detection System
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">Vehicle theft has increased in recent years. These vehicles may incur huge losses on the amount invested on them. Over 5 vehicles which were reported as stolen every hour in Delhi. Total 44,158 vehicle theft cases were reported in 2018 against 39,084 such cases in 2017. So it’s necessary to create such a system that will prevent the vehicle theft. The main intention of the system is to prevent the vehicle from getting stolen and if it is then find out exact location of the stolen vehicle and inform it to the concerned authority. The system consists of a microcontroller, a GSM module, GPS module, NFC, force resistive sensors, vibration sensor and many other sensors used for theft detection. With the help of these sensors microcontroller will decide whether the vehicle or its spare parts are getting stolen or not. Like when thieves try to steal the wheels of the car, the load on the force resistive sensors is decreased, hence increasing there resistance. Whenever a theft is detected by the system, the alarm will be buzzed till either the authenticated owner of the vehicle doesn’t assure vehicle’s safety or the battery of the vehicle doesn’t die. The system will work integratedly with ECU and ECM of the vehicle. The cars lack these facility will be provided with custom solution where near field communication will be used for authentication purpose. In case when the vehicle got stolen, the system retrieves exact location of vehicle from GPS which is fed to a microcontroller. Microcontroller interfaced with GSM modem sends the information to the owner of the vehicle by an SMS. The vehicle owner is also able to turn off the engine by sending back an SMS. Whenever the GSM modem receives a message from a particular mobile number, microcontroller will trigger a switch which will then turn off the engine.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal2">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">LED Cube
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">LED Cube is a 3 dimensional cube made out of Light Emitting Diodes (LEDs). It utilizes code based on instructable designer, CHR and uses an arduino to power the cube and act as programmer. This cube gives off a warm glow that is pleasant to the eye and will entertain people of all ages.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+
+              <div class="modal fade" id="myModal3">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button" data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Quad Copter
+
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">A Quadcopter is a small remote-controlled aircraft like a helicopter, with four blades that spin rapidly to push air downwards thus creating a thrust for keeping the body aloft. All these blades are coplanar spinning in the opposite direction. A quadcopter is a type of drone which can be controlled by a remote or made fully automated. It is a light machine made for achieving high speed and agility.It has a high potential for performing various tasks that are dangerous to humans and costly. It has a wide range of applications like Aerial Photography & Videography, Payload carrying, Roof cleaning and drone racing.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+
+              <div class="modal fade" id="myModal4">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">VRC Plane Aero Modeling
+
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">A radio controlled plane (RC Plane) is a small flying machine i.e. controlled by an operator on the ground using a hand held transmitter. The plane is controlled using a transmitter communicating with a receiver sending signals to servos onboard the plane. The aerodynamics governing these aircrafts is the same as those governing large aircrafts. The aircraft considered in this study was designed to have optimum lift and drag characteristics. This was achieved by choosing the optimum values of fuselage length, wingspan, elevator, rudder dimensions and the all up weight determined by a series of iterative analysis. The RC plane has a wide range of commercial applications like it can be used for studying and implementing the different aspects of aero-modelling, photography and videography, payload caring, etc</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal5">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Better and Faster Emergency care during accidents and vehicle impact
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">An approach To design a self sustained system to detect car accident and able to inform the nearest emergency care servide with the accident location and record the incident that will be transmitted to a remote server for monitoring.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal6">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Line Follower and Maze Solver
+
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">Line Follower → A robot which uses lines as its path to reach a specific destination. Technology Used → Arduino, Microcontroller Algorithms Implemented → Shortest Path, PID Control. Awards → Secured 1st Rank at BITS ATMOS (PILANI) 2018 in Line FollowerReached Semi-Finals E-Yantra 2018 (the same stack used)Stage-2 IARC IIT-Kanpur (Techkriti)</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal7">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Person Tracking and Counting
+
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">Developed a system which could track and keep count of the number of people entering and exiting a gate in real time using overhead cameras and RaspberryPi.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal8">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Fetching emergency medical records using facial scan
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">Created a face recognition API built on top of Dlib and simple REST API using Flask, to quickly query medical records by indentifyinh patiernts using face detection and recognition. </p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal9">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">Self balancing bipedal robot
+
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">Developed a self balancing biped robot after studying modeling, complex control systems and mathematical simulations, capable of balancing and traversing any path using wireless controller which is designed using XBEE communication protocol.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal10">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">BATTERY MANAGEMENT SYSTEM FOR LIPO(Battery)
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">BMS continuously counts the voltage of each cell in the battery. When the battery crosses discharging or charging voltage limit then MOSFET will act as a switch and it will disconnect the contact between the battery and the respective load. Also, it will give an indication of when the battery is charged or discharged. ON/OFF switch is also provided as Battery Saver(). Technology Stack:, Basic Electronics, Embedded Systems, Embedded c language, Proteus & EasyEDA Software</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              <div class="modal fade" id="myModal11">
+                <div class="modal-dialog">
+                  <div class="modal-content" style="background-color: #242424;border-radius: 25px;">
+                  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title" style="color: #fff;">Project Description</h4>
+                      <button type="button"  data-dismiss="modal" style="color:white ;border-radius: 50px;margin-left: 30%;">&times;</button>
+                    </div>
+                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <h3 style="text-align: center;">VOLTAGE AND CURRENT SENSOR
+
+                      </h3>
+                      <br>
+                      <p class="modal-title" style="text-align: center;color: #fff;">The device continuously counts the voltage of the battery by using the voltage divider rule. That value will be sent to the microcontroller for further action. When the battery is connected as a load to the MOSFET, the Shunt is connected to the source terminal of the MOSFET, and the gate terminal of the MOSFET is connected to the microcontroller’s output pin(P1). When P1 receives the HIGH signal, MOSFET turns on. The blinking of the LED indicates that the MOSFET is on. Signal before shunt is then sent to OPAMP for amplification. Then That value will be sent to the microcontroller for further action. With a simple formula, (formula and respective values are according to the calibration of our circuit) we can find out the current drawn and the voltage of the battery. Basic Electronics Proteus & EasyEDA Software.</p>
+
+                    </div>
+                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                    
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+              
+
+
+
+
+
+              <div>
+                <h2 style="text-align: center;margin-bottom: 5%;">
+                  Some Of Our Projects
+                </h2>
+              </div>
+                <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                  <div class="card"  style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/cardbrown.png);">
+                    <img class="card-img-top" src="assets/images/clipart/Vehicle theft.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Vehicle<br> Theft<br> Detection System
+                        </h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                       
+                          <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a> 
+
+                        
+                        
+                                            
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/LED cube.png" style="max-width: 450px; max-height: 450px; align-self: center;padding-top: 15%;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">LED Cube</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color: rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>          
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card11.png);">
+                      <img class="card-img-top" src="assets/images/clipart/quadcopter.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;"> <br> Quad<br> Copter</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>         
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/cardrc.png);">
+                      <img class="card-img-top" src="assets/images/clipart/rc plane.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">RC<br> Plane Aero<br> Modeling
+                        </h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>    
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card11.png);">
+                      <img class="card-img-top" src="assets/images/clipart/Emergency care.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;"> Better and Faster<br> Emergency care during<br> accidents and vehicle impact</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal5" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>    
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card12.png);">
+                      <img class="card-img-top" src="assets/images/clipart/line follower.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Line Follower<br> and<br> Maze Solver
+                        </h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal6" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>    
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;padding-bottom: 5%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/person track.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Person Tracking<br> and <br>Counting</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal7" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>                  
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/cardface.png);">
+                      <img class="card-img-top" src="assets/images/clipart/face scan.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Fetching emergency<br> medical records<br> using facial scan</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal8" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>       
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/cardself.png);">
+                      <img class="card-img-top" src="assets/images/clipart/bipedal.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">Self balancing <br>bipedal <br>robot
+                        </h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal9" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>    
+                    </div>
+                    </div>
+                  </div>
+                  <div class="card-deck" style="padding-left: 25%;padding-right: 25%;padding-bottom: 5%;">
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card12.png);">
+                      <img class="card-img-top" src="assets/images/clipart/battery management.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;">BATTERY MANAGEMENT SYSTEM <br>FOR <br>LIPO(Battery)</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal10" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>                  
+                    </div>
+                    </div>
+                    <div class="card" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;background-image: url(assets/images/card13.png);">
+                      <img class="card-img-top" src="assets/images/clipart/current & voltage.png" style="max-width: 450px; max-height: 450px; align-self: center;" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title" style="color: white;"><br> VOLTAGE<br> AND<br> CURRENT SENSOR</h5>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal11" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                            Know More
+                          </button>                         <a href="#callback" ><button class="btn btn-primary" style="text-align: center;font-size: small; margin-bottom: 3%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:  rgb(49, 49, 49);border: 0em;border-radius: 25px;">Get A Call Back </button></a>       
+                    </div>
+                    </div>
+                    
+                  </div>
+            </section>
+            <section id="callback" style=" max-height: 90%;">
+              <h2 style="text-align: center;padding-top: 5%;padding-bottom: 5%; color: #575454;">Get A Call Back</h2>
+              <div style="padding: 0%;">
+                  <div class="row content">
+                    <div class="col-sm-3 " style="padding-left: 5%;">
+                      <img src="assets/images/clipart/get a call.png">
+                    </div>
+                
+                    <div class="col-sm-9 ">
+                      <form style="margin-top: 3%; padding-right: 10%;padding-left: 10%;">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control" id="inputEmail4" placeholder="Student's Name" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px; margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;color: #f1f1f1;">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" class="form-control" id="inputPassword4" placeholder="Parent's Name" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px;margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;">
+                            </div>
+                          </div>
+                          <div class="form-group" >
+                            <input type="number" class="form-control" id="inputAddress" placeholder="Parent's Contact Number" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px;margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;">
+                          </div>
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="inputAddress2" placeholder="Email Id (Optional)" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px;margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;">
+                          </div>
+                          
+                          
+                          <button type="button" class="btn btn-primary" style="margin-top: 5%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 50px;background-color: rgb(49, 49, 49);" onclick="return storeToFirebase('getCallBack', 'getCallBackCollection');">Get A Call Back</button>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+  <!-- Footer -->
+  <footer class="bg-white">
+    <div class="container py-5">
+      <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+          <p class="font-italic text-muted">Join our 6,200 students' family!</p>
+          <p style="color: #6c757d; margin-top: 20px;">Office No. 7, 
+            Amar Business Park,<br>
+            Laxman Nagar,
+            Baner - 411045<br>info@robomonkee.com<br>8176061349</p>
+            <ul class="list-inline mt-4" style="margin-top: 10px !important;">
+              <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
+              <li class="list-inline-item"><a href="mailto:info@robomonkee.com" target="_blank"><i class="fa fa-envelope-o icon-large" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="tel:8176061349" target="_blank"><i class="fa fa-phone" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="https://api.whatsapp.com/send?phone=8176061349" target="_blank"><i class="fa fa-whatsapp" style="color: #f55858;"></i></a></li>
+            </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Programmable Bot</a></li>
+            <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
+            <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
+            <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+          <p class="text-muted mb-4">To get Latest Updates and news from us, subscribe our newsletter!</p>
+          <div class="p-1 rounded border">
+            <div class="input-group">
+              <input id="newsletterEmail" type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+              <div class="input-group-append">
+                <button id="button-addon1" type="button" class="btn btn-link" onclick="return storeToFirebase('newsletter', 'newsletterCollection');"><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">© 2021 RoboMonkee All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer-->
+
+
+  <script src="./assets/js/firebase.js" ></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+    <!-- Global Init -->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/vdoplayer.js"></script>
+
+  </body>
+</html>

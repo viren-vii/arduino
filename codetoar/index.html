@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8">
+    <title>HTML generator</title>
+    <meta name="description" content="HTML generator">
+    <meta name="author" content="Viren-vii">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="icon" href="./robomonkee.png">
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+
+    <script>hljs.highlightAll();</script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> -->
+</head>
+<body class="bg noselect">
+    <div id="loader" class="loader"></div> 
+    <div id="cover"></div>
+    <img class="headerImage" src="../assets/images/robomonkee.png">
+    <div class="nav">
+            <a onclick="addActiveClass('playground');" id = "playgroundNavBtn" class="nav-buttons active">Play Ground</a>
+            <a onclick="addActiveClass('line-follower');" id = "line-followerNavBtn" class="nav-buttons">Line Follower</a>
+            <a onclick="addActiveClass('ultrasonic');" id = "ultrasonicNavBtn" class="nav-buttons">Ultrasonic</a>
+            <a onclick="addActiveClass('bluetooth');" id = "bluetoothNavBtn" class="nav-buttons">Bluetooth</a>
+    </div>
+    <div class="floatBtn" style="text-align: center;"><button class="floatbt" type="submit" onclick="  document.getElementById('modalId').style.display='block';  handleOnChange(); return false;">GET CODE</button></div>
+<div class="codeHere">
+<div class="scroll">
+    <pre>
+    <div id="playground"><pre><code class="lang-cpp">
+        //Choose function which you want to perform and time for which it should run!
+        <div id="pgCode">
+<select name="functions">
+    <option value="forward">forward</option>
+    <option value="reverse">reverse</option>
+    <option value="left">left</option>
+    <option value="right">right</option>
+    <option value="stop">stop</option>
+</select>();  delay(<input class="SS" oninput="this.style.width = ((this.value.length + 2) * 10) + 'px';" type="text" value="1000"/>); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Delay in milliseconds (There are 1000 milliseconds in a second)</span></div>
+    </div></code></pre>
+    <button id="addFnInPlaygroundBtn" onclick="addPlaygroundBlock()">+</button>
+    </div></pre>
+    <div id="line-follower" class="hide">
+<pre><code class="lang-cpp"> <form>
+<!-- #define TRIGGER_PIN 9
+#define ECHO_PIN 10 
+
+#define IR1 A1
+#define IR2 A2
+#define IR3 A3
+#define IR4 A4
+#define IR5 A5
+
+#define EN2 3
+#define RM1 4
+#define RM2 5
+#define EN1 6
+#define LM1 7
+#define LM2 8 -->
+    float SP_EN1 = <input type="number" min="0" max="255" value="0" placeholder="SPEED 1" id="SP_EN1" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Left Motor Speed</span></div>
+    float SP_EN2 = <input type="number" min="0" max="255" value="0" placeholder="SPEED 2" id="SP_EN2" oninput="handleOnChange();this.style.width = ((this.value.length + 2) * 20) + 'px';" required></input>; <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Right Motor Speed</span></div>
+<datalist id = "HL">
+    <option value="HIGH"></option>
+    <option value="LOW"></option>
+</datalist>
+<!-- void forward(){
+    Serial.print("Forwards Triggered");
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,HIGH);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,SP_EN1);   
+}
+
+void right(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,0);
+    digitalWrite(LM1,HIGH);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,SP_EN1);
+}
+
+void left(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,0);
+}
+
+void deg360(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,HIGH);
+    digitalWrite(RM2,LOW);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,HIGH);
+    analogWrite(EN1,SP_EN1);
+}
+
+void reverse(){
+    Serial.print("Reverse Triggered");
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM2,HIGH);
+    analogWrite(EN2,SP_EN2);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,HIGH);
+    analogWrite(EN1,SP_EN1);   
+}
+
+void stop(){
+    Serial.print("Right Triggered");
+    digitalWrite(RM1,LOW);
+    digitalWrite(RM2,LOW);
+    digitalWrite(LM1,LOW);
+    digitalWrite(LM2,LOW);
+    analogWrite(EN1,0);
+    analogWrite(EN2,0);
+}
+
+
+void setup(){
+    Serial.begin(9600);
+    // MOTOR AND ENABLES
+    pinMode (RM1, OUTPUT);
+    pinMode (RM2, OUTPUT);
+    pinMode (LM1, OUTPUT);
+    pinMode (LM2, OUTPUT);
+    pinMode (ENA, OUTPUT);
+    pinMode (ENB, OUTPUT);
+    // IR ARRAY
+    pinMode (IR1, INPUT);
+    pinMode (IR2, INPUT);
+    pinMode (IR3, INPUT);
+    pinMode (IR4, INPUT);
+    pinMode (IR5, INPUT);
+    // ULTRASONIC SENSOR
+    pinMode(ECHO_PIN,INPUT);
+    pinMode(TRIGGER_PIN,OUTPUT);
+}
+
+int dist(){
+    digitalWrite(TRIGGER_PIN,LOW);
+    delayMicroseconds(2);
+    digitalWrite(TRIGGER_PIN,HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TRIGGER_PIN,LOW);
+    int dur=pulseIn(ECHO_PIN, HIGH);
+    c=dur*0.0294/2;
+    return c;
+}
+
+void loop(){
+    int S1 = digitalRead(IR1);
+    int S2 = digitalRead(IR2);
+    int S3 = digitalRead(IR3);
+    int S4 = digitalRead(IR4);
+    int S5 = digitalRead(IR5); -->
+
+    <!-- <button type="button" onclick="toggleUS();">Toggle Ultrasonic</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Include/Exclude Ultrasonic from Program</span></div> -->
+    <div class="nohighlight">
+        <input type="radio" id="sensors3" oninput="radioCheck('3');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors3">3 Sensors</label> <input type="radio" id="sensors5" checked="checked" oninput="radioCheck('5');" class="check" autocomplete="off" name="sensorsNumber"><label class="radio-label" for="sensors5">5 Sensors</label><div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Choose how many sensors you want to be working.</span></div>
+    </div>
+    
+    <div id="ifBlocks">
+    if(S1 == <input class="SS" value="0" id="S1if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Value read by IR sensor (0/1)</span></div> && S2 == <input class="SS" id="S2if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S3 == <input class="SS" id="S3if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S4 == <input class="SS" id="S4if0" value="0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/> && S5 == <input class="SS" value="0" id="S5if0" type="number" min="0" max="1" oninput="handleOnChange();this.style.width = ((this.value.length +2) * 20) + 'px';" required/>){
+        <select name="functions" id="Fnif0" oninput="handleOnChange();">
+            <option value="forward" selected>forward</option>
+            <option value="reverse">reverse</option>
+            <option value="left">left</option>
+            <option value="right">right</option>
+            <option value="stop">stop</option>
+        </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
+    }
+    </div>
+    <button type="button" onclick="addIfBlock();">+</button> <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Add another if block similar to above one</span></div>
+
+<!-- } -->
+</form> </code></pre>
+    </div>
+    <div id="ultrasonic" class="hide">
+        <pre><code class="lang-cpp">
+        <div id="ultrasonicBlock" style="display: block;">
+            if(dist()&lt;<input type="number" placeholder="DISTANCE" min="0" id="dist" value="0" required oninput="handleOnChange(); this.style.width = ((this.value.length + 5) * 10) + 'px';"/>) <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Distance of Bot from Obstacle in cm</span></div> {
+                <select name="functions" id="FnUS" oninput="handleOnChange();">
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                  </select>(); <div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Function, which you want, bot to follow</span></div>
+                delay(10);
+            }else{
+                forward();
+            }
+            </div>
+            </code></pre>
+    </div>
+
+    <div id="bluetooth" class="hide">
+        <pre><code class="lang-cpp">
+            <input type="radio" checked="checked" oninput="showHideBluetoothBlocks('btn')" id="buttonControllerRadio" class="check" autocomplete="off" name="controllerType"><label class="radio-label" class="active" for="buttonControllerRadio">Button Controller</label> <input type="radio" oninput="showHideBluetoothBlocks('voice')" id="voiceControllerRadio" class="check" autocomplete="off" name="controllerType"><label class="radio-label" for="voiceControllerRadio">Voice Controller</label><div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Choose the mode of controller.</span></div>
+
+            <div id="bluetoothBtnController" class="show"> 
+            // recieved is a variable in which serial data obtained from bluetooth controller is stored
+
+            if(recieved == 'u'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/up-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsU"> 
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'd'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/down-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsD" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'r'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/left-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsL" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'l'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/right-arrow.png"/></span></div>){
+                <select name="functions" id="btControlsR" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 's'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/stop.png"/></span></div>){
+                <select name="functions" id="btControlsS" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'sl'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-left.png"/></span></div>){
+                <select name="functions" id="btControlsSL" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'sr'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-right.png"/></span></div>){
+                <select name="functions" id="btControlsSR" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            else if(recieved == 'horn'<div class="tooltip"><b><i> i </i></b><span class="tooltiptext">Button <img src="../assets/images/bt/spin-right.png"/></span></div>){
+                <select name="functions" id="btControlsHR" >
+                    <option value="forward">forward</option>
+                    <option value="reverse">reverse</option>
+                    <option value="left">left</option>
+                    <option value="right">right</option>
+                    <option value="stop">stop</option>
+                    <option value="stop">spin right</option>
+                    <option value="stop">spin left</option>
+                    <option value="stop">horn</option>
+                </select>();
+            }
+            </div>
+            <div id="bluetoothVoiceController" class="hide"><div id="bluetoothVoiceBlock">
+            // voiceInput is a variable in which serial data (whatever you'll say on mic) obtained from bluetooth controller is stored
+
+            if(voiceInput == "<input type="text"/>"){
+                <select name="functions" > 
+                <option value="forward">forward</option>
+                <option value="reverse">reverse</option>
+                <option value="left">left</option>
+                <option value="right">right</option>
+                <option value="stop">stop</option>
+                <option value="stop">spin right</option>
+                <option value="stop">spin left</option>
+                <option value="stop">horn</option>
+                </select>();
+            }
+            </div>
+            <button onclick="addVoiceControlBlock()">+</button>
+            </div>
+            
+        </code></pre>
+    </div>
+
+    <div id="modalId" class="w3-modal">
+        <div class="w3-modal-content w3-animate-zoom">
+        <header class="w3-container"> 
+            <h2 style="text-align: center;">Click on the button to copy code!</h2>
+            <div id="choices">
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck('pg');" class="check" id="playground-check" name="playground-check" value="playground-check">
+                    <label class="check-label" for="playground-check">Playground</label>
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck();" class="check" id="line-follower-check" name="line-follower-check" value="line-follower-check">
+                    <label class="check-label" for="line-follower-check">Line Follower</label>
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck();" class="check" id="ultrasonic-check" name="ultrasonic-check" value="ultrasonic-check">
+                    <label class="check-label" for="ultrasonic-check">Ultrasonic</label>
+                    <input type="checkbox"  autocomplete="off" oninput = "choiceCheck('bt');" class="check" id="bluetooth-check" name="bluetooth-check" value="bluetooth-check">
+                    <label class="check-label" for="bluetooth-check">Bluetooth</label><br>
+            </div>
+            <br>
+            <div class = "modal-button-div">
+                <div class="modal-buttons" ><button type="button" onclick="copyToClipboard('arduinoCodeDiv')">Copy Code</button></div>
+                <div class="modal-buttons" ><button type="button" onclick="saveCode('arduinoCodeDiv')">Download Code</button></div>
+                <div class="modal-buttons" ><a href="https://create.arduino.cc/editor" target="blank"><button type="button" onclick="copyToClipboard('arduinoCodeDiv','upload')">Upload Code</button></a></div>
+            </div>
+
+            <span onclick="document.getElementById('modalId').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+            </header>
+          <div class="w3-container">
+            <pre class="arduinoCode">
+                <div id = "arduinoCodeDiv">
+                </div>
+            </pre>
+          </div>
+          <footer class="w3-container">
+            <p>   </p>
+          </footer>
+        </div>
+      </div>
+</div>
+</div>
+      <a href="../index.html"><button class="bounce" id="homeBtn" title="Home"><img src="../assets/images/home.png"/></button></a>
+
+
+    </body>
+</html> 

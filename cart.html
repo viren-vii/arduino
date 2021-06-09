@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="RoboMonkee">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap">
+    <title>RoboMonkee</title>
+
+    <link rel = "icon" href = "./assets/images/robomonkee.png" type = "image/x-icon">
+
+    <!-- Additional CSS Files -->
+
+    <link rel="stylesheet" type="text/css" href="assets/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/botInfo.css">
+    <style>
+      .checked {
+        color: orange;
+      }
+      .floatingHomeButton{
+          box-shadow: 2px 6px 6px rgb(82, 82, 82); 
+          position: fixed;
+          margin: 20px 20px;
+          z-index :1; 
+          float:left; 
+          width: 3%; 
+          padding:10px; 
+          border: none;
+          background-color: white; 
+          border-radius: 500px ;
+          height: auto;
+          outline:none
+        }
+
+        .floatingHomeButton:hover img{transition: 0.2s; filter: invert(100);}
+        .floatingHomeButton:hover{transition: 0.2s; background-color: black;}
+ 
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top:10px;
+}
+
+.middle {
+  margin-top:10px;
+  float: left;
+  width: 70%;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+nav{
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(117, 58, 136, 1) 0%,
+    rgba(203, 43, 94, 1) 0%,
+    rgba(117, 58, 136, 1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(117, 58, 136, 1) 0%,
+    rgba(203, 43, 94, 1) 0%,
+    rgba(117, 58, 136, 1) 100%
+  );
+  width: 100%;
+  color: white;
+}
+.navbar{
+  border-radius: 0;
+
+}
+/* Individual bars */
+.bar-5 {width: 70%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 20%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 7%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 7%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
+      </style>
+    </head>
+    
+    <body>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-light" href="./index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="#botInfo">Info<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#botFunctions">Functions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#botInTheBox">In The Box</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Reviews
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#reviewsSection">Reviews Stats</a>
+                <a class="dropdown-item" href="#parentReviews">Happy Parents</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#writeReview">Write a review!</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+        <section id="botInfo">
+          <div class="container">
+            <div class="heading-section">
+                <h2>  </h2>
+            </div>
+            <div class="row">
+              <div class="col-md-6" style="padding-right: 5%;">
+                <div id="slider" class="owl-carousel product-slider">
+                  <div class="item">
+                    <img id="one" src="assets/images/clipart/1w.png" />
+                  </div>
+                  <div class="item">
+                    <img id="two" src="assets/images/clipart/2w.png" />
+                  </div>
+                  <div class="item">
+                    <img id="three" src="assets/images/clipart/3w.png" />
+                  </div>
+                  <div class="item">
+                    <img id="four11" src="assets/images/clipart/4w.png" />
+                  </div>
+                  <div class="item">
+                    <img id="five" src="assets/images/clipart/5w.png" />
+                  </div>
+                  <div class="item">
+                    <img id="six" src="assets/images/clipart/6w.png" />
+                  </div>
+            </div>
+            <div id="thumb" class="owl-carousel product-thumb">
+              <div class="item">
+                <img id="one1" src="assets/images/clipart/1w.png" />
+              </div>
+              <div class="item">
+                <img id="two2" src="assets/images/clipart/2w.png" />
+              </div>
+              <div class="item">
+                <img id="three3" src="assets/images/clipart/3w.png" />
+              </div>
+              <div class="item">
+                <img id="four4" src="assets/images/clipart/4w.png" />
+              </div>
+              <div class="item">
+                <img id="five5" src="assets/images/clipart/5w.png" />
+              </div>
+              <div class="item">
+                <img id="six6" src="assets/images/clipart/6w.png" />
+              </div>
+            </div>
+              </div>
+              <div class="col-md-6">
+                <div class="product-dtl">
+                  <div class="product-info">
+                    <div class="product-name">LEO </div>
+                   
+                    <div class="reviews-counter">
+                  <div class="rate">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star-half-full" style="color: #ff9800;fill:  #ff9800;"></span>
+                    </div>
+                  <span>1329 Reviews</span>
+                </div>
+                    <div class="product-price-discount"><span>₹6999.00</span><span class="line-through">₹10000.00</span></div>
+                  </div>
+                  <p>Leo is a bot with various functionalities with vast applications in the real world. The bot consists of three modes, line follower, Bluetooth mode, and avoiding obstacles. Firstly, we need to work on basics by learning about the essential components and their mechanisms with proper video tutorials through our app. Furthermore, the kid will start implementing the procedure of each mode by block coding, mix, or actual coding as per their selected course by adding their imagination and creativity. And then the main work is arranging everything and making our Leo ready.</p>
+                  <h7>Video Tutorials <img src="assets/images/coming-soon.png" style="max-width: 40px;max-height: 40px;"></h7>
+                  <div class="row">
+                    
+                    <div class="col-md-6">
+                      <label for="color">color</label>
+                  <select id="colorSelect" name="color" class="form-control" onclick="color()">
+                    <option>White</option>
+                    <option>Black</option>
+                  </select>
+                    </div>
+                  </div>
+                  <div class="product-count">
+                    <label for="size">Quantity</label>
+                    <form action="#" class="display-flex">
+                    <div class="qtyminus">-</div>
+                    <input type="text" name="quantity" value="1" class="qty">
+                    <div class="qtyplus">+</div>
+                </form>
+                <a href="#" class="round-black-btn" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">BUY</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+        
+      </div>
+      </div>
+        </section>
+        
+        <section>
+            <div class="">
+          <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 0%;padding-bottom: 5%;">
+            <div class="card"  style="border: 0em;">
+              <img class="card-img-top" src="assets/images/clipart/free shipping.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">FREE SHIPPING</h5>
+                <p class="card-text" style="text-align: center;">Free shipping above ₹9999.00</p>
+              </div>
+            </div>
+            <div class="card"  style="border: 0em;">
+              <img class="card-img-top" src="assets/images/clipart/money back.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">MONEY BACK GURANTEE</h5>
+                <p class="card-text" style="text-align: center;">100% money back guarantee.</p>
+              </div>
+            </div>
+            <div class="card"  style="border: 0em;">
+              <img class="card-img-top" src="assets/images/clipart/secure payment.png" alt="Card image cap" style="max-width: 250px;max-height: 250px;align-self: center;">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">SECURE PAYMENT</h5>
+                <p class="card-text" style="text-align: center;" >Secure payment via Credit cards, PayPal or bank transfer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="">
+        <div class="card"  style="border: 0em;padding-left: 10%;padding-right: 10%;">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;">Description</h5>
+            <p class="card-text" style="text-align: center;" ><ul>
+              <li>Coding Robots for Kids 8-12. A STEM educational robot kit for young beginners to learn robotics, Scratch & Python Coding, and electronics.</li>
+              <li>Equipped with Latest Technology. 4-core MCU integrates WIFI, bluetooth modules, high-precision metal gear encoder motors, and a wealth of sensors.</li>
+              <li>Good Hardware Works Together with Good Software. With rich tutorials and project cases provided, kids can start from graphic programming, and use Scratch or Arduino C language with one click.</li>
+              <li>Expandable with mBuild modules and Structural Parts. mBot Neo can expand the scope of activities with more than 60 different modules, and connect in series up to 10 different sensors, motors, LEDs or other components at a time.</li>
+              <li>Robust and durable for years. Being well packaged, mBot Neo uses long-lasting built-in battery and Aluminum alloy Metal Materials.</li>
+
+            </ul></p>
+          </div>
+        </div>
+      </div> -->
+      </section>
+      
+      <section style="padding-top: 5%;">
+        <div  >
+          <h2 style="text-align: center;padding-bottom: 5%;">Various Shapes, for Free & Flex Building.</h2>
+          <img src="assets/images/iso leo.png" style="padding-left: 30%;padding-right: 30%;padding-bottom: 10%;">
+        
+        </div>
+        
+        </section>
+        
+        <img src="/assets/images/main frame.png" alt="">
+        <!-- <section class="myback">
+          <!-- <h1 style="color: aliceblue;text-align: center;padding-top: 20%; background-image: url();">Space For Image</h1> -->
+        </section> -->
+      
+<section id="botFunctions">
+  <div class="card-group" style="padding-left: 10%;padding-right: 10%; padding-top: 5%;padding-bottom: 5%;">
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Obstacle Avodiance Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+
+        <source src="assets/images/videos/obstacles.mp4" type="video/mp4" />
+      </video>           
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Block Coding</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+
+        <source src="assets/images/videos/bc.mp4" type="video/mp4" />
+      </video>            
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Voice Control</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+        <source src="assets/images/videos/voiceControl.mp4" type="video/mp4" />
+
+      </video>          
+    </div></div>
+    <div class="card-group" style="padding-left:10%;padding-right: 10%; padding-top: 0%;padding-bottom:   15%;">
+      <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+        <h5 class="card-title" style="text-align: center;color: black;">Bluetooth Controled</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+        <source src="assets/images/videos/btControl.mp4" type="video/mp4" />
+
+      </video>           
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">Line Follower Mode</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
+
+        <source src="assets/images/videos/llf.mp4" type="video/mp4" />
+      </video>            
+    </div>
+    <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
+      <h5 class="card-title" style="text-align: center;color: black;">C++ Coding</h5>
+      <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius:50px;">
+
+        <source src="assets/images/videos/c++.mp4" type="video/mp4" />
+      </video>         
+    </div>
+  </div>
+
+</section>
+<section style="margin-top: 10%;">
+  <h2 style="text-align: center;margin-bottom: 60px;">The First STEM Robot Friend of Kids</h2>
+  <div class="card-deck" style="padding-left: 10%;padding-right: 10%;">
+    <div class="card"  style="border: 0em;">
+      <img class="card-img-top" src="assets/images/clipart/easy to build.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Easy Building</h5>
+        <p class="card-text" style="text-align: center;">Leo has an instinctive plan that makes it simple to assemble, with simply a basic screwdriver. A 3D structure manual in the crate assists youngsters with figuring out how to assemble the robot bit by bit. 
+          And surprisingly enlivened recordings and bit by bit tutorial exercises.</p>
+      </div>
+    </div>
+    <div class="card"  style="border: 0em;">
+      <img class="card-img-top" src="assets/images/clipart/simple playing.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Simple Playing</h5>
+        <p class="card-text" style="text-align: center;">In a straightforward playing module, Leo highlights 3 basic playing alternatives: control, line-follow, and obstacle detection mode. In the manual mode, kids can handle the robot by voice, utilizing controller driving, or direct command on coding software through "Arena" tab.</p>
+      </div>
+    </div>
+    <div class="card"  style="border: 0em;">
+      <img class="card-img-top" src="assets/images/clipart/fun programming.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Fun Programming</h5>
+        <p class="card-text" style="text-align: center;">No coding experience required. The simplified (block code) programming gives a natural method to you to figure out how to code. Along with the block coding, C++ coding software and Arduino ide in more than of 100 engaging programs with "tutorials" permits you to learn code bit by bit.</p>
+      </div>
+    </div>
+    <div class="card"  style="border: 0em;">
+      <img class="card-img-top" src="assets/images/clipart/own robot.png" style="max-width: 250px; max-height: 250px; align-self: center;" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;">Create your own Robot</h5>
+        <p class="card-text" style="text-align: center;">The open-source framework not just ensures the rich ongoing interaction of Leo，but additionally permits children to have limitless inventiveness! Leo can be associated with in excess of 100 sorts of electronic modules, viable with in excess of 500 parts on the robotics platform , yet in addition viable with Arduino, Raspberry Pi, and so forth</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+         
+        <section>
+        <div class="container3" id="botInTheBox" style="padding: 10%;">
+            <h2 style="text-align: center; font-family: monospace;">In The Box</h2>
+            <br><br>
+            <img src="assets/images/leo in the box.png" style="padding-left: 10%;padding-right: 10%;">
+          </div>
+        </section>
+        <section id="reviewsSection">
+          <div class="container3" style="padding-left: 20%;padding-right: 20%;padding-bottom: 10%;">
+            <h2 style="text-align: center; padding-bottom: 5%;">Reviews (Based On BETA Version)</h2>
+            <span class="heading">User Rating</span><br>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p>4.42 average based on 56 reviews.</p>
+<hr style="border:1px solid #8a8a8a" style="margin-bottom: 5%;">
+
+<div class="row">
+  <div class="side">
+    <div>5 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-5" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>40</div>
+  </div>
+  <div class="side">
+    <div>4 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-4" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>8</div>
+  </div>
+  <div class="side">
+    <div>3 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-3" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>3</div>
+  </div>
+  <div class="side">
+    <div>2 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-2" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>2</div>
+  </div>
+  <div class="side">
+    <div>1 star</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+      <div class="bar-1" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>3</div>
+  </div>
+</div>
+<h4 style="color: #8a8a8a;padding-top: 10%;font-size: small;"><i>* Recent Four Reviews Will be Displayed</i></h4>
+
+            <div id="parentReviews" class="card"  style="border-radius: 50px;margin-top: 5%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+              <div class="card-body">
+                <h5 class="card-title" style="color: white;">Hrishika , Mother of Aisha</h5>
+                <div>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <p class="card-text" style="color: white;">
+                  Leo is a great initiative for students to learn robotics and to have some practical knowledge. My daughter is a keen learner and she is very delighted to make her codes. I would recommend every parent to get this for their children. </p>
+              </div>
+            </div>
+            <br>
+            <div class="card"  style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+              <div class="card-body">
+                <h5 class="card-title"  style="color: white;">Yashaswi</h5>
+                <div>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <p class="card-text"  style="color: white;">I'm extremely happy to enroll in the Leo beta program and the concept learning and visualization are so perfect.</p>
+              </div>
+            </div>
+            <br>
+            <div class="card"  style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+              <div class="card-body">
+                <h5 class="card-title" style="color: white;" >Ankita ,Mother of Anandita</h5>
+                <div>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <p class="card-text"  style="color: white;">Enrolling my daughter in Robo Monkee was the best decision. Robo Monkee is a perfect platform to explore her passion. It has created a strong interest in technology in my daughter and I am happy to see that.</p>
+              </div>
+            </div>
+            <br>
+            <div class="card"  style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;">
+              <div class="card-body">
+                <h5 class="card-title"  style="color: white;">Arvind , Father of Preeti</h5>
+                <div>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                </div>
+                <p class="card-text"  style="color: white;">My daughter is extremely excited to make her robot. Thank you Robo Monkee for developing her interest in the field of robotics.  The visualization and website are child-friendly making it easy for children to access. I would recommend all the parents to enroll in the courses for their children.</p>
+              </div>
+            </div>
+            <br>
+            
+            <h2 style="margin-top: 5%;">Write Your Review</h2>
+            <div class="form-group" id="writeReview">
+              <label class="control-label" for="review"> <br>  Your Review:</label>
+              <textarea class="form-control" rows="10" placeholder="Your Reivew" name="review" id="review" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);"></textarea>
+              <span id="reviewInfo" class="help-block pull-right">
+            </div>
+            <h2>Your Info:</h2>
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" placeholder="Name" name="name" id="name" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
+              </div>
+              <div class="form-group">
+                <label for="city">City:</label>
+                <input class="form-control" type="text" placeholder="City" name="city" id="city" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" type="text" placeholder="Email" name="email" id="email" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
+              </div>
+              <a id="submit" class="btn btn-primary" style="color: #f1f1f1;border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;" onclick="return storeToFirebase('review', 'reviewCollection');">Submit</a>
+              <input id="submitForm" type="submit" style="display:none;">
+              <span id="submitInfo" class="help-block">
+                By clicking <strong>Submit</strong>, I authorize the sharing of my name and review on the web. (email will not be shared)
+              </span>
+        </section>
+       
+        <section style="background-color: rgb(73, 73, 95);height: 80%;"> 
+                  <div class="card-deck" style="padding-top: 10%;align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%;">
+          <div class="card"  style="border: 0em;max-width: 1000px;border-radius: 40px;">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm">
+                  <h5 class="card-title"  >Hi RoboMonkee ,</h5>
+                  <p class="card-text" style="padding-bottom: 2%;" >I Want To Buy Leo - The Codable Robot.</p>
+                  <input name="email" type="text" id="emailBuy" placeholder="   E-mail" required="" class="contact-field" style="margin-bottom: 5%;padding-bottom: 2%;padding-top: 2%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 15px;">
+                  <button type="button" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;margin-left: 5%;" onclick="return storeToFirebase('iWantBot', 'iWantBotCollection');">Join US</button>
+                </div>
+                </div>
+                <div class="col-sm">
+                  <img style="max-width: 70%; max-height: 70%;" src="/assets/images/clipart/robomonkee.png" alt="">
+              </div>
+            </div>
+        </div>
+        </div>
+        </section>
+  <!-- Footer -->
+  <footer class="bg-white">
+    <div class="container py-5">
+      <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+          <p class="font-italic text-muted">Join our 6,200 students' family!</p>
+          <p style="color: #6c757d; margin-top: 20px;">Office No. 7, 
+            Amar Business Park,<br>
+            Laxman Nagar,
+            Baner - 411045<br>info@robomonkee.com<br>8176061349</p>
+          <ul class="list-inline mt-4" style="margin-top: 10px !important;">
+            <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
+            <li class="list-inline-item"><a href="mailto:info@robomonkee.com" target="_blank"><i class="fa fa-envelope-o icon-large" style="color: #f55858;"></i></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram" style="color: #f55858;"></i></a></li>
+            <li class="list-inline-item"><a href="tel:8176061349" target="_blank"><i class="fa fa-phone" style="color: #f55858;"></i></a></li>
+            <li class="list-inline-item"><a href="https://api.whatsapp.com/send?phone=8176061349" target="_blank"><i class="fa fa-whatsapp" style="color: #f55858;"></i></a></li>
+          </ul>
+          <!-- <p>Email: info@robomonkee.com</p>
+          <p>Email: info@robomonkee.com</p> -->
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Programmable Bot</a></li>
+            <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
+            <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
+            <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+            <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+          <p class="text-muted mb-4">To get Latest Updates and news from us, subscribe our newsletter!</p>
+          <div class="p-1 rounded border">
+            <div class="input-group">
+              <input id="newsletterEmail" type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+              <div class="input-group-append">
+                <button id="button-addon1" type="button" class="btn btn-link" onclick="return storeToFirebase('newsletter', 'newsletterCollection');"><i class="fa fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class="text-muted mb-0 py-2">© 2021 RoboMonkee All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer-->
+
+  <script src="./assets/js/firebase.js" ></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+  https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+        
+    <!-- Global Init -->
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/vdoplayer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    function color(){
+      var e = document.getElementById("colorSelect");
+      var strUser = e.options[e.selectedIndex].text;
+      console.log(strUser);
+      if(strUser == "White"){
+        document.getElementById("one").src = "assets/images/clipart/1w.png";
+        document.getElementById("two").src = "assets/images/clipart/2w.png";
+        document.getElementById("three").src = "assets/images/clipart/3w.png";
+        document.getElementById("four11").src = "assets/images/clipart/4w.png";
+        document.getElementById("five").src = "assets/images/clipart/5w.png";
+        document.getElementById("six").src = "assets/images/clipart/6w.png";
+
+        document.getElementById("one1").src = "assets/images/clipart/1w.png";
+        document.getElementById("two2").src = "assets/images/clipart/2w.png";
+        document.getElementById("three3").src = "assets/images/clipart/3w.png";
+        document.getElementById("four4").src = "assets/images/clipart/4w.png";
+        document.getElementById("five5").src = "assets/images/clipart/5w.png";
+        document.getElementById("six6").src = "assets/images/clipart/6w.png";
+      }
+      if(strUser == "Black"){
+        document.getElementById("one1").src = "assets/images/clipart/1b.jpg";
+        document.getElementById("two2").src = "assets/images/clipart/2b.png";
+        document.getElementById("three3").src = "assets/images/clipart/3b.png";
+        document.getElementById("four4").src = "assets/images/clipart/4b.png";
+        document.getElementById("five5").src = "assets/images/clipart/5b.png";
+        document.getElementById("six6").src = "assets/images/clipart/6b.png";
+
+        document.getElementById("one").src = "assets/images/clipart/1b.jpg";
+        document.getElementById("two").src = "assets/images/clipart/2b.png";
+        document.getElementById("three").src = "assets/images/clipart/3b.png";
+        document.getElementById("four11").src = "assets/images/clipart/4b.png";
+        document.getElementById("five").src = "assets/images/clipart/5b.png";
+        document.getElementById("six").src = "assets/images/clipart/6b.png";
+
+        
+      }
+    }
+  </script>
+  </body>
+</html>

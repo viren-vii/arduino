@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        
+	<title>
+        Robo Monkee Editor
+    </title>
+        
+        
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+    <link rel="icon" type="image/x-icon" href="l.svg">
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+    <link rel="stylesheet" href="index.css">
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+        
+        
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+	<script type="text/javascript" src="C:/Users/gawan/Downloads/google-blockly-4.20201217.0-6-gd7e9eaf (1)/google-blockly-d7e9eaf/blockly_compressed.js"></script>
+  	<script type="text/javascript" src="C:/Users/gawan/Downloads/google-blockly-4.20201217.0-6-gd7e9eaf (1)/google-blockly-d7e9eaf/blocks_compressed.js"></script>
+  	<script type="text/javascript" src="C:/Users/gawan/Downloads/google-blockly-4.20201217.0-6-gd7e9eaf (1)/google-blockly-d7e9eaf/javascript_compressed.js"></script>
+  	<script type="text/javascript" src="C:/Users/gawan/Downloads/google-blockly-4.20201217.0-6-gd7e9eaf (1)/google-blockly-d7e9eaf/msg/js/en.js"></script>
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+        
+        
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+    <script type="text/javascript" src="code.js"></script>
+    <script type="text/javascript" src="functions.js"></script>
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+
+        
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.7.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
+<!--   -----------------------------------------------------------------------------------------------------------------------------------------     -->
+        
+</head>
+<body onload="auto_save_and_restore_blocks()">
+<!--
+    <div style="height: 13%; margin: 10px;">
+     <h1 style="display: inline-block;"><a href="#">Robo Monkee</a></h1> 
+  </div>
+-->
+    <div style="width: 100%; height: 11vh;">
+        <a href="#"><img src="logo_name_1.svg" style="width: 100%; display: inline-block; height: 100%;"></a>
+        <input type="file" id="load" style="display: none;"/>
+        <div id="fakeload"></div>
+    </div>
+    <div style="width: 100%; height: 85vh; display: inline-flex">
+	   <div id="blocklyDiv" style="height: 85vh; width: 70%;"></div>
+                <button onclick="showcode()" style="height: 50px; margin: 10px;">Show Code</button>
+        <button onclick="discard()" style="height: 50px; margin: 10px;">Discard Code</button>
+        <button onclick="save()" style="height: 50px; margin: 10px;">Save Code</button>
+        <button onclick="uploadClick()" style="height: 50px; margin: 10px;">Upload Code</button>
+
+        <div id="code" style="height: 85vh; width: 30%;"></div>
+    </div>
+<!--    <?xml version="1.0"?>-->
+<!--
+    <xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+  <block type="arduino" id="c)QK,r!+)QKxAJnzngQ9" x="87" y="87"></block>
+</xml>
+-->
+    
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="Logic" colour="#5b80a5">
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block type="logic_null"></block>
+    <block type="logic_ternary"></block>
+  </category>
+  <category name="Loops" colour="#5ba55b">
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_whileUntil">
+      <field name="MODE">WHILE</field>
+    </block>
+    <block type="controls_for">
+      <field name="VAR" id="qZ`r1+#nzp-s8Pj2,+KA">i</field>
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach">
+      <field name="VAR" id="sc)[[{1d(4bKMVs[L_Vr">j</field>
+    </block>
+    <block type="controls_flow_statements">
+      <field name="FLOW">BREAK</field>
+    </block>
+  </category>
+  <category name="Math" colour="#5b67a5">
+    <block type="math_number">
+      <field name="NUM">0</field>
+    </block>
+    <block type="math_arithmetic">
+      <field name="OP">ADD</field>
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <field name="OP">ROOT</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <field name="OP">SIN</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant">
+      <field name="CONSTANT">PI</field>
+    </block>
+    <block type="math_number_property">
+      <mutation divisor_input="false"></mutation>
+      <field name="PROPERTY">EVEN</field>
+      <value name="NUMBER_TO_CHECK">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_round">
+      <field name="OP">ROUND</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">3.1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_on_list">
+      <mutation op="SUM"></mutation>
+      <field name="OP">SUM</field>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constrain">
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">50</field>
+        </shadow>
+      </value>
+      <value name="LOW">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="HIGH">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_int">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_float"></block>
+  </category>
+  <category name="Text" colour="#5ba58c">
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
+    <block type="text_append">
+      <field name="VAR" id="YcXLe2HQX93@J6F1e#8K">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_length">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_isEmpty">
+      <value name="VALUE">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="Ery^u1J~~-r(s~MyF9Fn">text</field>
+        </block>
+      </value>
+      <value name="FIND">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_charAt">
+      <mutation at="true"></mutation>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="Ery^u1J~~-r(s~MyF9Fn">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="Ery^u1J~~-r(s~MyF9Fn">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_changeCase">
+      <field name="CASE">UPPERCASE</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="Lists" colour="#745ba5">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_create_with">
+      <mutation items="3"></mutation>
+    </block>
+    <block type="lists_repeat">
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">5</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_indexOf">
+      <field name="END">FIRST</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="/6Z[,}HU75_j85m$4~)Y">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getIndex">
+      <mutation statement="false" at="true"></mutation>
+      <field name="MODE">GET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="/6Z[,}HU75_j85m$4~)Y">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <mutation at="true"></mutation>
+      <field name="MODE">SET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="/6Z[,}HU75_j85m$4~)Y">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_getSublist">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="/6Z[,}HU75_j85m$4~)Y">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <mutation mode="SPLIT"></mutation>
+      <field name="MODE">SPLIT</field>
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_sort">
+      <field name="TYPE">NUMERIC</field>
+      <field name="DIRECTION">1</field>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
+  <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+  <sep></sep>
+  <category name="Arduino" colour="#5ba55b">
+    <block type="arduino"></block>
+    <block type="delay">
+      <field name="delay">0</field>
+    </block>
+  </category>
+  <category name="Libraries" colour="#5ba58c">
+    <block type="line"></block>
+    <block type="wall"></block>
+  </category>
+  <sep></sep>
+  <category name="Line Follower" colour="#745ba5">
+    <block type="ir_array">
+      <field name="if_LS4">if</field>
+      <field name="LS4">LS 4</field>
+      <field name="Value_LS4">high</field>
+      <field name="Logic_LS4">and</field>
+      <field name="if_LS3">if</field>
+      <field name="LS3">LS 3</field>
+      <field name="Value_LS3">high</field>
+      <field name="Logic_LS3">and</field>
+      <field name="if_LS2">if</field>
+      <field name="LS2">LS 2</field>
+      <field name="Value_LS2">high</field>
+      <field name="Logic_LS2">and</field>
+      <field name="if_LS1">if</field>
+      <field name="LS1">LS 1</field>
+      <field name="Value_LS1">high</field>
+      <field name="Logic_LS1">and</field>
+      <field name="if_RS1">if</field>
+      <field name="RS1">RS 1</field>
+      <field name="Value_RS1">high</field>
+      <field name="Logic_RS1">and</field>
+      <field name="if_RS2">if</field>
+      <field name="RS2">RS 2</field>
+      <field name="Value_RS2">high</field>
+      <field name="Logic_RS2">and</field>
+      <field name="if_RS3">if</field>
+      <field name="RS3">RS 3</field>
+      <field name="Value_RS3">high</field>
+      <field name="Logic_RS3">and</field>
+      <field name="if_RS4">if</field>
+      <field name="RS4">RS 4</field>
+      <field name="Value_RS4">high</field>
+    </block>
+    <block type="move">
+      <field name="move_dropdown">left</field>
+      <field name="speed">100</field>
+    </block>
+  </category>
+  <category name="Wall Follower" colour="#5b80a5">
+    <block type="controls_if">
+      <value name="IF0">
+        <block type="distance">
+          <field name="equal">equal to</field>
+          <field name="distance input">0</field>
+        </block>
+      </value>
+      <statement name="DO0">
+        <block type="move">
+          <field name="move_dropdown">left</field>
+          <field name="speed">100</field>
+        </block>
+      </statement>
+    </block>
+    <block type="distance">
+      <field name="equal">equal to</field>
+      <field name="distance input">0</field>
+    </block>
+    <block type="move">
+      <field name="move_dropdown">left</field>
+      <field name="speed">100</field>
+    </block>
+    <block type="delay">
+      <field name="delay">0</field>
+    </block>
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+    <block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block type="logic_null"></block>
+    <block type="logic_negate"></block>
+  </category>
+</xml>
+    <script>
+        /* TODO: Change toolbox XML ID if necessary. Can export toolbox XML from Workspace Factory. */
+var toolbox = document.getElementById("toolbox");
+
+var options = { 
+	toolbox : toolbox, 
+	collapse : true, 
+	comments : true, 
+	disable : true, 
+	maxBlocks : Infinity, 
+	trashcan : true, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	media : 'https://blockly-demo.appspot.com/static/media/', 
+	rtl : false, 
+	scrollbars : true, 
+	sounds : true, 
+	oneBasedIndex : true, 
+	grid : {
+		spacing : 20, 
+		length : 3, 
+		colour : '#888', 
+		snap : false
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : true, 
+		startScale : 1, 
+		maxScale : 3, 
+		minScale : 0.3, 
+		scaleSpeed : 1.2
+	}
+};
+
+/* Inject your workspace */ 
+var workspace = Blockly.inject("blocklyDiv", options);
+
+/* Load Workspace Blocks from XML to workspace. Remove all code below if no blocks to load */
+
+/* TODO: Change workspace blocks XML ID if necessary. Can export workspace blocks XML from Workspace Factory. */
+var workspaceBlocks = document.getElementById("workspaceBlocks");
+
+/* Load blocks to workspace. */
+Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+    </script>
+<!--
+    <script>
+  function auto_save_and_restore_blocks() {
+  // Restore saved blocks in a separate thread so that subsequent
+  // initialization is not affected from a failed load.
+  window.setTimeout(restore_blocks, 0);
+  // Hook a save function onto unload.
+  bindEvent(window, 'unload', backup_blocks);
+//  tabClick(selected);
+
+  // Init load event.
+  var loadInput = document.getElementById('load');
+  loadInput.addEventListener('change', load, false);
+  document.getElementById('fakeload').onclick = function() {
+    loadInput.click();
+  };
+}
+    </script>
+-->
+</body>
+</html>

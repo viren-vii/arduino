@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/44f557ccce.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style>
+        #accordionDiv{
+            width: 60%;
+            margin: auto;
+        }
+        #carouselExampleIndicators{
+          width: 80%;
+          margin: auto;
+        }
+        footer li i {
+            color: #cb2b5e;
+        }
+        footer li a:hover {
+            transition: 0.1s;
+            font-weight: bolder;
+            color: #cb2b5e;
+        }
+        a.bannerButton {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+
+            text-decoration: none;
+            color: initial;
+
+            width: auto;
+            height: auto;
+            font-size: xx-large;
+            font-weight: 900;
+            padding: 20px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            bottom: 0;
+            margin-bottom: 5%;
+            color: white;
+            background-color: rgb(19, 19, 19);
+            transition: 0.5s;
+        }
+        a.bannerButton:hover {
+            transition: 0.5s;
+            background-color: rgb(51, 51, 51);
+        }
+        #top a {
+            color: pink;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+            border-radius: 10px;
+        }
+        #top a:hover {
+            color: rgb(255, 118, 187);
+        }
+        .accordion-body img{
+          margin-right: 2%;
+          width: 20%;
+        }
+        .accordion-body {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+        }
+        .fa {
+          font-size: 30px;
+        }
+        .carousel-item img{
+          height: 80vh;
+          border-radius: 20px;
+        }
+        @media screen and (max-width: 767px) {
+            a.bannerButton {
+                font-size: small;
+                padding: 5px;
+            }
+        }
+        .floatingHomeButton{
+          box-shadow: 2px 6px 6px rgb(82, 82, 82); 
+          position: fixed;
+          margin: 20px 20px;
+          z-index :1; 
+          float:left; 
+          width: 3%; 
+          padding:10px; 
+          border: none;
+          background-color: white; 
+          border-radius: 500px ;
+          height: auto;
+          outline:none
+        }
+
+        .floatingHomeButton:hover img{transition: 0.2s; filter: invert(100);}
+        .floatingHomeButton:hover{transition: 0.2s; background-color: black;}
+
+        /* .c{
+          height: 1000px;
+        } */
+        /* .carousel {
+          background: #FAFAFA;
+          margin-bottom: 40px;
+          width: 100%;;
+        }
+
+        .carousel-cell {
+          width: 100%;
+          height: 600px;
+          margin-right: 10px;
+          border-radius: 5px;
+          background-image: url("https://viren-vii.github.io/arduino/assets/images/eventsGallery/DSC_0459.JPG")
+        }
+
+        /* cell number */
+        /* .carousel-cell:before {
+          display: block;
+          text-align: center;
+          line-height: 200px;
+          font-size: 80px;
+          color: white;
+        }
+
+        .carousel-nav .carousel-cell {
+          height: 80px;
+          width: 100px;
+        }
+
+        .carousel-nav .carousel-cell:before {
+          font-size: 50px;
+          line-height: 80px;
+        }
+
+        .carousel-nav .carousel-cell.is-nav-selected {
+          background: #ED2;
+        } */ */
+        .carousel {
+          background: #EEE;
+        }
+
+        .carousel-cell {
+          width: 31%;
+          height: 400px;
+          margin-right: 10px;
+          border-radius: 5px;
+        }
+
+        /* cell number */
+        .carousel-cell:before {
+          display: block;
+          text-align: center;
+          line-height: 600px;
+          font-size: 80px;
+          color: white;
+        }
+
+        .one{
+          background-image: url("./assets/images/eventsGallery/DSC_0459.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .two{
+          background-image: url("./assets/images/eventsGallery/DSC_0485.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .three{
+          background-image: url("./assets/images/eventsGallery/DSC_0542.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .four{
+          background-image: url("./assets/images/eventsGallery/20190702105252_IMG_3036.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .five{
+          background-image: url("./assets/images/eventsGallery/IMG_3648.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .six{
+          background-image: url("./assets/images/eventsGallery/20190702115713_IMG_3050.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .seven{
+          background-image: url("./assets/images/eventsGallery/IMG_6929.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .eight{
+          background-image: url("./assets/images/eventsGallery/IMG_6894.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .nine{
+          background-image: url("./assets/images/eventsGallery/IMG_6898.JPG");
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
+        
+    </style>
+
+
+  </head>
+  <body>
+    <a href="./index.html"><button class="floatingHomeButton"><img style="max-width: 100%;" src="./assets/images/home.png"></button></a>
+
+    <div style="position: relative;">
+        <a class="bannerButton" href="#accordionPanelsStayOpenExample" style="margin-bottom:0%;box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">Learn More</a>
+        <div style="width: auto;" >
+          <img src="assets/images/bgevent.png" style="width: 100%;">
+        
+        </div>
+    </div>
+
+
+    <div class="container" style="margin-top: 5%;margin-bottom: 5%;">
+        <h1 style="padding-bottom: 2%;text-align: center;font-size: xx-large; font-weight: bolder;">Robotics Competition</h1>
+        <p style="text-align: center;font-size:x-large">RoboMonkee announces Speedster. 
+            The competition mainly focuses on Skill Development, Multi Tasking, Teamwork, Technical exposure and Problem Solving.
+            The tracks are primarily designed to evaluate a Team on the grounds of their Team Work and Problem solving capabilities.</p>
+      </div>
+
+      <div id="accordionDiv" >
+    <div class="accordion" id="accordionPanelsStayOpenExample" >
+        <div class="accordion-item" style="box-shadow: 0px 4px rgb(107, 106, 106);border: 0em;border-radius: 25px;margin-bottom: 5%;">
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                HIGHLIGHTS
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne" >
+            <div class="accordion-body">
+              <img src="./assets/images/clipart/highlight.png"/>
+              <p>Speedster 2020 was the most succesful even hosted by us in which over 50 competitors from various age groups participated and won exciting prizes. The competition was held in Nashik in which participants from junior as well as senior age groups participated!</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="box-shadow: 0px 4px rgb(107, 106, 106);border: 0em;border-radius: 25px;margin-bottom: 5%;">
+          <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                ELIGIBILITY
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+            <div class="accordion-body">
+              <img src="./assets/images/clipart/eligibility.png"/>
+              There are generally 2 age groups in competitions so that there is healthy competition and more fun! 2 categories namely junior and senior, can participate in competitions. As of the technical issue, we, team RoboMonkee make sure, everyone who participates in competition holds same knowledge about the particular event by conducting workshops as per demand.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="box-shadow: 0px 4px rgb(107, 106, 106);border: 0em;border-radius: 25px;margin-bottom: 5%;">
+          <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                REGISTRATION
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+            <div class="accordion-body">
+              <img src="./assets/images/clipart/registration.png"/>
+                All the details are released enough amount of time prior to competition so that you get proper time to learn and practice for competition. Stay tuned with us on the website to get updated on registration details!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" style="box-shadow: 0px 4px rgb(107, 106, 106);border: 0em;border-radius: 25px;margin-bottom: 5%;">
+          <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                TRAINING
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+              <div class="accordion-body">
+                <img src="./assets/images/clipart/training (1).png"/>
+                During the period between declaration of dates and competition, we conduct workshops as per demand. Our expert engineers who have already won similar competitions share their experience.    
+            </div>
+            </div>
+          </div>
+          <div class="accordion-item" style="box-shadow: 0px 4px rgb(107, 106, 106);border: 0em;border-radius: 25px;margin-bottom: 5%;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                GAMEPLAY
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive">
+              <div class="accordion-body">
+                <img src="./assets/images/clipart/game play.png"/>
+                Speedster was a specially a rc car event, in which competitors controlled thir self made cars on arena full of obstacles and one who finished fastest with least penalties won the competition!
+            </div>
+            </div>
+          </div>
+          <div class="accordion-item" style="box-shadow: 0px 4px rgb(107, 106, 106);border: 0em;border-radius: 25px;margin-bottom: 5%;">
+            <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                PRIZES
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingSix">
+              <div class="accordion-body">
+                <img src="./assets/images/clipart/prize.png"/>
+                In senior category, first prize was 20,000 RS and second prize was 15,000 RS and third prize was 10,000 RS!
+            </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <section class="c">
+      <!-- <div class="carousel carousel-main" data-flickity='{ "wrapAround": true, "autoPlay": true}'>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div>
+      
+      <div class="carousel carousel-nav"
+        data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+        <div class="carousel-cell"></div>
+      </div> -->
+
+          <div class="carousel"
+      data-flickity='{ "wrapAround": true, "autoPlay": true}'>
+      <div class="carousel-cell one"></div>
+      <div class="carousel-cell two" ></div>
+      <div class="carousel-cell three"></div>
+      <div class="carousel-cell five"></div>
+      <div class="carousel-cell four"></div>
+      <div class="carousel-cell six"></div>
+      <div class="carousel-cell seven" ></div>
+      <div class="carousel-cell eight"></div>
+      <div class="carousel-cell nine"></div>
+      <!-- <div class="carousel-cell six"></div> -->
+</div>
+    </section>
+    
+      <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assets/images/eventsGallery/DSC_0459.JPG" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/eventsGallery/DSC_0485.JPG" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/eventsGallery/DSC_0542.JPG" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/eventsGallery/DSC_0598.JPG" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/eventsGallery/IMG_3648.JPG" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/images/eventsGallery/monkee arena 2.JPG" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div> -->
+
+
+
+    <hr>
+      <!-- Footer -->
+      <footer class="bg-white">
+        <div class="container py-5">
+          <div class="row py-4">
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3">
+              <p class="font-italic text-muted">Join our 6,200 students' family!</p>
+              <p style="color: #6c757d; margin-top: 20px;">Office No. 7, 
+                Amar Business Park,<br>
+                Laxman Nagar,
+                Baner - 411045<br>info@robomonkee.com<br>8176061349</p>
+                <ul class="list-inline mt-4" style="margin-top: 10px !important;">
+                  <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
+                  <li class="list-inline-item"><a href="mailto:info@robomonkee.com" target="_blank"><i class="fa fa-envelope-o icon-large" style="color: #f55858;"></i></a></li>
+                  <li class="list-inline-item"><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram" style="color: #f55858;"></i></a></li>
+                  <li class="list-inline-item"><a href="tel:8176061349" target="_blank"><i class="fa fa-phone" style="color: #f55858;"></i></a></li>
+                  <li class="list-inline-item"><a href="https://api.whatsapp.com/send?phone=8176061349" target="_blank"><i class="fa fa-whatsapp" style="color: #f55858;"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+              <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Programmable Bot</a></li>
+                <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
+                <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
+                <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+              <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-lg-0">
+              <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+              <p class="text-muted mb-4">To get Latest Updates and news from us, subscribe our newsletter!</p>
+              <div class="p-1 rounded border">
+                <div class="input-group">
+                  <input id="newsletterEmail" type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);background-color:rgb(49, 49, 49);border: 0em;border-radius: 25px;">
+                  <div class="input-group-append">
+                    <button id="button-addon1" type="button" class="btn btn-link" onclick="return storeToFirebase('newsletter', 'newsletterCollection');"><i class="fa fa-paper-plane"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Copyrights -->
+        <div class="bg-light py-4">
+          <div class="container text-center">
+            <p class="text-muted mb-0 py-2">© 2021 RoboMonkee All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+  <!-- End Footer-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+  </body>
+</html>
