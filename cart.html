@@ -249,7 +249,7 @@ nav{
                       <label for="color">color</label>
                   <select id="colorSelect" name="color" class="form-control" onclick="color()">
                     <option>White</option>
-                    <option>Black</option>
+                    <option><a href="cart_black.html">Black</a></option>
                   </select>
                     </div>
                   </div>
@@ -341,7 +341,7 @@ nav{
       <h5 class="card-title" style="text-align: center;color: black;">Block Coding</h5>
       <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
 
-        <source src="assets/images/videos/bc.mp4" type="video/mp4" />
+        <source src="assets/images/videos/bc_1.mp4" type="video/mp4" />
       </video>            
     </div>
     <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
@@ -363,7 +363,7 @@ nav{
       <h5 class="card-title" style="text-align: center;color: black;">Line Follower Mode</h5>
       <video class="video-fluid z-depth-1" autoplay loop  muted style="border-radius: 50px;">
 
-        <source src="assets/images/videos/llf.mp4" type="video/mp4" />
+        <source src="assets/images/videos/llf_1.mp4" type="video/mp4" />
       </video>            
     </div>
     <div class="card" style="padding-right: 2%;padding-left: 2%;background-color: transparent;border: 0em;">
@@ -574,18 +574,19 @@ nav{
               </span>
         </section>
        
-        <section style="background-color: rgb(73, 73, 95);height: 60%;"> 
-                  <div class="card-deck" style="padding-top: 7%;align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%;">
-          <div class="card"  style="border: 0em;max-width: 1000px;border-radius: 40px;">
-            <div class="card-body">
+        <!-- <div style="background-color: rgb(73, 73, 95);height: 30vh;">  -->
+                  <div class="card-deck" style="padding-top: 0%; align-items: center;align-self: center;align-content: center;margin-left: 30%;margin-right: 30%; padding-bottom: 2%;">
+          <div class="card"  style="border: 0em;max-width: 1000px;border-radius: 40px; background-color: #212529">
+            <div class="card-body" style="width: 100%; ">
              
-              <h5 class="card-title"  >Hi RoboMonkee ,</h5>
-              <p class="card-text" style="padding-bottom: 2%;" >I Want To Buy Leo - The Codable Robot.</p>
+              <h5 class="card-title"  style="color: white;">Hi RoboMonkee ,</h5>
+              <p class="card-text" style="padding-bottom: 2%; color: white;" >I Want To Buy Leo - The Codable Robot.</p>
                   <input name="email" type="text" id="emailBuy" placeholder="   E-mail" required="" class="contact-field" style="margin-bottom: 5%;padding-bottom: 2%;padding-top: 2%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 15px;">
                   <button type="button" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;margin-left: 5%;" onclick="return storeToFirebase('iWantBot', 'iWantBotCollection');">Join US</button>
           </div>
         </div>
-        </section>
+      <!-- </div> -->
+      </div>
   <!-- Footer -->
   <footer class="bg-white">
     <div class="container py-5">
@@ -594,22 +595,19 @@ nav{
           <p class="font-italic text-muted">Join our 6,200 students' family!</p>
           <p style="color: #6c757d; margin-top: 20px;">Office No. 7, 
             Amar Business Park,<br>
-            Laxman Nagar,
             Baner - 411045<br>info@robomonkee.com<br>8176061349</p>
-          <ul class="list-inline mt-4" style="margin-top: 10px !important;">
-            <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
-            <li class="list-inline-item"><a href="mailto:info@robomonkee.com" target="_blank"><i class="fa fa-envelope-o icon-large" style="color: #f55858;"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram" style="color: #f55858;"></i></a></li>
-            <li class="list-inline-item"><a href="tel:8176061349" target="_blank"><i class="fa fa-phone" style="color: #f55858;"></i></a></li>
-            <li class="list-inline-item"><a href="https://api.whatsapp.com/send?phone=8176061349" target="_blank"><i class="fa fa-whatsapp" style="color: #f55858;"></i></a></li>
-          </ul>
-          <!-- <p>Email: info@robomonkee.com</p>
-          <p>Email: info@robomonkee.com</p> -->
+            <ul class="list-inline mt-4" style="margin-top: 10px !important;">
+              <!-- <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a></li> -->
+              <li class="list-inline-item"><a href="mailto:info@robomonkee.com" target="_blank"><i class="fa fa-envelope-o icon-large" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.instagram.com/robo_monkee/" target="_blank"><i class="fa fa-instagram" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="tel:8176061349" target="_blank"><i class="fa fa-phone" style="color: #f55858;"></i></a></li>
+              <li class="list-inline-item"><a href="https://api.whatsapp.com/send?phone=8176061349" target="_blank"><i class="fa fa-whatsapp" style="color: #f55858;"></i></a></li>
+            </ul>
         </div>
         <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
           <h6 class="text-uppercase font-weight-bold mb-4">Services</h6>
           <ul class="list-unstyled mb-0">
-            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo - The Coding Bot</a></li>
+            <li class="mb-2"><a href="./cart.html" class="text-muted">Leo</a></li>
             <li class="mb-2"><a href="./workshop.html" class="text-muted">Robotics Workshop</a></li>
             <li class="mb-2"><a href="./events.html" class="text-muted">Robotics Events</a></li>
             <li class="mb-2"><a href="./projects.html" class="text-muted">Projects</a></li>
@@ -667,35 +665,8 @@ nav{
       var e = document.getElementById("colorSelect");
       var strUser = e.options[e.selectedIndex].text;
       console.log(strUser);
-      if(strUser == "White"){
-        document.getElementById("one").src = "assets/images/clipart/1w.png";
-        document.getElementById("two").src = "assets/images/clipart/2w.png";
-        document.getElementById("three").src = "assets/images/clipart/3w.png";
-        document.getElementById("four").src = "assets/images/clipart/4w.png";
-        document.getElementById("five").src = "assets/images/clipart/5w.png";
-        document.getElementById("six").src = "assets/images/clipart/6w.png";
-
-        document.getElementById("one1").src = "assets/images/clipart/1w.png";
-        document.getElementById("two2").src = "assets/images/clipart/2w.png";
-        document.getElementById("three3").src = "assets/images/clipart/3w.png";
-        document.getElementById("four4").src = "assets/images/clipart/4w.png";
-        document.getElementById("five5").src = "assets/images/clipart/5w.png";
-        document.getElementById("six6").src = "assets/images/clipart/6w.png";
-      }
       if(strUser == "Black"){
-        document.getElementById("one").src = "assets/images/clipart/1b.jpg";
-        document.getElementById("two").src = "assets/images/clipart/2b.png";
-        document.getElementById("three").src = "assets/images/clipart/3b.png";
-        document.getElementById("four").src = "assets/images/clipart/4b.png";
-        document.getElementById("five").src = "assets/images/clipart/5b.png";
-        document.getElementById("six").src = "assets/images/clipart/6b.png";
-
-        document.getElementById("one1").src = "assets/images/clipart/1b.jpg";
-        document.getElementById("two2").src = "assets/images/clipart/2b.png";
-        document.getElementById("three3").src = "assets/images/clipart/3b.png";
-        document.getElementById("four4").src = "assets/images/clipart/4b.png";
-        document.getElementById("five5").src = "assets/images/clipart/5b.png";
-        document.getElementById("six6").src = "assets/images/clipart/6b.png";
+        window.open("cart_black.html", "_self");
       }
     }
   </script>
