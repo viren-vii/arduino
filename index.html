@@ -788,7 +788,10 @@
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="button" id="form-submit" class="main-button" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;" onclick="return storeToFirebase('contactUs', 'contactUsCollection');">Send It</button>
+                                <button type="button" id="form-submit" class="main-button g-recaptcha" style="box-shadow: 4px 4px 8px rgba(0,0,0,1);border-radius: 50px;" onclick="return storeToFirebase('contactUs', 'contactUsCollection');"
+                                data-sitekey="6LdOJiQbAAAAALAA2G6o40azEwXM-lGEj3Ddyrrp" 
+                                  data-callback='onSubmit' 
+                                  data-action='submit'>Send It</button>
                               </fieldset>
                             </div>
                           </div>
@@ -879,6 +882,16 @@
     </div>
   </footer>
   <!-- End Footer-->
+
+
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
+ 
+
     <script>var viewMode = getCookie("view-mode");
       if(viewMode == "desktop"){
           viewport.setAttribute('content', 'width=1024');
