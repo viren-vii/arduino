@@ -85,7 +85,18 @@ function storeToFirebase(rootDoc, rootCollection){
         if(!done){
             return;
         }
+        Email.send({
+            SecureToken : "d6bb1539-b8ef-4f67-912a-a3e0b763d24f",
+            To : 'virubhosale112@gmail.com',
+            From : 'vbusites@gmail.com',
+            Subject : "This is regarding "+rootDoc,
+            Body : "This email is coming from "+rootDoc+" "+rootCollection+" <br>"+JSON.stringify(data)+"<br> MESSAGE: <br>"+message
+        }).then(
+          message => console.log(message)
+        );
         console.log("Document successfully written!");
-        alert("Submitted Successfully! THank you!");
+        alert("Submitted Successfully! Thank you!");
     }
+
 }
+
