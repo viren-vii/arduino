@@ -567,8 +567,11 @@ nav{
                 <label for="email">Email:</label>
                 <input class="form-control" type="text" placeholder="Email" name="email" id="email" value="" style="border-radius: 50px;box-shadow: 4px 4px 8px rgba(0,0,0,1);">
               </div>
-              <a id="submit" class="btn btn-primary" style="color: #f1f1f1;border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;" onclick="return storeToFirebase('review', 'reviewCollection');">Submit</a>
-              <input id="submitForm" type="submit" style="display:none;">
+              <button id="submit" class="btn btn-primary g-recaptcha" style="color: #f1f1f1;border-radius: 50px;margin-top: 10%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 25px;background-color:rgb(49, 49, 49);border: 0em;" onclick="return storeToFirebase('review', 'reviewCollection');"
+              
+              data-sitekey="6LdOJiQbAAAAALAA2G6o40azEwXM-lGEj3Ddyrrp" 
+              data-callback='onSubmit' 
+              data-action='submit'>Submit</button>              <input id="submitForm" type="submit" style="display:none;">
               <span id="submitInfo" class="help-block">
                 By clicking <strong>Submit</strong>, I authorize the sharing of my name and review on the web. (email will not be shared)
               </span>
@@ -645,7 +648,14 @@ nav{
     </div>
   </footer>
   <!-- End Footer-->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 
+  <script>
+    function onSubmit(token) {
+      document.getElementById("demo-form").submit();
+    }
+  </script>
+ 
   <script src="./assets/js/firebase.js" ></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>

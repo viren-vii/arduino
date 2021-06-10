@@ -28,20 +28,41 @@ function storeToFirebase(rootDoc, rootCollection){
         fullName = document.getElementById('name').value;
         email = document.getElementById('email').value;
         message = document.getElementById('message').value;
+        if(fullName === "" || email === "" || message === ""){
+            alert("Please fill the form properly!");
+            return false;
+        }
     }else if(rootDoc === 'newsletter'){
         email = document.getElementById('newsletterEmail').value;
+        if(email === ""){
+            alert("Please fill the form properly!");
+            return false;
+        }
     }else if(rootDoc === 'review'){
         message = document.getElementById('review').value;
         fullName = document.getElementById('name').value;
         city = document.getElementById('city').value;
         email = document.getElementById('email').value;
+        if(fullName === "" || email === "" || message === "" || city === ""){
+            alert("Please fill the form properly!");
+            return false;
+        }
     }else if(rootDoc === 'iWantBot'){
         email = document.getElementById('emailBuy').value;
+        if(email === ""){
+            alert("Please fill the form properly!");
+            return false;
+        }
     }else if(rootDoc === 'getCallBack'){
         fullName = document.getElementById('inputEmail4').value;
         parentsName = document.getElementById('inputPassword4').value;
         parentsContact = document.getElementById('inputAddress').value;
         email = document.getElementById('inputAddress2').value;
+
+        if(fullName === "" || email === "" || parentsName === "" || parentsContact.length <= 9){
+            alert("Please fill the form properly!");
+            return false;
+        }
     }
     // Add a new document in collection "cities"
     console.log(rootDoc, rootCollection);
@@ -52,13 +73,19 @@ function storeToFirebase(rootDoc, rootCollection){
     parentsName && (data.parentsName = parentsName);
     parentsContact && (data.parentsContact = parentsContact);
     city && (data.city = city);
-    data.createdAt =  firebase.firestore.FieldValue.serverTimestamp();;
-    db.collection("emailFunctions").doc(rootDoc).collection(rootCollection).doc(email).set({data})
-    .then(() => {
-        console.log("Document successfully written!");
-        alert("Submitted Successfully! THank you!")
-    })
-    .catch((error) => {
+    data.createdAt =  firebase.firestore.FieldValue.serverTimestamp();
+    done = false;
+    try{
+        db.collection("emailFunctions").doc(rootDoc).collection(rootCollection).doc(email).set({data});
+        done = true;
+    }catch(error){
         console.error("Error writing document: ", error);
-    });
+        alert("Please fill the form properly!");
+    }finally{
+        if(!done){
+            return;
+        }
+        console.log("Document successfully written!");
+        alert("Submitted Successfully! THank you!");
+    }
 }

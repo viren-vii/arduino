@@ -36,7 +36,9 @@
                                     <label for="remember_me">Remember Me!</label>
                                 </div>
                                 <div class="row">
-                                    <input type="submit" value="Submit" onclick="alert('Invalid Credentials');" class="btn" >
+                                    <input type="submit" class="g-recaptcha" data-sitekey="6LdOJiQbAAAAALAA2G6o40azEwXM-lGEj3Ddyrrp" 
+                                    data-callback='onSubmit' 
+                                    data-action='submit' value="Submit" onclick="alert('Invalid Credentials');" class="btn" >
                                 </div>
                             </form>
                         </div>
@@ -49,4 +51,11 @@
         </div>
         </div>
     </body>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onSubmit(token) {
+          document.getElementById("demo-form").submit();
+        }
+      </script>
+     
 </html>

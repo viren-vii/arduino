@@ -624,7 +624,7 @@
                     </div>
                 
                     <div class="col-sm-9 ">
-                      <form style="margin-top: 3%; padding-right: 10%;padding-left: 10%;">
+                      <form id="formForm" style="margin-top: 3%; padding-right: 10%;padding-left: 10%;">
                           <div class="form-row">
                             <div class="form-group col-md-6">
                               <input type="text" class="form-control" id="inputEmail4" placeholder="Student's Name" style="box-shadow: 2px 2px 4px rgba(0,0,0,1);border-radius: 50px; margin-bottom: 5%;background-color: rgb(31, 31, 31);border: 0em;color: #f1f1f1;">
@@ -641,7 +641,10 @@
                           </div>
                           
                           
-                          <button type="button" class="btn btn-primary" style="margin-top: 5%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 50px;background-color: rgb(49, 49, 49);" onclick="return storeToFirebase('getCallBack', 'getCallBackCollection');">Get A Call Back</button>
+                          <button class="btn btn-primary g-recaptcha" style="margin-top: 5%;box-shadow: 4px 4px 8px rgba(0,0,0,1);border: 0em;border-radius: 50px;background-color: rgb(49, 49, 49);" onclick="return storeToFirebase('getCallBack', 'getCallBackCollection');"
+                          data-sitekey="6LdOJiQbAAAAALAA2G6o40azEwXM-lGEj3Ddyrrp" 
+                          data-callback='onSubmit' 
+                          data-action='submit'>Get A Call Back</button>
                         </form>
                     </div>
                   </div>
@@ -707,6 +710,12 @@
   </footer>
   <!-- End Footer-->
 
+  <script src="https://www.google.com/recaptcha/api.js"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("formForm").submit();
+    }
+  </script>
 
   <script src="./assets/js/firebase.js" ></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
